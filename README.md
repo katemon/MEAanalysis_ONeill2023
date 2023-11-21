@@ -18,7 +18,5 @@ This code package includes the following:
 
 This code can be accessed at https://github.com/firesteinlab/MEAanalysis_ONeill2023/
 
-It was developed by Erin D. Anderson. For questions, contact E. Anderson at anderin@seas.upenn.edu
-
 Citation:
 O'Neill KM, Anderson ED, Mukherjee S, Gandu S, McEwan SA, Omelchenko A, Rodriguez AR, Losert W, Meaney DF, Babadi B, Firestein BL. "Time-dependent homeostatic mechanisms underlie Brain-Derived Neurotrophic Factor action on neural circuitry." Communications Biology, 2023.
