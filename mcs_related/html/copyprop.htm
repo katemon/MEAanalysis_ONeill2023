@@ -1,0 +1,45 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>copyprop.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> COPYPROP - copies a gcbo-property to a property of another object                                                                                   </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% copyprop(infield, outfield, targeth) copies the value of the property &lt;infield&gt; 
+% of the current callback object to property &lt;outfield&gt; of the object 
+% with the handle &lt;targeth&gt;. Generally &lt;infield&gt; and &lt;outfield&gt; must be 
+% cell arrays with one-for-one source and target fields. 
+% Alternative source objects can be specified by their handle with 
+% the parameter value pair 'sourceobj', &lt;sourcehandle&gt;. 
+% 
+% If &lt;infield&gt; is a cell array and &lt;outfield&gt; is 'userdata' (string) the value of 
+% the &lt;infield&gt; properties are copied to the target 'userdata' field as 
+% structure fields. 
+% 
+% U. Egert 6/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by copyprop.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="assign.htm">assign</A></LI> 
+<LI><A HREF ="setfield.htm">setfield</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call copyprop.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="lfp_extractguictrl.htm">lfp_extractguictrl</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

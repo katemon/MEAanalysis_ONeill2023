@@ -1,0 +1,59 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>density.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> density - 2-D probability density plot.                                                                                                             </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [rho, xvec, yvec] = density(x, y, dx, dy, [x0 x1 y0 y1]); 
+% 
+%  2-D probability density plot. 
+% 
+%  Input:  Vectors x and y of equal length. If dx and/or dy are omitted, the 
+%          default is 75 bins in each direction. 
+% 
+%          If dx or dy is negative, then the variable is taken as the number of 
+%          bins rather than a grid resolution. 
+% 
+%          The vector containing the limits can be padded with NaNs if only 
+%          certain limits are desired, e g if x0 and y1 are wanted: 
+% 
+%            density(x, y, [.5 nan nan 45]) 
+% 
+%  Output: The density matrix RHO together with vectors XVEC and YVEC. 
+%          If no output arguments are specified, DENSITY will plot the density 
+%          function with the prescribed axes using PCOLOR. 
+% 
+%  Requires bin.m. Tested under MatLab 4.2, 5.0, and 5.1. 
+% 
+%  See also bin.m for further details about dx, x0, etc, and ffgrid.m. 
+% 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by density.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="bin.htm">bin</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call density.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="closesortfigures.htm">closesortfigures</A></LI> 
+<LI><A HREF ="dotdensity.htm">dotdensity</A></LI> 
+<LI><A HREF ="dotdisplay.htm">dotdisplay</A></LI> 
+<LI><A HREF ="histdialog.htm">histdialog</A></LI> 
+<LI><A HREF ="prm1plot.htm">prm1plot</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

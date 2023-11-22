@@ -1,0 +1,46 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>dspikes2mat.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> dspikes2mat - retrieve spike cutouts to a column matrix (MEATools)                                                                                  </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% TRACES  = dspikes2mat(idx, tracetype, varargin) retrieves spike cutouts recorded 
+% with MCRack v. 1.3 & up, to a matrix in the base workspace. &lt;idx&gt; is a vector of 
+% indices into the global variable &lt;spkpointer&gt;, &lt;tracetype&gt; can be 
+% 'raw' or 'filtered' resulting in either unfiltered or Savitzky-Golay 
+% filtered cutouts. 
+% 
+% If called without input arguments an input dialog box is opend requesting 
+% the necessary information. 
+% 
+% NOTE: 
+% It is currently required that you have parsed the file beforehand once using 
+% the 'parse spike files' menu of the MEA-Tools GUI. 
+% 
+% (c) U. Egert 3/99 
+% 
+% See also TRACE2MAT 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by dspikes2mat.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="racksetupdef.htm">racksetupdef</A></LI> 
+<LI><A HREF ="trace2mat.htm">trace2mat</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

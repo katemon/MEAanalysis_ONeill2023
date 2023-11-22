@@ -1,0 +1,58 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>doserespplot.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> doserespplot       - creates a plot of dose/response curves                                                                                         </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% [axh, lh] = doserespplot(ep_eval, epoch_data, varargin) creates dose response plots 
+%              with a line for each datasset and a marker for each epoch. 
+% 
+% &lt;ep_eval&gt;         data matrix with one column for each dataset and one row for each epoch. 
+%                    Each column will be a line in the plot. 
+% &lt;epoch_data&gt;       a cell array defining the epochs in the format as returned by getepoch.m 
+% 
+% epoch_data = {&lt;string descriptor&gt;}  {&lt;value&gt;}   {&lt;left ep. limit&gt;}  {&lt;right ep. limit&gt;} 
+% 
+% example: 
+%    'Bic'    [10]    [2.0576]    [3.3226] 
+%    'Bic'    [20]    [5.1475]    [6.4124] 
+%    'Bic'    [30]    [8.2788]    [9.3571] 
+% 
+% &lt;varargin&gt; modifies default setting with parameter/value pairs: 
+%    'sortbyval'    [1] to sort the epochs by increasing 'doses', -1 for decreasing, 
+%                   any other to omit sorting 
+%    'legendstr'    []   a cell array of strings identifying the epochs 
+%    'xtext'        string to use as xlabel 
+%    'ytext'        string to use as ylabel 
+%    'plotfunc'     plot type, legal values: ['plot'], 'semilogx', 'semilogy', 'loglog', 'bar'. 
+% 
+% 
+% U. Egert 10/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by doserespplot.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call doserespplot.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="startdose_resp_eval.htm">startdose_resp_eval</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

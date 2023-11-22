@@ -1,0 +1,533 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>contentclasses.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>                                                                                                                                                     </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% -------------------- 
+% General Functions 
+% 
+% append2pvp                       - append parameter/value pairs to an existing list 
+% assert                           - test if control conditions are met 
+% assign                           - assign a value to a variable 
+% bin                              - return an index into a list of bins 
+% checknogrid                      - check if the MCRack file hold data recorded with MEAs 
+% checkout                         - check out the current meatools version to a new directory 
+% chkglobal                        - test for global state of variables and globalizes 
+% chkinpg                          - mark a polygon and find the values inside and outside of it. 
+% chkinpg                          - mark a polygon and find the values inside and outside of it. 
+% ciddist                          - calculate the distance betw. 2 matrix pos. 
+% col                              - returns a matrix as a column vector 
+% cols                             - returns number of cols n of matrix v 
+% countcell                        - count the number of elements in a cell 
+% cp2struct                        - moves variables into a structure 
+% density                          - 2-D probability density plot. 
+% dotmovie                         - creates either a movie in one figure or a series of figures each with 
+% dotrate                          - plot cell-values and linear regressions (MEATools component) 
+% e2e_distance                     - calculates the direct distance between two MEA electrodes 
+% edistance                        - calculate the distance between a pattern and a sample 
+% elements                         - returns total number of elements in a matrix 
+% fac                              - calculate factorial of an integer 
+% ffgrid                           - Fast 'n' Furious data gridding. 
+% fgetlu                           - fgetline emulation that is resistant to DOS/UNIX '\n' problem 
+% frequencygain                    - calculate frequencygain curves from frequency sweeps 
+% frequencygain_step               - analyze the step response of MEA electrodes 
+% gauss                            - Generates a normalized 2D gaussian filter 
+% getfilenamebttn                  - browse button callback 
+% getfilenames                     - returns a list of filenames in a path as cell array 
+% getmeadim                        - return the dimensions of a particular MEA type 
+% globalize                        - makes existing variables global in a workspace. 
+% histc                            - Histogram count. 
+% inpolygon                        - True for points inside polygonal region. 
+% interpxval                       - find x-values when using interp2 on 2D matrices 
+% ip                               - workbench for interpolation functions 
+% isfile                           - check if a file exists 
+% isianalysis                      - inter-spike interval distribution analysis 
+% isvar                            - check if a variable exists in a given workspace 
+% laplace                          - Generates a matrix implementing a 2D Laplace operator 
+% lowpass                          - fast lowpass IIR filter 
+% maxwindow                        - maximizes a figure window 
+% mem_in_use                       - returns the memory occupied by the calling workspace 
+% namespac                         - define members of struct name in caller's workspace 
+% nelements                        - returns the total number of non-cell elements in a cell array 
+% orientation                      - gives the orientation/type of a 'matrix' 
+% part                             - sort of Mathematica's part function 
+% partcheck                        - range check index i for use in part 
+% partition                        - Mathematica's Partition function 
+% partition                        - rearranges a partition of an array into non-overlapping columns 
+% partlinear                       - calculate linear indices into a matrix 
+% pc                               - calculate principle component vectors 
+% pcoftraces                       - calculates principle components for waveforms in a matrix 
+% plotmeagrid                      - creates a figure with the MEA layout 
+% plotmeagrid_objects              - create a MEA raster for electrode selection 
+% pvstruct2cell                    - converts structures to parameter/value cells 
+% range                            - range spanned between min. and max. of a dataset 
+% recording_duration               - return the recording duration of a datastream object 
+% removedrift                      - remove slow signal drifts 
+% repeat                           - repeat a column vector 
+% repetcol                         - fast restricted version of repetition 
+% repetition                       - repeat segments of length l n times 
+% repetrow                         - fast restricted version of repetition 
+% round2float                      - round values to the n-th decimal position 
+% row                              - return any matrix as row vector 
+% rows                             - returns number of rows m of matrix v 
+% savgol                           - returns Savitzky-Golay filter coefficients 
+% savgol_core                      - core routine for the calculation of Savitzky-Golay filters 
+% scalar                           - TRUE if a variable is a scalar 
+% sequential_mean                  - calculate the mean spike without holding all data at once (script) 
+% showlop                          - show laplace operator shape 
+% tempvar                          - Get temporary variable name. 
+% 
+% -------------------- 
+% General Graphics Tools 
+% 
+% addexportmenu                    - adds an export options menu 
+% addgtextmenu                     - add a gtext menu option 
+% addkilledgemenu                  - removes edge axes on 8x8 figures (MEATools component) 
+% addplot64menu                    - adds a standart options menu to 8x8 plots 
+% addpopupctrl                     - add an Options menu item to toggle the pop-up function in graphics 
+% addpscprintmenu                  - add a postscript printopion menu to a figure 
+% addzoommenu                      - adds zoom menu that can be used with ginput 
+% allyaxis                         - scales all subplots of the current figure to the same 'ylim' values 
+% bar3sc                           - 3D bar histogram with bar color corresponding to height 
+% bar64                            - create an 8x8 bar graph for MEA data 
+% bar_avg_std                      - bar histogram with error bars 
+% binplot                          - memberfunc. of dotdisplay.m, creates a PSTH plot 
+% cbdemo2_script                   - test script for overlays of bitmaps and contours 
+% cell2mat                         - converts a cell array of vectors to a matrix 
+% cell2num                         - converts a cell array of doubles to a double array 
+% cell2pvpstring                   - generates a parameter/value pair string from a cell array 
+% cellfunc_call                    - calls a function with the arguments given as cell array 
+% chanmap_on_img                   - plots RACKSETUP.ChannelID electrodes on a bitmap image 
+% closenamedfig                    - closes all figure with names starting with certain string 
+% contourmovie                     - creates transparent animated contour plot 
+% copyprop                         - copies a gcbo-property to a property of another object 
+% copysubs                         - copies a list of subplots into a new figure 
+% dose_response_script             - evaluation of dose response relations (script) 
+% doserespplot                     - creates a plot of dose/response curves 
+% dotdensity                       - create a density plot from a dotplot 
+% dotdisplay                       - dot display for time series data 
+% dotmovie                         - creates either a movie in one figure or a series of figures each with 
+% dotplotdemoscript                - dot and psth displays 
+% drawline                         - draws vertical lines 
+% drawpolygon                      - marks a polygon in a plot and returns the vertices. 
+% fig2ai                           - prints a figure to a Adobe Illustrator file (.AI) 
+% fig2eps                          - prints a figure to an encapsulated postscript file (.EPS) 
+% fig2hpgl                         - prints a figure to a HPGL file (.HPGL) 
+% fig2jpg                          - prints a figure to a JPEG file (.JPG) 
+% fig2mfile                        - prints a figure to an mfile 
+% fig2sub                          - copies a full figure to a subplot position 
+% fig2tif                          - prints a figure to a TIFF file (.TIF) 
+% fig2wmf                          - prints a figure to a windows metafile (.wmf) 
+% figsetup                         - open/create a named window 
+% getobjprop                       - finds a graphics object and gets a propertys value 
+% ginput_zoom                      - ginput with a zoom option 
+% im_pos                           - Write image position and pixel value 
+% imgsurf                          - creates an image from a jpeg-image file 
+% makepcolorplot                   - script supporting measurfplot.m 
+% makesurf2contour                 - copy a surface to a contour in a new figure 
+% matlabmovie                      - create a move using the matlab movie function 
+% meamovie                         - displays a 64 x N-matrix as an animated pseudocolor plot  [MEA/ab] 
+% measurfplot                      - creates a surface plot from a MEA array frame with color bar. 
+% moviebuilder                     - routine to generate a sequence of jpegs 
+% movieframe2img                   - prettify a movie frame in a separate image (MEATools component) 
+% movietestscript                  - useful to test the movie function 
+% mpegbuilder                      - convert matlab movie to mpeg 
+% mpgwrite                         - Write an MPEG file. 
+% normaxes                         - normalizes x- and y-data of line objects to mean==1 
+% nowait                           - close all waitbar figures 
+% parameterpltmany                 - plots traces from the original MCS datafile 
+% pc_vs_time                       - show PC scaling factors vs. experimental time 
+% plot64                           - now calls plot_mxn 
+% plot8x8img                       - create an 8x8 pseudocolor plot using image.m 
+% plot_mxn                         - draw MxN subplots with one trace per plot, zoomable, MEATools component 
+% plotmeagrid                      - creates a figure with the MEA layout 
+% plotmeagrid_objects              - create a MEA raster for electrode selection 
+% plotpcvec                        - MEATOOLS utility to plot principle component vectors 
+% plotpoly                         - find & plot dots inside and outside of a polygon 
+% plotprm8                         - plot matrix columns against each other in subplots (MEATools) 
+% plotprmmanyctrl                  - control function for PARAMETERPLTMANY (MEATools comp.) 
+% plotsbpops                       - plots spikes colored according to CLUSTERNUMBER 
+% popgco                           - pops a graphics object into a separate figure 
+% popsubplot                       - copies a subplot into a full figure 
+% prepare_fig4copy                 - changes some properties to 'prettify' the figure 
+% prepare_surf4copy                - changes the visibility of vector and bitmap graphics in the figure 
+% printviaepsfile                  - prints a figure using a detour via eps-files, solves some printer problems 
+% printwinc                        - maximizes a window and prints it with the windows color printer 
+% prm1plot                         - plot PARMAT columns to a single figure (MEATools) 
+% query_figure                     - GUI to manage the figures currently open. 
+% quickmovie_array                 - quick & dirty tool to generate a movie from a 64xN matrix 
+% quickmovie_cont                  - quick & dirty tool to generate a movie from a continuous recording 
+% quickmovie_dstream               - quick & dirty tool to generate a movie from a datastream object 
+% quickmovie_sweep                 - quick & dirty tool to generate a movie from triggered sweeps 
+% rateplots                        - plots a variety of spikerate displays 
+% save8x8edge                      - copies specific subplots to a different figure (MEATOOLS component) 
+% scrollxaxis                      - adds a slider to move the x-axis window position. 
+% scrollyaxis                      - adds a slider to move the y-axis window position. 
+% set2userdata                     - copy variables to the userdata of a graphics object 
+% setgcf                           - find/create a named figure 
+% setobjprop                       - finds a graphics object and sets a given property 
+% setradiogroup                    - sets exactly one of a group of radiobuttons 
+% setsbpopup                       - callback for electrode selection field in spikesortbox 
+% setuiprop                        - finds a graphics object and set a given property 
+% showdottrace                     - Companion function in the sortroutine 
+% showimg                          - display a bitmap image 
+% showjpg                          - load, show and format a jpeg file 
+% spikerecdisp                     - displays MCRack spike cutous 
+% spxpchanplt                      - show the no. of spikes per channel in a histogram 
+% srate                            - calculates local event rates with a moving window 
+% standard_paperlayout             - adjusts paper properties in for figure 
+% sublabl                          - adds a text label to a subplot 
+% subplotmosaic_script             - combine subplots from different figures into one 
+% suptitle                         - Puts a title above all subplots. 
+% supxlabel                        - Puts an xlabel below all subplots. 
+% supylabel                        - Puts an ylabel below all subplots. 
+% surfc_ue                         - combination surf/contour plot, mod. SURFC 
+% sweep2movie                      - generate matlab movie from a MEA data set 
+% testtracebox                     - GUI to view selected spike traces 
+% usefulpr                         - commands useful to modify and print plots 
+% 
+% -------------------- 
+% Statistics and Dataanalysis, Data Handling Tools, some only for Datastreams based on MCRack Files 
+% 
+% avgsweep                         - calculate means and standarddev. across dataset for LFP analysis 
+% cid2subplotmap                   - creates subplots corresponding to MEA electrode positions 
+% combineclusters                  - script to merge sorted clusters of spikes 
+% contdotplot                      - simple dot-plot for spike times from MCRack files 
+% ctrart                           - removes stimulus artifacts in spike trains 
+% dat2mcs_cid_conversion           - convert DAT channel assignments to MEA ChannelNames, script 
+% dlength2ms                       - find window length in datastrm objects 
+% dose_response_script             - evaluation of dose response relations (script) 
+% dspikes2mat                      - retrieve spike cutouts to a column matrix (MEATools) 
+% dtrigt2ms                        - find trigger time in datastrm objects 
+% find_total_window_ticks          - find the number of samples per sweep in MCRack datasets 
+% findlfpdatarange                 - callback for datarange selection in lfp_extractgui 
+% getanalog                        - retrieve data from an 'Analog Raw Data' datastream in MCRack files 
+% getanalog_uv                     - retrieves MC-Rack continuous data as a matrix of uV values 
+% getcid                           - finds ChannelID for electrodename 
+% getdstrmrange                    - define a range from a trace of a datastrm object 
+% getidx                           - finds indices into SOURCECHANNELNUMBER for an electrode 
+% getname                          - finds the MEA-electrode name for a channel ID 
+% getparamdata                     - retrieve parameter data from a datastream object 
+% getparamgui                      - GUI to assist in retrieving parameter data from *.mcd files 
+% getraw_uv                        - retrieves MC-Rack continuous data as a matrix of uV values 
+% getsubpops                       - find the no. of subpopulations for electrode/channelID &lt;c&gt; 
+% getsweep_uv                      - retrieves an MC-Rack sweep as a matrix of uV values 
+% gettrace                         - plots traces from the original MCRacks datafile 
+% gettrigger_uv                    - retrieves MC-Rack continuous data as a matrix of uV values 
+% getydatameanmin                  - calculates the mean of the minima of the traces in a plot 
+% guisubpop_list                   - finds a CLUSTERNUMBER list for an electrode 
+% lfp_extractgui                   - utility to extract features from a datastream object 
+% lfp_statistics_script            - calculation of mean and average across sweeps in MCRack records 
+% listclusternums                  - collates a list of subpopulations 
+% lo4dotdensity                    - run a laplace operator across a matrix 
+% lowpass                          - fast lowpass IIR filter 
+% make_elist                       - creates a list of electrodes/subpopulations with more than N spikes 
+% mcs2gdf                          - convert SOURCECHANNELNUMBER/SPIKETIME to gdf 
+% mcsdate                          - recovers the recording date of a MCRacks-file 
+% mea2str_d                        - write spike/trigger/digital MCRack data into Nex-readable files, Ver. 2 
+% measurfplot                      - creates a surface plot from a MEA array frame with color bar. 
+% merge_spk_matfiles               - merges sorted spike datasets (MEATools component) 
+% merge_spk_matfiles               - script to merge sorted spike datasets (MEATools component) 
+% mov2struct                       - moves variables into a structure 
+% noncid2zero                      - set unlisted rows to zeros 
+% nspx                             - gives number of spikes in the current MCRack dataset 
+% nsubpops                         - shows the subpopulations sorted for one or all electrode (MEATools) 
+% oldcid2new                       - converts datastream ChannelIDs 
+% parsespikesbatch                 - GUI to parse several MCRacks spike data files 
+% pc_matrix2                       - calculates principle components for waveforms in a matrix 
+% pcjkparams                       - principle component analysis of spike waveforms 
+% pcjkparams_d                     - principle component analysis of spike waveforms 
+% pcparams                         - principle component analysis of spike waveforms 
+% pcvectors2pcvm                   - create a principle component matrix from PCVECTORS (MEATools component) 
+% ppf_analysis                     - script to analyze paired pulse fac. experiments (MEATools comp.) 
+% ppf_analysisdlg1a                - average across sets of columns in 2 and 3D matrices 
+% ppf_analysisdlg2                 - dialog to reshape 'outmat' matrices 
+% psdatastrmspikes                 - extract spikes from an MCRack-datastream object 
+% pstharea                         - calculate the area in a section of a PSTH 
+% racksetupdef                     - dialog to edit the RACKSETUP structure 
+% ratecorrscript                   - script to analyse changes in rate correlations with time 
+% rateplots                        - plots a variety of spikerate displays 
+% rdspx9_batch                     - parses all MCRack spike data files in a directory 
+% readspike2data                   - reads exported SPIKE 2 data into MEATools compatible format 
+% redo_pcjkparams                  - run the principle component analysis for a single electrode (script) 
+% remove_artifact_script           - Orthogonal projection for artifact removal - best Laplace filter 
+% removedrift                      - remove slow signal drifts 
+% rename2                          - assigns a CLUSTERNAME to selected spikes (MEATools) 
+% reusesortingparams               - script used to apply recorded sorting procedures to a new dataset (MEATools) 
+% setsurfval2nan                   - set sub/supra threshold values in a surface to NaN 
+% showclusternames                 - displays Clusternames listed in PARSESETUP 
+% sortspx4                         - core routine of the MEATools spike sorting function 
+% spike_rate_statistics_script     - script to analyse spike rate from MEATools and Nex 
+% spxpchanplt                      - show the no. of spikes per channel in a histogram 
+% srate                            - calculates local event rates with a moving window 
+% startcell2_64                    - starts cell2mat to order cell vectors to 64xN arrays 
+% streamtypecount                  - returns indices to datastreams of a given type 
+% subpoplist                       - retrieves a list of CLUSTERNUMBERS (MEATools comp.) 
+% sweepevalscript                  - 'manual' visualization of LFP-extraction results 
+% sweepscript                      - some useful functions to work with MCRack sweep datastrm objects 
+% sweepval2mat                     - parses the result variables from lfp_extract 
+% template_script                  - create a sweep template from MCRack sweeps (e.g. as artifact model) 
+% trace2mat                        - retrieve spike cutouts to a column matrix (MEATools) 
+% unsort                           - utility to change subpopulation assignments (MEATools component) 
+% unsortall                        - utility to reset subpopulation assignments. 
+% whoisclasslist                   - lists variables of a certain class 
+% write2gdf                        - converts channel/time vectors to gdf 
+% writecn2spike2                   - write selected CLUSTERNUMBERS to an ASCII file 
+% writemcs2neximp                  - writes MEATools type spike data to gdf files 
+% 
+% -------------------- 
+% Scripts 
+% 
+% cbdemo2_script                   - test script for overlays of bitmaps and contours 
+% dose_response_script             - evaluation of dose response relations (script) 
+% dotplotdemoscript                - dot and psth displays 
+% lfp_extractscript                - construction site for LFP extraction 
+% lfp_statistics_script            - calculation of mean and average across sweeps in MCRack records 
+% map2trialdemoscript              - map spikes to trials in MCRack datasets 
+% movietestscript                  - useful to test the movie function 
+% ratecorrscript                   - script to analyse changes in rate correlations with time 
+% remove_artifact_script           - Orthogonal projection for artifact removal - best Laplace filter 
+% spike_rate_statistics_script     - script to analyse spike rate from MEATools and Nex 
+% subplotmosaic_script             - combine subplots from different figures into one 
+% sweepevalscript                  - 'manual' visualization of LFP-extraction results 
+% sweepscript                      - some useful functions to work with MCRack sweep datastrm objects 
+% template_script                  - create a sweep template from MCRack sweeps (e.g. as artifact model) 
+% usefulpr                         - commands useful to modify and print plots 
+% 
+% -------------------- 
+% Uitools 
+% 
+% activate_uicontrols              - copies style, string and value of uicontrols to their userdata 
+% addfigoptions                    - add standard figure control options menu 
+% addframe2imgmenu                 - adds movie-frame annotation & print menu (MEATools component) 
+% addgtextmenu                     - add a gtext menu option 
+% addkilledgemenu                  - removes edge axes on 8x8 figures (MEATools component) 
+% addplot64menu                    - adds a standart options menu to 8x8 plots 
+% addpopupctrl                     - add an Options menu item to toggle the pop-up function in graphics 
+% addpscprintmenu                  - add a postscript printopion menu to a figure 
+% addzoommenu                      - adds zoom menu that can be used with ginput 
+% browselastpath                   - browse the last directory used 
+% buttonfcn_selective              - evaluate a function depending on the mouse button used 
+% cfg2base                         - collects setting of a GUI to a structure 
+% cfg2figud                        - collects setting of a GUI to a structure 
+% cfgstruct2tag                    - assign values from a structure to object properties 
+% cslider                          - creates a colour scale slider 
+% dstreamsummary                   - writes a short datastream object summary to a 'Status' field 
+% emptygui                         - MEATOOLS user interface template 
+% findoptmenu                      - search/add an 'Options' menu 
+% getguiud                         - collects the 'userdata' field of all non-text fields in a GUI 
+% getparamdata                     - retrieve parameter data from a datastream object 
+% getparamgui                      - GUI to assist in retrieving parameter data from *.mcd files 
+% getsvparams                      - queries parameters to calculate Savitzky-Golay filters (MEATools comp.) 
+% guisubpop_dlg                    - opens a dialog to select a CLUSTERNUMBER from an electrode list 
+% loadfilectrl                     - control function for the file-loader GUIs (MEA Tools component) 
+% loadspikegui                     - GUI to load mat-files 
+% loadsweepgui                     - GUI to load MCRack-files 
+% mcssummarybox                    - summarize and display standard variables in MCS datasets (MEATools) 
+% meatools                         - prepares the MEA-Tools environment 
+% meatoolsbox                      - start GUI for MEATools with menus 
+% parsespikesgui                   - GUI to parse MCRacks spike data files 
+% plot64gui                        - a graphical user interface for 'plot64'         [MEA/ab] 
+% ppf_analysisdlg1a                - average across sets of columns in 2 and 3D matrices 
+% ppf_analysisdlg2                 - dialog to reshape 'outmat' matrices 
+% removemenu                       - delete an item from a figure menu 
+% scrollxaxis                      - adds a slider to move the x-axis window position. 
+% scrollyaxis                      - adds a slider to move the y-axis window position. 
+% select1ename                     - callback for electrode selection (MEATools component) 
+% select1subpop                    - callback for electrode/subpop. selection (MEATools component) 
+% selectplot                       - select a subplot via mouse click 
+% selectvars                       - toggles variable selection style between GDF/MCS 
+% setcnto0                         - set the CLUSTERNUMBER of a spike to zero 
+% setself                          - copies a gcbo-property to another 
+% setsubpops                       - modify object properties based on popmenues 
+% sortgui1                         - GUI to control some MEATools spike sort functions 
+% spikeratebox                     - user interface for spike rate analysis with MEATOOLS 
+% spikerecdisp                     - displays MCRack spike cutous 
+% spikesortbox                     - user interface for spike sorting with MEATOOLS 
+% startburstanalysis               - burst analysis calculation and display 
+% startmoviegui                    - a graphical user interface for 'meamovie'     [MEA/ab] 
+% stdstatus                        - create a simple statusfield (text) in a figure 
+% sweepevalgui                     - user interface for displaying results of LFP extraction with MEATOOLS 
+% switchoff                        - hide and disable guicontrols 
+% switchon                         - show and enable guicontrols 
+% testtracebox                     - GUI to view selected spike traces 
+% togglechkd                       - toggles the state of checkboxes and menu items 
+% togglecslider                    - callback for cslider.m, toggles uicontextmenu and slider color 
+% toggleguionoff                   - toggle GUI properties 'visible' and 'enable' 
+% togglepopvsedit                  - toggles between popupmenu/edit GUI fields 
+% unsort_gui                       - unsort tools for spike sorting via the NeuroTools GUI 
+% 
+% -------------------- 
+% Documentation Tools 
+% 
+% ctrlhelp                         - utilities for managing command collections in control files 
+% datastream_def                   - definition of datastream object properties 
+% h12contents                      - generates a matlab-type contents file for &lt;dirpath&gt; 
+% helpcontinuous                   - help file for 'continuous data' tools 
+% helpsuppl                        - help text for the supplementary data menu 
+% history                          - changes in the current version and release history 
+% isglobal                         - checks if a variable is in the global workspace 
+% meatoolscontributors             - list of contributors to the MEA-Tools 
+% 
+% -------------------- 
+% Internal Meatools Compontents, not Functional Individually 
+% 
+% addkilledgemenu                  - removes edge axes on 8x8 figures (MEATools component) 
+% addlomenu                        - add a Laplace Operator control submenu 
+% addsvmenu                        - adds a Savitzky-Golay submenu to a figure 
+% apply_cfgfields                  - collects configuration GUI fields into a structure 
+% binhist                          - memberfunction for dotdisplay.m 
+% burstanalysis                    - analyze spike trains for burst patterns (MEATools component) 
+% cbdemo1                          - script to create a movie with MEATools based on cerebellum data 
+% cbsag_demo_info                  - info figure for cbsag_smallmoviefig 
+% cbsag_smallmoviefig              - creates a cerebellum-LFP movie demo 
+% cbsurf                           - creates a surface above a bitmap image of a cerebellum slice 
+% chan_map                         - plots a MEA grid with electrode positions 
+% chk_essentials                   - check for variables obligatory for your project 
+% chk_mcssortsettings              - control settings for spike sorting 
+% chk_spikesortconditions          - check for variables obligatory for spike sorting 
+% chkdist2                         - evaluate spike parameter distributions (MEATools) 
+% chkmem                           - check for memory resources 
+% chmarksize                       - callback for GUI to adjust the markersize in the current figure 
+% chmarksizegui                    - adds a GUI to change the markersize of line-objects 
+% cleanup                          - script to clear the workspace during batch spike file parsing 
+% clearepoch                       - inteface to clear a set of epoch data 
+% close_es_selection               - closes the electrode/subpop selection box (MEATools component) 
+% closesortfigures                 - close all figures associated during MEATools spike sorting 
+% create_datastatewindow           - creates a window needed during spike rate calculation 
+% datastreamsummary                - summary of datastream object properties 
+% datastrm2namecell                - callback for MEATools to create a list of datastream object names 
+% displayfunctionshelp             - help file in MEATools 
+% dotdisplay_combifigure           - creates dot and psth displays for spike time series 
+% dstream_sum_fig                  - figure setup for MCRack file summaries 
+% es_selectionbox                  - used to select electrode/subpopulation pairs (MEATools) 
+% es_selectionbox2                 - used to select electrode/subpopulation pairs (MEATools) 
+% eval_anybrowsebutton             - browse button callback for 'loadfilebox' 
+% eval_anybrowsebutton             - browse button callback for 'loadfilebox' 
+% eval_elistfield                  - list the subpops for the electrodes selected in the ename popup 
+% eval_matbrowsebutton             - browse button callback for 'LOADSPIKEGUI' 
+% evaldsource_entries              - evalute GUI entries from data source fields 
+% evalepoch                        - evaluate a sequence of data ranges 
+% findlfptriggertime               - callback for datarange selection in lfp_extractgui 
+% getepoch                         - identify separate time ranges in a plot and retrieve the data 
+% getloparams                      - queries parameters to calculate Laplace operators (MEATools comp.) 
+% getpathbttn                      - browse button callback for path only 
+% guicfg2cell                      - converts GUI-configuration structure to a cell array suitable for evaluation 
+% guicfg2pvp                       - converts GUI-configuration struction to a parameter/value string 
+% guicfg2struc                     - converts GUI-configuration structure to a parameter/value structure 
+% hcmoviedemo                      - script to start a movie display demo (MEATools component) 
+% hcotcmovie_fig                   - creates a movie demo of LFPs in a hippocampus culture 
+% histdialog                       - part of the dot-display function 
+% histstatistics                   - part of the dot-display program 
+% howmuchmem                       - an effort to investigate how much memory is available 
+% lfp_extract                      - extract sweep characteristics in MCRack triggered sweeps (MEATools) 
+% lfp_extract_plot                 - plot results from MCRack sweep evaluation on a trace 
+% lfp_extractguictrl               - control function for the LFP extraction GUI (MEATools comp.) 
+% lfp_extractguihelp               - help for the LFP_EXTRACT graphical user interface 
+% lfp_extractscript                - construction site for LFP extraction 
+% lfpextract_defaults              - configuration file for the LFP_EXTRACTGUI (MEATools component) 
+% lfptoolshelp                     - help for the LFP tools menu of MEA-Tools 
+% loadguicfg                       - loads a GUI configuration from a file 
+% makeglobald                      - ensures a global datastream object for a file 
+% map2trialdemoscript              - map spikes to trials in MCRack datasets 
+% map2trialgui                     - MEATOOLS user interface map spikes to trigger event epochs 
+% maptoimg_bttn                    - callback to map MEA electrodes on a bitmap image (MEATools component) 
+% markspx                          - marks spikes selected by a polygon (MEATools) 
+% mcsrate_summary                  - collects a summary for the spikesortbox GUI 
+% mcsspk_summary                   - collects a summary for the spikesortbox GUI 
+% mcssummaryctrl                   - manages a GUI useful to summarize MCS data variables 
+% mea2str                          - write spike/trigger/digital MCRack data into Nex-readable files 
+% mea2str_inp                      - Pops up a window and allows to change channelnames, called by mea2str 
+% meadot_grid                      - figure setup used in the MEA-Tools suite 
+% meatoolsboxctrl                  - control function for meatoolsbox (MEATools comp.) 
+% moviecontrol                     - co-function to starts MEA-movies (MEATOOLS) 
+% moviedemoctrl                    - control function for the MEATools demo movies 
+% moviestartcontrol                - control GUI for movie displays in MEATools 
+% otc                              - image of the slice recorded in 271p62_3.005 
+% parsespxguictrl                  - control function for parsespikesgui 
+% pcjkparams_def                   - Default settings for pcjk_params_d.m. 
+% plot64_default                   - default settings for plot64.m 
+% plot64_default                   - default settings for plot_MxN.m 
+% plot64_fighelp                   - help on options in figures drawn with plot64.m 
+% plot64guicontrol                 - evaluates and executes PLOT64GUI settings and starts PLOT64 
+% plot64popup                      - copies an axis in a plot64.m figure to a new window (MEATools comp.) 
+% runsortlog                       - applies spike prepared sorting settings on a datasets 
+% saveguicfg                       - saves GUI to a structure and file 
+% saveworkspace                    - request a filename and saves the current workspace 
+% setbasics                        - standard matlab setup for U. Egert 
+% setcnto0                         - set the CLUSTERNUMBER of a spike to zero 
+% setcslide                        - callback for cslider.m, sets range and zero for CLim 
+% setdselectrode                   - retrieves a list of electrodes from datastrm object in gcbo 
+% setespair2ud                     - stores a subpoplation selection for a listed electrode (MEATools component) 
+% setfieldlabel                    - sets objectstrings according to the value of an object. 
+% setguiud                         - sets fields in a GUI as given in a structure 
+% showespair                       - prints a matrix into a small figure 
+% sortctrl                         - callback functions used during MEATools spike sorting 
+% sortgui1                         - GUI to control some MEATools spike sort functions 
+% sorthelp                         - help for the sorting tool GUI started with 'spikesortbox' 
+% spikeratectrl                    - control function collection for spike rate analysis 
+% spikeratehelp                    - still empty 
+% spiketoolshelp                   - help text for the Spike Tools Menu of MEA Tools 
+% spkquality                       - mark spike 'dots' according to a classification 
+% splist                           - es_selection: collate a list of subpopulations for an electrode (MEATools component) 
+% spxbundle                        - finds and plots the traces crossing a time/voltage window 
+% spxpar81                         - extracts spike shape parameters (MEATools) 
+% startburstanalysis_batch         - batch analysis of burst structure across several spike data files 
+% startdose_resp_eval              - evaluation of settings in DOSE_RESPONSE_SCRIPT 
+% startesselection                 - callback for spikeratebox.m 
+% startimgsurf                     - evaluates GUI settings to start imgsurf.m 
+% startlfp_extract                 - callback for the run-button of the lfp_extractgui 
+% startmovie                       - is a wrapper function for meamovie          [MEA/ab] 
+% startrate                        - starts spike rate plotting using the configs given by spikeratebox 
+% startspikereader                 - start rdspx9 from the parsespikesgui 
+% startsubpopplot                  - starts plotsubpop 
+% startsweepeval                   - starts the LFP evaluation graphics tools, not a standalone function 
+% sweepevalctrl                    - control function for sweepevalgui.m (MEATools comp.) 
+% sweepevalguihelp                 - help text for sweepevalgui.m 
+% sweepevalplot                    - utility to display results from sweepval2mat 
+% sweepval2mat                     - parses the result variables from lfp_extract 
+% tdfsplist                        - es_selection: collate a list of subpopulations for an electrode (MEATools component) 
+% testtracebox                     - GUI to view selected spike traces 
+% toggletracetype                  - switches spike cutouts display between filtered and raw (MEATools) 
+% writesortlog                     - saves sorting parameters in a file for reuse 
+% 
+% -------------------- 
+% Environment Control Functions 
+% 
+% getdisks                         - find available drive letters (windows only) 
+% 
+% -------------------- 
+% String Functions 
+% 
+% deblanklr                        - Remove trailing AND leading blanks from strings. 
+% strtok2cell                      - parse a string into cellstr 
+% struct2text                      - converts simple structures to strings 
+% 
+% -------------------- 
+% Others 
+% 
+% plotmeagrid                      - creates a figure with the MEA layout 
+% plotmeagrid_objects              - create a MEA raster for electrode selection 
+% setsurfval2nan                   - set sub/supra threshold values in a surface to NaN 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call contentclasses.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

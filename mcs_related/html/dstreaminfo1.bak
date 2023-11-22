@@ -1,0 +1,1375 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./dstreaminfo1_files/filelist.xml">
+<title>MEA - Tools: Datastream object properties</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>U. Egert</o:Author>
+  <o:Keywords>MEA-Tools, datastream objects,</o:Keywords>
+  <o:Description>Description of datastream object property fields</o:Description>
+  <o:LastAuthor>uegert</o:LastAuthor>
+  <o:Revision>4</o:Revision>
+  <o:TotalTime>5</o:TotalTime>
+  <o:Created>2001-08-29T13:38:00Z</o:Created>
+  <o:LastSaved>2001-08-29T14:00:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>629</o:Words>
+  <o:Characters>3590</o:Characters>
+  <o:Category>MEA-Tools</o:Category>
+  <o:Company>Univ. Freiburg</o:Company>
+  <o:Lines>29</o:Lines>
+  <o:Paragraphs>7</o:Paragraphs>
+  <o:CharactersWithSpaces>4408</o:CharactersWithSpaces>
+  <o:Version>9.4402</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>107</w:Zoom>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:0pt;}
+h2
+	{mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";}
+h6
+	{mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:1.95pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	color:blue;
+	mso-text-animation:none;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	mso-text-animation:none;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:72.0pt 118.35pt 72.0pt 2.0cm;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:665135792;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1305294412 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:37.95pt;
+	mso-level-number-position:left;
+	margin-left:37.95pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <u1:DocumentProperties>
+  <u1:Author>uegert</u1:Author>
+  <u1:LastAuthor>uegert</u1:LastAuthor>
+  <u1:Revision>1</u1:Revision>
+  <u1:TotalTime>1</u1:TotalTime>
+  <u1:Created>2001-08-28T12:59:00Z</u1:Created>
+  <u1:LastSaved>2001-08-28T13:40:00Z</u1:LastSaved>
+  <u1:Pages>1</u1:Pages>
+  <u1:Company>Univ. Freiburg</u1:Company>
+  <u1:Lines>1</u1:Lines>
+  <u1:Paragraphs>1</u1:Paragraphs>
+  <u1:Version>9.4402</u1:Version>
+ </u1:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <u2:WordDocument>
+  <u2:DisplayHorizontalDrawingGridEvery>0</u2:DisplayHorizontalDrawingGridEvery>
+  <u2:DisplayVerticalDrawingGridEvery>0</u2:DisplayVerticalDrawingGridEvery>
+  <u2:UseMarginsForDrawingGridOrigin/>
+  <u2:Compatibility>
+   <u2:FootnoteLayoutLikeWW8/>
+   <u2:ShapeLayoutLikeWW8/>
+   <u2:AlignTablesRowByRow/>
+   <u2:ForgetLastTabAlignment/>
+   <u2:LayoutRawTableWidth/>
+   <u2:LayoutTableRowsApart/>
+  </u2:Compatibility>
+ </u2:WordDocument>
+</xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h2>Table I&nbsp;</h2>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Example for some of the file properties stored in a
+datastream object (in alphabetical order).</span><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt'> <o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border:solid windowtext .5pt;
+  border-right:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h6>Field Name</h6>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border-top:solid windowtext .5pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><b>Example</b></p>
+  </td>
+  <u3:p></u3:p>
+  <td width=312 valign=top style='width:187.15pt;border:solid windowtext .5pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><b>Explanation</b></p>
+  </td>
+ </tr>
+ <u3:p></u3:p>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>ChannelID2</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>{1 ... 64}</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>linear index pointer for each
+  electrode position in an MxN array</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>ChannelNames2</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>{'# 12', '# 13', ..., '# 64'}</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>string 'names' of these
+  electrodes (depending on MEA layout)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>fileaccess</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>ole</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>access type for this file</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>filename</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>cb100200_1_0002.mcd<o:p></o:p></p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <u3:p></u3:p>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>filesize</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>21146</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>given in byte</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>HardwareChannelID2</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>{1 ... 60}</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>hardware-channel numeric
+  identifiers, list of actual AD converter channel numbers</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>HardwareChannelNames2</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>cell (1 1)</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>corresponding hardware-channel
+  string identifiers (independent of layout)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>meatype</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>8x8</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>geometry of the microelectrode
+  array</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>MicrosecondsPerTick</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>40</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>sampling period in ?s</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>MicrovoltsPerAD2</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>0.83333</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>resolution of the AD converter
+  in ?V per bit</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>MillisamplesPerSecond2</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>25000000</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>sampling rate in units of 0.001
+  Hz</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>NChannels2</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>13</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>number of electrodes used</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>Recording date:</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>10-Feb-2000 17:20:01<o:p></o:p></p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <u3:p></u3:p>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>recordingdate</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>730526.7222</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>recording start time and date
+  in seconds (machine time)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>recordingStopDate</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>730526.7222</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>recording stop time and date in
+  seconds</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>softwareversion</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>1.51.1.0</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>version ID of the MCRack
+  recording software used</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>StreamCount</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>1</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>number of data streams in the
+  file</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>StreamInfo</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>StreamName: 'Spikes' <br>
+  &nbsp;DataType: 'analog'</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>details about the settings for each
+  stream, content varies depending on the stream type</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>StreamNames</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>{'Spikes 2'}</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>string names for those streams</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>streams in OLE-opened file:</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>'Spikes 2'</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>names of the data stream stored
+  in the file</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>sweepStartTime</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>0</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>start time of each sweep (which
+  may be 1 for gap-free records)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>sweepStopTime</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>100</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>corresponding stop time</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>TimeWindow</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>struct (1 1)</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>information about the settings
+  for the recording window.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>TotalChannels</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>64</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>total number of electrodes in the
+  recording system</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>TriggerStreamID</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>double (1 2)</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>identifier for trigger streams
+  (if used)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>version</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>2.4.8</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>version ID of the datastream
+  definition</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=222 valign=top style='width:133.0pt;border-top:none;border-left:
+  solid windowtext .5pt;border-bottom:solid windowtext .5pt;border-right:none;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>ZeroADValue</p>
+  </td>
+  <td width=177 valign=top style='width:106.3pt;border:none;border-bottom:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>2048</p>
+  </td>
+  <td width=312 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>ADC value for 0 V</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2>Table II</h2>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>The field <i>'TimeWindow'</i> holds a structure. You
+can have only one type of <i>TimeWindow</i> in a datastream object.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='height:12.6pt'>
+  <td width=102 valign=top style='width:61.2pt;border:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>field names</p>
+  </td>
+  <td width=48 valign=top style='width:28.5pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.6pt'>
+  <p class=MsoNormal>size</p>
+  </td>
+  <td width=105 valign=top style='width:63.0pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.6pt'>
+  <p class=MsoNormal>data type of the content</p>
+  </td>
+  <td width=405 valign=top style='width:243.0pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.6pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>content</p>
+  </td>
+  <td width=60 valign=top style='width:36.0pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.6pt'>
+  <p class=MsoNormal>units</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:61.2pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>'Choice'</p>
+  </td>
+  <td width=48 valign=top style='width:28.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=105 valign=top style='width:63.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>string</p>
+  </td>
+  <td width=405 valign=top style='width:243.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>'Fixed Window', 'Start On Trigger', 'Start And Stop On
+  Trigger', or 'Fixed Window'</p>
+  </td>
+  <td width=60 valign=top style='width:36.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:61.2pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>Time1</p>
+  </td>
+  <td width=48 valign=top style='width:28.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=105 valign=top style='width:63.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>double</p>
+  </td>
+  <td width=405 valign=top style='width:243.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>depending on the Time Window selection either the Window
+  Distance or the Pre-Trigger interval</p>
+  </td>
+  <td width=60 valign=top style='width:36.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>ms</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:61.2pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>Time2</p>
+  </td>
+  <td width=48 valign=top style='width:28.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=105 valign=top style='width:63.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>double</p>
+  </td>
+  <td width=405 valign=top style='width:243.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>depending on the Time Window selection either the Window Extent,
+  or the Post-Trigger interval with 'Start And Stop On Trigger'</p>
+  </td>
+  <td width=60 valign=top style='width:36.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>ms</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:61.2pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>StartTrigger</p>
+  </td>
+  <td width=48 valign=top style='width:28.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=105 valign=top style='width:63.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>string</p>
+  </td>
+  <td width=405 valign=top style='width:243.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>name of the selected starting trigger</p>
+  </td>
+  <td width=60 valign=top style='width:36.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:61.2pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>StopTrigger</p>
+  </td>
+  <td width=48 valign=top style='width:28.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=105 valign=top style='width:63.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>string</p>
+  </td>
+  <td width=405 valign=top style='width:243.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>name of the selected stop trigger</p>
+  </td>
+  <td width=60 valign=top style='width:36.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2>Table III </h2>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Datastream dependent field entries:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>The field <i>StreamInfo</i> holds a cell array of
+structures with stream specific information (1 cells<span style="mso-spacerun:
+yes">&nbsp; </span>per stream, 1 structure per cell, which is empty for 'analog
+raw data').<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ mso-table-layout-alt:fixed;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='height:21.0pt'>
+  <td width=94 valign=top style='width:56.4pt;border:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:21.0pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>datastream type</p>
+  </td>
+  <td width=195 valign=top style='width:117.2pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:21.0pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>field name</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:21.0pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:21.0pt'>
+  <p class=MsoNormal>data type</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:21.0pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>content</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:21.0pt'>
+  <p class=MsoNormal>units</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=94 valign=top style='width:56.4pt;border-top:none;border-left:solid windowtext .5pt;
+  border-bottom:none;border-right:solid windowtext .5pt;mso-border-top-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>'spikes'</p>
+  </td>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>PreTrigger:</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1 1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>pre-trigger interval </p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>ms</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=94 rowspan=4 valign=top style='width:56.4pt;border:solid windowtext .5pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>PostTrigger</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1 1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>post-trigger interval </p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>ms</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>DeadTime</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1 1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>period before a new trigger
+  event is allowed</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>ms</p>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>Level</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1xN</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>trigger level for spike
+  detection</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>µV</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>Slope</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1xN</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>detection slope: </p>
+  <p class=MsoNormal style='margin-left:1.95pt'>0 for negative, </p>
+  <p class=MsoNormal style='margin-left:1.95pt'>1 for positive, </p>
+  <p class=MsoNormal style='margin-left:1.95pt'>-1 for absolute level</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=94 rowspan=8 valign=top style='width:56.4pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>'params'</p>
+  </td>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>Parameters</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>var. </p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>cell</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>return values of the online
+  analyses used, one or more of the following: 'min', 'max', 'tmin', 'tmax',
+  'height', 'width', 'area', 'number', 'amplitude', 'rate' </p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>var.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>InputBufferName</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>string</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>name of the datastream analyzed</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>NumTimeWindows</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>var.</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>no. of time windows averaged</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>TimeWindowChoice</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>string</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>one of the trigger types
+  available</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>TimeWindowTime1</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>depending on the Time Window
+  selection </p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>ms</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>TimeWindowTime2</p>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoBodyTextIndent>depending on the Time Window selection either </p>
+  <p class=MsoNormal style='margin-left:37.95pt;text-indent:-18.0pt;mso-list:
+  l0 level1 lfo2;tab-stops:list 37.95pt'><![if !supportLists]><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>Window Extent, or the </p>
+  <p class=MsoNormal style='margin-left:37.95pt;text-indent:-18.0pt;mso-list:
+  l0 level1 lfo2;tab-stops:list 37.95pt'><![if !supportLists]><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>Post-Trigger interval with 'Start And Stop On
+  Trigger'</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>ms</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>TimeWindowStartTrigger</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>string</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>name of the selected starting trigger</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>TimeWindowStopTrigger</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>string</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>name of the selected stop trigger</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=94 rowspan=5 valign=top style='width:56.4pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>'trigger'</p>
+  </td>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>ChannelID</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>corresponds to <i>ChannelID2</i> value of the channel used
+  as trigger</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>DeadTime</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1 1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>period before a new trigger
+  event is allowed</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>ms</p>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>Level</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1xN</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>trigger level for spike
+  detection</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>µV</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>Slope</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1xN</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>double</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>detection slope: </p>
+  <p class=MsoNormal style='margin-left:1.95pt'>0 for negative, </p>
+  <p class=MsoNormal style='margin-left:1.95pt'>1 for positive, </p>
+  <p class=MsoNormal style='margin-left:1.95pt'>-1 for absolute level</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=195 valign=top style='width:117.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>InputBufferName</p>
+  </td>
+  <td width=56 valign=top style='width:33.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=67 valign=top style='width:40.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>string</p>
+  </td>
+  <td width=247 valign=top style='width:148.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'>data stream used as trigger
+  source</p>
+  </td>
+  <td width=69 valign=top style='width:41.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:1.95pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+<u3:p></u3:p>
+</body>
+
+</html>

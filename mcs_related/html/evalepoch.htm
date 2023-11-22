@@ -1,0 +1,53 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>evalepoch.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> evalepoch       - evaluate a sequence of data ranges                                                                                                </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [ep_eval, ep_std] = evalepoch(epoch_data, sourcedata, varargin) 
+% 
+% IN 
+% &lt;epoch_data&gt;      cell array defining stimulus type, stimulus value, start and stop time 
+% &lt;sourcedata&gt;      matrix or cell array of vectors with the data to evaluate, e.g. spikerates; 
+%                   It is assumed that the entries correspond to equidistant samples. 
+% 
+% &lt;varargin&gt; modifies default setting with parameter/value pairs: 
+% 
+%    'dim'          dimension along which to evaluate a matrix, default is 2, i.e. columns. 
+%    'ftype'        function to use for evaluation, e.g. 'mean' 
+%    'normalize'    when set to 1 normalizes the epoch values with respect to the 
+%                        norm_refepoch. Default is 0. 
+%    'norm_refepoch' index identifying the reference epoch (i.e. row) in &lt;epoch_data&gt; 
+% 
+% OUT 
+% &lt;ep_eval&gt;         results matrix with one column for each dataset and one row for each epoch. 
+%                   Columns are arranged as in sourcedata, rows in the sequence they were selected. 
+% &lt;ep_st&gt;           corresponding matrix with standard deviation (standard error when normalized) 
+% 
+% U. Egert 10/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by evalepoch.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call evalepoch.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="startdose_resp_eval.htm">startdose_resp_eval</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

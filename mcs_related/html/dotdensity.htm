@@ -1,0 +1,54 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>dotdensity.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> dotdensity - create a density plot from a dotplot                                                                                                   </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% sh = dotdensity(lh, varargin) creates a pseudocolor 
+% surface plot representing the distribution of values 
+% in the xdata and ydata of line object &lt;lh, if &lt;lh&gt; 
+% is an object handle. If &lt;lh&gt; is a 2-column matrix 
+% this will be used as a database. 
+% 
+% Note that the calculation is very slow with Matlab 
+% 5.2 because hist.m is used. Matlab 5.3 uses histc 
+% which is compiled in a dll and very much faster. 
+% 
+% Parameter/value pairs: 
+% ..., 'ndensbins', n, ...    define the number of bins (default 100); 
+% 
+% U. Egert 2/2000 
+% 
+% See also BAR3 BAR3H HISTC 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by dotdensity.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="cslider.htm">cslider</A></LI> 
+<LI><A HREF ="density.htm">density</A></LI> 
+<LI><A HREF ="histc.htm">histc</A></LI> 
+<LI><A HREF ="isfile.htm">isfile</A></LI> 
+<LI><A HREF ="lo4dotdensity.htm">lo4dotdensity</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call dotdensity.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="sortctrl.htm">sortctrl</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

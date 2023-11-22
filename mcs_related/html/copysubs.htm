@@ -1,0 +1,47 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>copysubs.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> COPYSUBS - copies a list of subplots into a new figure                                                                                              </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% copysubs(sf, tf, submatsize, linidx) copies subplots 
+% from the source figure with handle &lt;sf&gt; to the same 
+% positions in target  figure with handle &lt;tf&gt;. &lt;submatsize&gt; 
+% gives the number of rows and columns in the subplot arrangement 
+% of the source figure. &lt;linidx&gt; gives the subplot index 
+% of the axis objects to copy. Note that in this scheme 
+% subplots are counted in the  usual matlab notation along 
+% columns. If the target figure does not exist a new one is 
+% created, as are non existing subplots. 
+% 
+% example 
+% sf = figure; 
+% subplot(2,2,1); plot(rand(1,10)); 
+% subplot(2,2,2); plot(rand(1,50)); 
+% copysubs(sf, figure, [2,2], [1 4 ]) 
+% 
+% This will copy the newly created subplots to a different figure and 
+% create an empty axis in position [2,2,3] 
+% U. Egert 8/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call copysubs.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="subplotmosaic_script.htm">subplotmosaic_script</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

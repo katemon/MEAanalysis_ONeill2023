@@ -1,0 +1,57 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>ffgrid.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> ffgrid - Fast 'n' Furious data gridding.                                                                                                            </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [zgrid, xvec, yvec] = ffgrid(x, y, z, dx, dy, [x0 x1 y0 y1 z0 z1 n0]); 
+% 
+%  Fast 'n' Furious data gridding. 
+% 
+%  Input:  Unevenly spaced data in vectors x, y, and z of equal length. 
+%          If dx and dy are omitted, the default is 75 bins in each direction. 
+% 
+%          If dx or dy is negative, then the variable is taken as the number of 
+%          bins rather than a grid resolution. If dx is complex, the imaginary 
+%          part is taken as the value with which empty grid points are padded. 
+%          The default padding is 10% below minimum value in grid. 
+% 
+%          The vector containing the limits can be padded with NaNs if only 
+%          certain limits are desired, e g if x1 and z0 are wanted: 
+% 
+%            ffgrid(x, y, z, [.5 nan nan nan 45]) 
+% 
+%          The last parameter, n0, removes outliers from the data set by 
+%          ignoring grid points with n0 or less observations. When n0 is 
+%          negative it is treated as the percentage of the total number of 
+%          data points. 
+% 
+%  Output: The gridded matrix ZGRID together with vectors XVEC and YVEC. 
+%          If no output arguments are given, FFGRID will plot the gridded 
+%          function with the prescribed axes using PCOLOR. 
+% 
+%  Requires bin.m. Tested under MatLab 4.2, 5.0, and 5.1. 
+% 
+%  See also bin.m for further details about dx, x0, etc, and density.m. 
+% 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by ffgrid.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="bin.htm">bin</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

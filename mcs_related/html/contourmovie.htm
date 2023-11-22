@@ -1,0 +1,50 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>contourmovie.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> CONTOURMOVIE       - creates transparent animated contour plot                                                                                      </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% syntax: 
+% contourmovie(data, frlist, varargin) 
+% &lt;data&gt; must be a 64xN matrix which will be shown as an 8x8 axis. 
+% contourmovie will loop through &lt;data&gt; creating &lt;flist&gt; or N 
+% frames if &lt;frlist&gt; is omitted. &lt;frlist&gt; is a column index list. 
+% 
+% Defaults can be adjusted by parameter value pairs: 
+% 'targetaxis' (gca)    contours will be drawn into this axis 
+% 'ipf'  (3)            interpolation factor (see interp2 for details) 
+% 'caxlim' ([-50 30])   boundaries for color scaling 
+% 'colorscale' ('jet')  a valid color map 
+% 'ncontours'  (20)     number of contour levels to use 
+% 
+% (c) U. Egert 2/99 
+% 
+% See also CBDEMO2_SCRIPT 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by contourmovie.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call contourmovie.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="cbdemo2_script.htm">cbdemo2_script</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

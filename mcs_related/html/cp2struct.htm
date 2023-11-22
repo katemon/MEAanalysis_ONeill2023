@@ -1,0 +1,51 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>cp2struct.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> CP2STRUCT - moves variables into a structure                                                                                                        </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% CP2STRUCT(structname, inputvariables) moves the &lt;inputvariables&gt; 
+%    into fields of &lt;structname&gt;. Input arguments 
+%    must not be given as strings. If the structure &lt;structname&gt; 
+%    does not exist it is created new. 
+% 
+% example 
+%    if: 
+%    a = 1:5; b = 'asdf'; 
+% 
+%    then: 
+%    c = cp2struct(c, a, b) 
+%    will return the structure c with the field c.a and c.b 
+% 
+% 
+% U.Egert 8/97 
+% 
+% See also CP2STRUCT SETFIELD RMFIELD GETFIELD STRUCT 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by cp2struct.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="setfield.htm">setfield</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call cp2struct.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="lfp_extractscript.htm">lfp_extractscript</A></LI> 
+<LI><A HREF ="startlfp_extract.htm">startlfp_extract</A></LI> 
+<LI><A HREF ="sweepevalscript.htm">sweepevalscript</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

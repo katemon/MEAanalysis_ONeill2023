@@ -1,0 +1,138 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>datastrm22.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> DATASTRM		- data object constructor for opening data recorded with MC Rack                                                                          </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% d = datastrm(a,varargin) is a datastrm constructor for MC Rack data files of all MC Rack versions 
+%                           (MC Rack version 1 and above uses the OLE Server Object contained in MCStream.dll) 
+%                           (MC Rack version 0 is handled by a MATLAB reader and is retained for compatibilty) 
+% &lt;a&gt; is a filename or a datastrm object or a struct containing fields of earlier datastrm versions. 
+% &lt;d&gt; is a datastrm object with the header information contained in the MCRack file. 
+% 
+% Following properties of the MCRack data file can be retrieved with getfield(d,'propertyxxx'). 
+% Many of them come as arrays as they depend on the MCRack stream(=buffer), of which more 
+% than one can be contained in an MCRack data file (e.g. Trigger 1 and Spikes 1) 
+% Please use getstreamnumber(d,'streamname') for converting stream name to stream id, which 
+% must be used for indexing all stream dependent arrays. 
+% 
+% All other methodes than datastrm,nextdata,getfield,getstreamnumber,ad2muvolt in datastrm 
+% directory are private or retained for compatibility and should not be used. 
+% 
+% Following properties of the datastrm object are accessible with getfield(a,'eg_prop'): 
+% 
+% filename                string 
+% version                 string             of the datastrm object definition in matlab 
+% softwareversion         string             of the MCRack version which recorded the opened data file 
+% filesize                double             in byte 
+% meatype                 string             '8x8' for MEA layout, all types of MEA's; 'nogrid' for hardware/in vivo layout 
+% TotalChannels           double             number of hardware channel, can be up to 128 for 'nogrid' layout 
+% NChannels2              double/stream      no. of channels recorded 
+% ChannelNames2           cell string        strings of channel definitions, 
+%                         array/stream       sorted in hardware aquisition order 
+% HardwareChannelNames2   cell string        strings of channel definitions, 
+%                         array/stream       sorted in recording order 
+% ChannelID2              cell with double   linear channel ID (i.e. number of channel in MCRack channels page, 
+%                         array/stream       e.g. 1=#11,2=#12,..,9=#21,10=#22,...), 
+%                                            sorted in hardware aquisition order 
+% HardwareChannelID2      cell with double   hardware channel ID (=number of channel in hardware aquisition sequence), 
+%                         array/stream       e.g. 1=#11,2=#12,..,9=#21,10=#22,...), 
+%                                            sorted in recording order 
+% MicrovoltsPerAD2        double/stream      µV per AD unit 
+% MicrosecondsPerTick     double             hardware sampling period 
+% MillisamplesPerSecond2  double/stream      samples per second * 1000, (there will be a downsampling option 
+%                                            for Filtered data in later MCRack version) 
+% ZeroADValue2            double/stream      zero position of the AD conversion 
+% 
+% recordingdate           double             start date and time 
+%                                                  datestr(getfield(d,'recordingdate'),0) returns a formatted string 
+% recordingStopDate       double             stop date and time 
+%                                                  datestr(getfield(d,'recordingStopDate'),0) returns a formatted string 
+%                                            filelength in ms 
+%                                                  filelength=(getfield(d,'recordingStopDate')- 
+%                                                                 getfield(d,'recordingdate'))*24*3600*1000 
+% sweepStartTime          0                  onset of each window of gap-free, continuous data, given in ms 
+% sweepStopTime           0                  end of each window of gap-free, continuous data, given in ms 
+% 
+% TimeWindow              struct             recording Time Window information (i.e. trigger conditions, extent) 
+%                Choice:  string             Start On Trigger, Start And Stop On Trigger, or Fixed Window 
+%                 Time1:  double                   in ms, depending on the Time Window selection either the 
+%                                                        Window Distance or the Pre-Trigger interval 
+%                 Time2:  double                   in ms, depending on the Time Window selection either the 
+%                                                         Window Extent, or the Post-Trigger interval with 
+%                                                         Start And Stop On Trigger. 
+%          StartTrigger:  string                   name of the selected starting trigger 
+%           StopTrigger:  string                   name of the selected stop trigger 
+% 
+% StreamCount             double             no. of data stream in the record 
+% StreamNames             cell str/stream    'name' of the 'instrument' used, e.g. 'Spikes 1', 'Trigger 2', 'Electrode Raw Data' 
+% StreamInfo              cell with          cell array of structures with stream specific information 
+%                         struct/stream 
+% 
+% Case: 'spikes' 
+%            StreamName:  string             recorded stream/buffer 
+%              DataType:  string             type of recorded stream: 'analog', 'trigger, 'spikes', 'params 
+%            PreTrigger:  double             pre-trigger interval in ms 
+%           PostTrigger:  double             post-trigger interval in ms 
+%              DeadTime:  double             'refractory period' in ms 
+%                 Level:  double/channel     trigger level in µV for each channel 
+%                 Slope:  double/channel     detection slope: 0 for negative, 1 for positive, -1 for absolute level 
+%          ChannelNames:  cell str/channel   channel names sorted as in Level and Slope 
+% 
+% Case: 'params' 
+%            StreamName:  string             recorded stream/buffer 
+%              DataType:  string             type of recorded stream: 'analog', 'trigger, 'spikes', 'params 
+%            Parameters:  cell string        actually return values of the analysis: 'min', 'max', 'tmin', 
+%                         /parameter               'tmax', 'height', 'width', 'area', 'number', 'amplitude', or 'rate' 
+%       InputBufferName:  cell string        analyzed data stream 
+%        NumTimeWindows:  double             no. of Time Windows averaged 
+%      TimeWindowChoice:  string             'Start On Trigger', 'Start And Stop On Trigger', or 'Fixed Window' 
+%       TimeWindowTime1:  double             depending on the Time Window selection either the Window Distance 
+%                                                  or the Pre-Trigger 
+%       TimeWindowTime2:  double             depending on the Time Window selection either the Window Extent, 
+%                                                  or the Post-Trigger interval with 'Start And Stop On Trigger'. 
+%TimeWindowStartTrigger:  string             name of the selected starting trigger 
+% TimeWindowStopTrigger:  string             name of the selected stop trigger 
+% 
+% Case: 'trigger' 
+%            StreamName:  string             recorded stream/buffer 
+%              DataType:  string             type of recorded stream: 'analog', 'trigger, 'spikes', 'params 
+%             ChannelID:  double             corresponds to HardwareChannelID2 of the channel used as trigger 
+%              DeadTime:  double             'refractory period' in ms 
+%                 Level:  double             trigger level in µV for each channel 
+%                 Slope:  double             detection slope: 0 for negative, 1 for positive 
+%       InputBufferName:  'not recorded'     data stream used as trigger source 
+% 
+% Case: 'other' 
+%            StreamName:  string             recorded stream/buffer 
+%              DataType:  string             type of recorded stream: 'analog', 'trigger, 'spikes', 'params 
+% 
+% Please refer to help nextdata for information on retrieving data 
+% 
+% Author: Th. Knott, NMI Reutlingen, knott@nmi.de 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by datastrm22.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="datastrm.htm">datastrm</A></LI> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="rdrawhd.htm">rdrawhd</A></LI> 
+<LI><A HREF ="setfield.htm">setfield</A></LI> 
+<LI><A HREF ="setpos.htm">setpos</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 
