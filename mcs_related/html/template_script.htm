@@ -1,0 +1,51 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>template_script.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> TEMPLATE_SCRIPT - create a sweep template from MCRack sweeps (e.g. as artifact model)                                                               </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+%################################################################################################## 
+% 
+%              SCRIPT TO CREATE A SWEEP TEMPLATE FOR LFP-ANALYSIS OF MEA RECORDS 
+% 
+%    Contents: 
+%                       - CREATE TEMPLATES 
+%                       - UTILITIES 
+% 
+% 
+%################################################################################################## 
+% This script is used to extract a set of sweep data recorded with MCRack and MEAs, average the 
+% data and thus create a template that may be used to correct for stimulus artifacts, subtract a 
+% baseline response or similar. The script relies on the file format used by MCRack. The resulting 
+% matrices are 64xN where N is the number of samples in a trace of the averaged sweeps. A second 
+% set of commands is useful to view and verify the results and compare them to the original 
+% data. 
+% Don't forget to adjust the name of your template in the &lt;template variable&gt; field of the 
+% LFP-Analysis I GUI! 
+% 
+% U. Egert 8/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by template_script.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="createswptemplate.htm">createswptemplate</A></LI> 
+<LI><A HREF ="getcid.htm">getcid</A></LI> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="getsweep_uv.htm">getsweep_uv</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

@@ -1,0 +1,50 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>unsortall.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> UNSORTALL  - utility to reset subpopulation assignments.                                                                                            </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% UNSORTALL(en, sp) is restricted to setting the CLUSTERNUMBER of 
+%                   either a given subpopulation &lt;sp&gt; on electrode &lt;en&gt; 
+%                   to zero. 
+% 
+% &lt;en&gt;     if a string is given the corresponding ChannelID is determined and 
+%          used. Alternatively the ChannelID can be given as a number. 
+% 
+% The PARSESETUP.Clusternames corresponding to the given subpopulation of spikes 
+% is deleted. 
+% 
+% If &lt;sp&gt; is omitted or set to zero all CLUSTERNUMBERs of that electrode 
+% are reset. 
+% 
+% If no input arguments are given all sorting results are reset by deleting 
+% CLUSTERNUMBER and PARSESETUP.Clusternames. 
+% 
+% uses 
+%    getidx 
+%    getcid 
+% 
+% U. Egert 1/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by unsortall.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="assert.htm">assert</A></LI> 
+<LI><A HREF ="getcid.htm">getcid</A></LI> 
+<LI><A HREF ="getidx.htm">getidx</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

@@ -1,0 +1,66 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>trace2mat.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> trace2mat          - retrieve spike cutouts to a column matrix (MEATools)                                                                           </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% TRACES  = trace2mat(idx, tracetype) retrieves spike cutouts recorded 
+% with MCRack to a matrix in the base workspace. Each column in &lt;TRACES&gt; 
+% corresponds to one spike waveform. &lt;idx&gt; is a vector of 
+% indices into the global variable &lt;spkpointer&gt;, &lt;tracetype&gt; can be 
+% 'raw' or 'filtered' resulting in either unfiltered or Savitzky-Golay 
+% filtered cutouts. Default filter coefficients [5,3] may be modified 
+% by the parameter value pair 
+% 
+%           ..., svparams, [a,b]) 
+% 
+% If called without input arguments an input dialog box is opened requesting 
+% the necessary information. 
+% 
+% If used with datastream objects it is necessary to use the global variable 
+% &lt;D&gt; for the object. Other names are not allowed. 
+% 
+% To access spike of a specific channel ID with datastream object extend with 
+% ..., 'dstreamobj', &lt;name&gt;, 'channelid', &lt;cid&gt;, ... 
+% 
+% (c) U. Egert 3/99 
+% 
+% See also GETTRACE 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by trace2mat.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="ad2muvolt.htm">ad2muvolt</A></LI> 
+<LI><A HREF ="assert.htm">assert</A></LI> 
+<LI><A HREF ="datastrm.htm">datastrm</A></LI> 
+<LI><A HREF ="nextdata.htm">nextdata</A></LI> 
+<LI><A HREF ="racksetupdef.htm">racksetupdef</A></LI> 
+<LI><A HREF ="savgol.htm">savgol</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call trace2mat.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="dspikes2mat.htm">dspikes2mat</A></LI> 
+<LI><A HREF ="parameterpltmany.htm">parameterpltmany</A></LI> 
+<LI><A HREF ="pcjkparams.htm">pcjkparams</A></LI> 
+<LI><A HREF ="pcjkparams_d.htm">pcjkparams_d</A></LI> 
+<LI><A HREF ="showdottrace.htm">showdottrace</A></LI> 
+<LI><A HREF ="spikerecdispctrl.htm">spikerecdispctrl</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

@@ -1,0 +1,60 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>unsort_gui.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> UNSORT_GUI - unsort tools for spike sorting via the NeuroTools GUI                                                                                  </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% unsort_gui(cfginfo, datainfo) evaluates edit fields as 
+%    indicated in &lt;cfginfo&gt; and handles either MCS data style, or 
+%    other formats if &lt;datainfo &gt; is supplied. Both input arguments 
+%    must be structures with the following fields. It is used in the 
+%    spikesortbox GUI. 
+% 
+% cfginfo.fighandle      a handle to the figure whos edit fields should be 
+%                        used 
+% cfginfo.tagname        the tag label of the edit fields that should be 
+%                        searched for the userdata{1} cell with the strings 
+%                        'subpopulation', 'ename', and 'newnum' 
+% 
+% datainfo.clustervar    the name of the variables and indices that should 
+%                        be used for the ID of the clusters as a string, e.g. 
+%                        if the 3rd column of an array DATA would be the 
+%                        clusternumbers you would write 'DATA(:,3)' 
+% datainfo.scnvar        the name of the variables and indices that should 
+%                        be used for the ID of the channels/electrode names, 
+%                        as a string, e.g. with gdf type arrays this would be 
+%                        'gdf(:,1)' 
+% datainfo.datavars      a cell array with variable names that must be global 
+%                        in the workspace and need to be used for this 
+%                        function, e.g. {'CHANNELS', 'CLUSTERS'}. This saves 
+%                        memory. 
+% 
+% NOTE that the variables for channel number and cluster number must be sorted 
+%         in the same order. 
+% 
+% U. Egert 
+% 
+% See also UNSORT 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by unsort_gui.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="apply_cfgfields.htm">apply_cfgfields</A></LI> 
+<LI><A HREF ="namespac.htm">namespac</A></LI> 
+<LI><A HREF ="unsort.htm">unsort</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

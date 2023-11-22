@@ -1,0 +1,51 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="MEATools Toolbox (C) by U. Egert 1998-2001">
+   <meta name="GENERATOR" content="Mozilla/4.77 [en] (Windows NT 5.0; U) [Netscape]">
+</head>
+<body background="iepback.gif">
+&nbsp;
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="100%" >
+<tr>
+<td HEIGHT="180"><img SRC="271p62_3_005swp39fr2200a.gif" height=206 width=180 align=LEFT></td>
+
+<td>
+<center><font size=+4><a href="overview.htm" TARGET="_top">MEATools</a></font>
+<br><font size=+1>MATLAB tools for the analysis of multi-neuronal data
+recorded with Multi-Electrode-Arrays</font>
+<br>Version 2.65
+<br><img SRC="logo2.gif" BORDER=0 height=81 width=600></center>
+</td>
+
+<td>
+<div align=right><a href="http://www.uni-freiburg.de"><img SRC="ufrlogo_small.gif" BORDER=0 height=169 width=170 align=RIGHT></a></div>
+</td>
+</tr>
+</table></center>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote><font size=+1><a href="overview.htm" TARGET="_top">- overview</a></font>
+<br><font size=+1><a href="index.htm" TARGET="_top">- a brief guide to
+non-Matlab m-files used by MEATools
+<i>(except for datastream-object functions)</i></a></font>
+<br>and some additional ones</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+<br>&nbsp;
+<center>
+<p><i><font size=+1>written by:</font></i>
+<br><i><font size=+1><a href="mailto:egert@biologie.uni-freiburg.de">U.
+Egert</a>, A. Brandt, M. Diesmann, S. Rotter, A. Aertsen, with contributions
+by Th. Knott (NMI Reutlingen), C. Schwarz (Univ. Tuebingen)</font></i>
+<br><i><font size=+1><a href="http://www.brainworks.uni-freiburg.de" target="_top">Dept.
+of Neurobiology &amp; Biophysics</a>, Univ. of Freiburg, Germany</font></i>
+<br><i><font size=+1>- Dec. 20<sup>th</sup> 2001 -</font></i></center>
+
+</body>
+</html>
