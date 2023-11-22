@@ -1,0 +1,56 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>burstanalysis.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> burstanalysis      - analyze spike trains for burst patterns (MEATools component)                                                                   </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% [nbursts,burstpos] = burstanalysis(threshold, spx_per_burst, cid, CN) 
+% identifies burst events in a spike train. 
+% Burst are identified as a series of short interspike intervals following a long 
+% interspike interval. 
+% 
+% &lt;threshold&gt; gives the maximum interspike-intervall duration allow within a burst (ms). 
+% &lt;spx_per_burst&gt; gives the minimal no. of spikes required for a burst. 
+% &lt;nbursts&gt;    gives the no. of bursts, not the no. of spikes in bursts!!! 
+% &lt;burstpos&gt;   a vector into the event series used pointing to the first spike in 
+%              each burst 
+% 
+% Default settings can be modified with parameter/value pairs: 
+% 'range'      a 2-element vector giving the start and end time of the data 
+%              range to be processed, given in the same units as SPIKETIME uses. 
+%              default: all spikes are used, 
+% 'eventtimes' can be a vector of times that are analyzed for bursts. 
+%              Def: times are selected from SPIKETIME based on &lt;cid&gt; and &lt;CN&gt; 
+% 
+% (c) U. Egert 10/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by burstanalysis.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="getidx.htm">getidx</A></LI> 
+<LI><A HREF ="range.htm">range</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call burstanalysis.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+<LI><A HREF ="startburstanalysis.htm">startburstanalysis</A></LI> 
+<LI><A HREF ="startburstanalysis_batch.htm">startburstanalysis_batch</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

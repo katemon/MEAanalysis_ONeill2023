@@ -1,0 +1,48 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>bar_avg_std.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> BAR_AVG_STD        - bar histogram with error bars                                                                                                  </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [bh, lh] = bar_avg_std(avg, stdev, varargin) creates a plot of vertical 
+% bars with error ranges indicated as symetric or positive vertical lines. 
+% &lt;avg&gt; is MATRIX giving the bar length, &lt;std&gt; gives the 
+% error line length. If &lt;avg&gt; and &lt;std&gt; are matrices a set of bars will 
+% be drawn for each column. Patch handles are returned in &lt;bh&gt;, error bar 
+% handles in &lt;lh&gt;. Plot details can be modified by parameter/value 
+% pairs as follows (defaults): 
+% 
+% 'xdata' (1:length(avg))     x-axis positions of the bar centers, 
+% 'marker' ('s')              marker type, see 'PLOT' for details, may be set to 'none' 
+% 'markersize' (3)            size for said marker 
+% 'width' (0.8)               relative width for the bars, bars contact each other with 1 
+% 'symetric' (1)              1 for avg+/- standarddev., 0 for avg+standarddev. only. 
+% 'lcolor' ('k')              error line color 
+% 'fcolor', ('brgcmkyw')      the sequence of colors to use for the columns of &lt;avg&gt; 
+% 
+% (c) U. Egert 1/99 
+% 
+% See also ERRORBAR BAR BARH 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by bar_avg_std.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

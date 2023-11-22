@@ -1,0 +1,42 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>checkout.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> checkout - check out the current meatools version to a new directory                                                                                </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% checkout(newdir, pathonly) - copies the current meatools version, i.e. the 
+% files in the meatools and meatools/mcintfac directories to a new directory. 
+% If &lt;newdir&gt; is omitted or empty &lt;newdir&gt; will be defined from the current date, 
+% e.g. if today is 05-Apr-2000 &lt;newdir&gt; will be 'meatools05-Apr-2000' in the 
+% path defined by mfilepath.m. 
+% 
+% All files in the meatools directory and the meatools/mcintfac directory 
+% will the be copied to &lt;newdir&gt;. These directories will be appended to the 
+% matlab searchpath while the original meatools and meatools/mcintfac directories 
+% will be removed from the search path. Finally, all functions will be cleared. 
+% In case you have an active datastream object in your workspace you will have 
+% to redefine it. 
+% 
+% (c) U. Egert 4/2000 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by checkout.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="bin.htm">bin</A></LI> 
+<LI><A HREF ="meatools.htm">meatools</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

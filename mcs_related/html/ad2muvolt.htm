@@ -1,0 +1,55 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>ad2muvolt.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> ad2muvolt - converts MCRack ADC values into microvolt values (datastrm method)                                                                      </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% [vdata, tvals] = ad2muvolt(a, addata, streamname) returns an array &lt;vdata&gt; 
+% of size(addata) with values converted from &lt;addata&gt; with the conversion 
+% factors given in the structure &lt;a&gt; which must contain the fields 
+% &lt;a.ZeroADValue&gt; and &lt;a.MicrovoltsPerAD&gt; such as in datastream objects 
+% or the RACKSETUP variable used with other MCRacks datasets. &lt;tvals&gt; is a 
+% time vector of the length of a row of &lt;addata&gt; based on &lt;a.MicrosecondsPerTick&gt;. 
+% 
+% If &lt;streamname&gt; is given conversion will be based on the parameters for 
+% that datastream. 
+% 
+% NOTE: addata MUST NOT be a cell array! 
+% 
+% U. Egert 3/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by ad2muvolt.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="getstreamnumber.htm">getstreamnumber</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call ad2muvolt.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="avgsweep.htm">avgsweep</A></LI> 
+<LI><A HREF ="cbdemo2_script.htm">cbdemo2_script</A></LI> 
+<LI><A HREF ="createswptemplate.htm">createswptemplate</A></LI> 
+<LI><A HREF ="getanalog_uv.htm">getanalog_uv</A></LI> 
+<LI><A HREF ="getraw_uv.htm">getraw_uv</A></LI> 
+<LI><A HREF ="getsweep_uv.htm">getsweep_uv</A></LI> 
+<LI><A HREF ="startlfp_extract.htm">startlfp_extract</A></LI> 
+<LI><A HREF ="sweepscript.htm">sweepscript</A></LI> 
+<LI><A HREF ="trace2mat.htm">trace2mat</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 
