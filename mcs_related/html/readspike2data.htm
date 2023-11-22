@@ -1,0 +1,64 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>readspike2data.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> readspike2data           - reads exported SPIKE 2 data into MEATools compatible format                                                              </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [CNspk2] = READSPIKE2DATA(fname) with the file &lt;fname&gt; being an export file from SPIKE 2 
+% reads the waveforms, channelnumber, clusternumber (if applicable), and spike time of each 
+% channel and spike. The data are stored in global variables compatible with MEATools 
+% spike data analysis: 
+% 
+% RACKSETUP, SOURCECHANNELNUMBER, SPIKETIME, PARSESETUP, spkpointer, TRACES, PCVECTORS. 
+% 
+% &lt;CNspk2&gt; holds the unit IDs assigned by SPIKE 2 spike sorting. It is compatible 
+% with MEATools if copied to CLUSTERNUMBER (global), so you can compare the different 
+% sorters. 
+% 
+% &lt;TRACES&gt; is a matrix of spike cutouts with one column per spike. The traces are 
+% padded with zeros to account for unequal cutout length, which may or may not 
+% affect the principle components calculated. 
+% 
+% NOTE: since the electrode/channel identifiers of SPIKE 2 are not compatible with the 
+% notation used with MEAs a wrong electrode number will be assigned. This is necessary 
+% to ensure compatibility of the various display tools. From any channel name listed 
+% in one of the GUI fields of the MEATools you may retrieve the original channel 
+% identifier using the command -- getcid(&lt;electrodename&gt;) --, in which &lt;electrodename&gt; 
+% is a string with the name displayed, e.g. getcid('# 23') will return 11 as channel ID. 
+% 
+% 
+% (c) U. Egert 2/99 
+% 
+% See also WRITECN2SPIKE2 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by readspike2data.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+<LI><A HREF ="getcid.htm">getcid</A></LI> 
+<LI><A HREF ="getname.htm">getname</A></LI> 
+<LI><A HREF ="nspx.htm">nspx</A></LI> 
+<LI><A HREF ="pc.htm">pc</A></LI> 
+<LI><A HREF ="pc_matrix.htm">pc_matrix</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call readspike2data.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

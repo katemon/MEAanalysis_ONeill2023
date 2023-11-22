@@ -1,0 +1,142 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>PVPMOD.M</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> PVPMOD             - evaluate parameter/value pairs                                                                                                 </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% pvpmod(x), where x is a cell array with an even number of cells, assigns 
+% the value x(i+1) to the parameter defined by the string x(i) in the 
+% calling workspace. This is useful to evaluate  &lt;varargin&gt; contents in an 
+% mfile, e.g. to change default settings  of any variable initialized 
+% before pvpmod(x) is called. 
+% Alternatively, &lt;x&gt; can be a structure where the fieldnames will become 
+% variable names and the field contents will become the contents of the new 
+% variables. 
+% 
+% Example 
+% assume x is a cell array of parameter/value pairs such as used to modify 
+% plots. Then 
+% x = {'fontname', 'helvetica', 'fontsize', 8}; 
+% pvpmod(varargin) 
+% will create variables with names created from x{1:2:end} with the 
+% corresponding values x{2:2:end} in the calling workspace 
+% 
+% (c) U. Egert 1998 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call PVPMOD.M</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="rdspx9.htm">rdspx9</A></LI> 
+<LI><A HREF ="activate_uicontrols.htm">activate_uicontrols</A></LI> 
+<LI><A HREF ="addpscprintmenu.htm">addpscprintmenu</A></LI> 
+<LI><A HREF ="assert.htm">assert</A></LI> 
+<LI><A HREF ="avgsweep.htm">avgsweep</A></LI> 
+<LI><A HREF ="bar64.htm">bar64</A></LI> 
+<LI><A HREF ="bar_avg_std.htm">bar_avg_std</A></LI> 
+<LI><A HREF ="burstanalysis.htm">burstanalysis</A></LI> 
+<LI><A HREF ="chan_map.htm">chan_map</A></LI> 
+<LI><A HREF ="chkdist2.htm">chkdist2</A></LI> 
+<LI><A HREF ="contourmovie.htm">contourmovie</A></LI> 
+<LI><A HREF ="cslider.htm">cslider</A></LI> 
+<LI><A HREF ="dlength2ms.htm">dlength2ms</A></LI> 
+<LI><A HREF ="doserespplot.htm">doserespplot</A></LI> 
+<LI><A HREF ="dotdensity.htm">dotdensity</A></LI> 
+<LI><A HREF ="dspikes2mat.htm">dspikes2mat</A></LI> 
+<LI><A HREF ="dtrigt2ms.htm">dtrigt2ms</A></LI> 
+<LI><A HREF ="evalepoch.htm">evalepoch</A></LI> 
+<LI><A HREF ="findlfptriggertime.htm">findlfptriggertime</A></LI> 
+<LI><A HREF ="frequencygain.htm">frequencygain</A></LI> 
+<LI><A HREF ="frequencygain_step.htm">frequencygain_step</A></LI> 
+<LI><A HREF ="gettrigtime.htm">gettrigtime</A></LI> 
+<LI><A HREF ="getanalog.htm">getanalog</A></LI> 
+<LI><A HREF ="getanalog_uv.htm">getanalog_uv</A></LI> 
+<LI><A HREF ="getdstrmrange.htm">getdstrmrange</A></LI> 
+<LI><A HREF ="getidx.htm">getidx</A></LI> 
+<LI><A HREF ="getname.htm">getname</A></LI> 
+<LI><A HREF ="getparamdata.htm">getparamdata</A></LI> 
+<LI><A HREF ="getraw_uv.htm">getraw_uv</A></LI> 
+<LI><A HREF ="getsweep_uv.htm">getsweep_uv</A></LI> 
+<LI><A HREF ="gettrigger_uv.htm">gettrigger_uv</A></LI> 
+<LI><A HREF ="guicfg2struc.htm">guicfg2struc</A></LI> 
+<LI><A HREF ="imgsurf.htm">imgsurf</A></LI> 
+<LI><A HREF ="isianalysis.htm">isianalysis</A></LI> 
+<LI><A HREF ="lfp_extract.htm">lfp_extract</A></LI> 
+<LI><A HREF ="lfp_extract_plot.htm">lfp_extract_plot</A></LI> 
+<LI><A HREF ="listclusternums.htm">listclusternums</A></LI> 
+<LI><A HREF ="makesurf2contour.htm">makesurf2contour</A></LI> 
+<LI><A HREF ="matlabmovie.htm">matlabmovie</A></LI> 
+<LI><A HREF ="mcs2gdf.htm">mcs2gdf</A></LI> 
+<LI><A HREF ="mcsspk_summary.htm">mcsspk_summary</A></LI> 
+<LI><A HREF ="mcssummaryctrl.htm">mcssummaryctrl</A></LI> 
+<LI><A HREF ="meadot_grid.htm">meadot_grid</A></LI> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+<LI><A HREF ="nextdata.htm">nextdata</A></LI> 
+<LI><A HREF ="nsubpops.htm">nsubpops</A></LI> 
+<LI><A HREF ="parameterpltmany.htm">parameterpltmany</A></LI> 
+<LI><A HREF ="parsespikesbatch.htm">parsespikesbatch</A></LI> 
+<LI><A HREF ="pc_matrix.htm">pc_matrix</A></LI> 
+<LI><A HREF ="pc_matrix2.htm">pc_matrix2</A></LI> 
+<LI><A HREF ="pc_vs_time.htm">pc_vs_time</A></LI> 
+<LI><A HREF ="pcjkparams.htm">pcjkparams</A></LI> 
+<LI><A HREF ="pcjkparams_d.htm">pcjkparams_d</A></LI> 
+<LI><A HREF ="plot64gui.htm">plot64gui</A></LI> 
+<LI><A HREF ="plot64guicontrol.htm">plot64guicontrol</A></LI> 
+<LI><A HREF ="plotmeagrid.htm">plotmeagrid</A></LI> 
+<LI><A HREF ="plotmeagrid_objects.htm">plotmeagrid_objects</A></LI> 
+<LI><A HREF ="plotprm8.htm">plotprm8</A></LI> 
+<LI><A HREF ="plotsbpops.htm">plotsbpops</A></LI> 
+<LI><A HREF ="popgco.htm">popgco</A></LI> 
+<LI><A HREF ="popsubplot.htm">popsubplot</A></LI> 
+<LI><A HREF ="prepare_fig4copy.htm">prepare_fig4copy</A></LI> 
+<LI><A HREF ="psdatastrmspikes.htm">psdatastrmspikes</A></LI> 
+<LI><A HREF ="quickmovie_array.htm">quickmovie_array</A></LI> 
+<LI><A HREF ="quickmovie_cont.htm">quickmovie_cont</A></LI> 
+<LI><A HREF ="quickmovie_dstream.htm">quickmovie_dstream</A></LI> 
+<LI><A HREF ="quickmovie_sweep.htm">quickmovie_sweep</A></LI> 
+<LI><A HREF ="racksetupdef.htm">racksetupdef</A></LI> 
+<LI><A HREF ="rateplots.htm">rateplots</A></LI> 
+<LI><A HREF ="rdspx9_batch.htm">rdspx9_batch</A></LI> 
+<LI><A HREF ="readspike2data.htm">readspike2data</A></LI> 
+<LI><A HREF ="removedrift.htm">removedrift</A></LI> 
+<LI><A HREF ="removedrift_iir.htm">removedrift_iir</A></LI> 
+<LI><A HREF ="rename2.htm">rename2</A></LI> 
+<LI><A HREF ="setdselectrode.htm">setdselectrode</A></LI> 
+<LI><A HREF ="setself.htm">setself</A></LI> 
+<LI><A HREF ="setsurfval2nan.htm">setsurfval2nan</A></LI> 
+<LI><A HREF ="showdottrace.htm">showdottrace</A></LI> 
+<LI><A HREF ="sortctrl.htm">sortctrl</A></LI> 
+<LI><A HREF ="spikeratectrl.htm">spikeratectrl</A></LI> 
+<LI><A HREF ="spikerecdisp.htm">spikerecdisp</A></LI> 
+<LI><A HREF ="spikerecdispctrl.htm">spikerecdispctrl</A></LI> 
+<LI><A HREF ="spxbundle.htm">spxbundle</A></LI> 
+<LI><A HREF ="srate.htm">srate</A></LI> 
+<LI><A HREF ="startburstanalysis.htm">startburstanalysis</A></LI> 
+<LI><A HREF ="startburstanalysis_batch.htm">startburstanalysis_batch</A></LI> 
+<LI><A HREF ="startlfp_extract.htm">startlfp_extract</A></LI> 
+<LI><A HREF ="startmovie.htm">startmovie</A></LI> 
+<LI><A HREF ="startrate.htm">startrate</A></LI> 
+<LI><A HREF ="struct2text.htm">struct2text</A></LI> 
+<LI><A HREF ="sublabl.htm">sublabl</A></LI> 
+<LI><A HREF ="surfc_ue.htm">surfc_ue</A></LI> 
+<LI><A HREF ="sweep2movie.htm">sweep2movie</A></LI> 
+<LI><A HREF ="sweepevalplot.htm">sweepevalplot</A></LI> 
+<LI><A HREF ="sweepval2mat.htm">sweepval2mat</A></LI> 
+<LI><A HREF ="trace2mat.htm">trace2mat</A></LI> 
+<LI><A HREF ="write2gdf.htm">write2gdf</A></LI> 
+<LI><A HREF ="writesortlog.htm">writesortlog</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

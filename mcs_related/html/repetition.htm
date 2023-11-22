@@ -1,0 +1,98 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>repetition.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> REPETITION      - repeat segments of length l n times                                                                                               </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% w=repetition(v,n,l,o), repeat segments of length l n times 
+% *************************************************************** 
+% *                                                             * 
+% * Usage:                                                      * 
+% *           v, row or column vector                           * 
+% *           n, number of times segments should be repeated    * 
+% *           l, length of segments                             * 
+% *              if l is ommited all v is taken as one segment  * 
+% *              (l=length(v).                                  * 
+% *           w, result with orientation of v                   * 
+% *                                                             * 
+% * Note:                                                       * 
+% *  In the degenerate case length(v)==1 the row or column      * 
+% *  vector v reduces to a scalar. However, w is defined to     * 
+% *  have the same orientation as v. For scalar v repetition    * 
+% *  needs the property string 'row' or 'col' as the last       * 
+% *  argument, otherwise a                                      * 
+% *              'Repetition:ScalarNotOriented'                 * 
+% *  error is raised. Applications using repetition in an       * 
+% *  environment where v may reduce to a scalar should always   * 
+% *  use a version of repetition with forced orientation:       * 
+% *     e.g.  repetition(v,2,'row') .                           * 
+% *  This is essential because the index operator() has         * 
+% *  different definitions for scalars and vectors:             * 
+% *                                                             * 
+% *      v is   ! orientation of v(i)                           * 
+% *    -------------------------------------------------        * 
+% *     scalar  ! matrix with orientation of i                  * 
+% *     vector  ! vector with orientation of v                  * 
+% *     matrix  ! matrix with orientation of i                  * 
+% *                                                             * 
+% * The orientation of a vector can be obtained by a call       * 
+% * to orientation(v). orientation() returns a property string. * 
+% *                                                             * 
+% * Uses:                                                       * 
+% *           part, orientation, copy                           * 
+% *                                                             * 
+% *                                                             * 
+% * History:                                                    * 
+% *         (4) repetrow and repetcol introduced, compiled      * 
+% *             versions exist                                  * 
+% *            MD, 1.4.1997, Freiburg                           * 
+% *         (3) error checking simplified, now allows forced    * 
+% *             orientation for l~=length(v) also.              * 
+% *            MD, 16.2.1997, Jerusalem                         * 
+% *         (2) orientation strings 'row', 'col' introduced to  * 
+% *             safely handle degenerate case scalar(v)==1.     * 
+% *            MD, 5.2.1997, Freiburg                           * 
+% *         (1) call of partition removed                       * 
+% *             The first version used partition for the one    * 
+% *             segment case. The new version allows us to use  * 
+% *             repetition in partition. Old warning:           * 
+% *                "!!!NOTE, copy is implemented by the         * 
+% *                 (v,n) version of repetition!!!" removed.    * 
+% *            MD, 4.2.1997, Freiburg                           * 
+% *         (0) first Version                                   * 
+% *            MD, SG 29.11.1996, Jerusalem                     * 
+% *                                                             * 
+% *                                                             * 
+% *                          diesmann@biologie.uni-freiburg.de  * 
+% *                          gruen@hbf.huji.ac.il               * 
+% *                                                             * 
+% *************************************************************** 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by repetition.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="orientation.htm">orientation</A></LI> 
+<LI><A HREF ="repetcol.htm">repetcol</A></LI> 
+<LI><A HREF ="repetrow.htm">repetrow</A></LI> 
+<LI><A HREF ="row.htm">row</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call repetition.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="ppf_analysisdlg1a.htm">ppf_analysisdlg1a</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

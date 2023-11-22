@@ -1,0 +1,67 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>plotmeagrid_objects.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> plotmeagrid_objects - create a MEA raster for electrode selection                                                                                   </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [figh, axh, doth] = plotmeagrid_objects(meaDim, skipcid); &lt;meaDim&gt; is a 
+% vector defining the number of rows and columns of the grid. &lt;skipcid&gt; 
+% (may be empty) 
+% indicates linear indices to positions that should be marked by a '.' 
+% only. Clicking on circles will turn them red or blank. 
+% 
+% &lt;figh&gt;, &lt;axh&gt;, and &lt;doth&gt; are handles to figure, axis and circles 
+% respectively (not those with '.' markers). 
+% 
+% The 'finish' button will send a list of marked electrodes with electrode 
+% names defines in colum/row format to a variable 'Ename' in the calling 
+% workspace. A rubberband utility allows to select by dragging a rubberband 
+% box across several electrodes. 
+% 'Ename'  will be a string when only one pos. is marked, it will be a 
+% cell array of strings when more than one position is marked. If no 
+% positions are marked 'Ename' will be an empty string. 
+% 
+% Known bugs: To start the rubberband utility you need to click on the 
+% space between the circles. The rubberband has to start ON a circle. 
+% Starting above and left to the circles  center will include circles on 
+% the top an left boundary of the box. Starting on or below the center will 
+% exclude these, execept for the start circle. 
+% 
+% Note that the box adds circles, it does not invert ones already marked. 
+% 
+% 
+% 
+% (c) U. Egert 2001-2003 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by plotmeagrid_objects.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+<LI><A HREF ="display.htm">display</A></LI> 
+<LI><A HREF ="gethelpmenuhandle.htm">gethelpmenuhandle</A></LI> 
+<LI><A HREF ="inpolygon.htm">inpolygon</A></LI> 
+<LI><A HREF ="range.htm">range</A></LI> 
+<LI><A HREF ="removemenu.htm">removemenu</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call plotmeagrid_objects.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="dotmovie.htm">dotmovie</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

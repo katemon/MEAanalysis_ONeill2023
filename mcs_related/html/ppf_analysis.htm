@@ -1,0 +1,50 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>ppf_analysis.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> ppf_analysis  - script to analyze paired pulse fac. experiments (MEATools comp.)                                                                    </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% (c) U. Egert 
+%------------------------------------------------------------------- 
+% 1.)extract LFP extrema beforehand, 
+% 2.)use Sweep Evaluation to display 
+%    the relevant extremum, e.g. amplitude. This will create &lt;outmat&gt; 
+%    with one plane of data for each trigger, one row per electrode 
+%    and one column per sweep. 
+%    If your experiment resulted in only one datafile with only one trial 
+%    per condition you should have the correct version of &lt;outmat&gt; at this 
+%    point. In most cases things are more complex. So you have to ... 
+% 3.)prepare the result matrices created during Sweep Evaluation to 
+%    form one &lt;outmat&gt; of size 64xNxP 
+% 
+% Here are a number of versions to prepare &lt;outmat&gt; for averaging/plotting 
+% under different experimental protocols, take care to rename the results 
+% of each section if you want to combine different sections: 
+%------------------------------------------------------------------- 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by ppf_analysis.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="allxaxis.htm">allxaxis</A></LI> 
+<LI><A HREF ="allyaxis.htm">allyaxis</A></LI> 
+<LI><A HREF ="getcid.htm">getcid</A></LI> 
+<LI><A HREF ="plot64.htm">plot64</A></LI> 
+<LI><A HREF ="ppf_analysisdlg2.htm">ppf_analysisdlg2</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+<LI><A HREF ="suptitle.htm">suptitle</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

@@ -1,0 +1,63 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>plotprm8.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> PLOTPRM8        - plot matrix columns against each other in subplots (MEATools)                                                                     </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% PLOTPRM8(idxspx, varargin) plots values in the columns of a matrix (default is PARMAT) vs. each other. 
+% &lt;idxspx&gt; must give the rows of the matrix to be used. Used in the spike sorting suite. Settings can 
+% be modified with parameter/value pairs, none of which is required for default usage: 
+% 
+% parameter    legal values 
+% 'dataset'    a matrix with rows per spike with the parameters in columns 
+% 'holdit'     0 or 1, for plotting a second dataset on top of an existing plot 
+% 'labels'     a cell array of strings with 1 string per column of &lt;dataset&gt; 
+% 'flipxy'   1 or 0, exchanges x and y axes 
+% 'useparams'  integer vector indicating the columns of &lt;dataset&gt; to be used 
+% 'figname' any name of a sort-figure 
+% 
+% 
+% global variables required: 
+%     RACKSETUP (for default settings) 
+%     PARSETUP (for default settings) 
+%     PARMAT (for default settings) 
+% 
+% 
+% U. Egert 12/1997 
+% **************************************************************************************************** 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by plotprm8.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="addpscprintmenu.htm">addpscprintmenu</A></LI> 
+<LI><A HREF ="assign.htm">assign</A></LI> 
+<LI><A HREF ="findoptmenu.htm">findoptmenu</A></LI> 
+<LI><A HREF ="parameterpltmany.htm">parameterpltmany</A></LI> 
+<LI><A HREF ="plotpcvec.htm">plotpcvec</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+<LI><A HREF ="sortctrl.htm">sortctrl</A></LI> 
+<LI><A HREF ="unsort.htm">unsort</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call plotprm8.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="chkdist2.htm">chkdist2</A></LI> 
+<LI><A HREF ="markspx.htm">markspx</A></LI> 
+<LI><A HREF ="plotsbpops.htm">plotsbpops</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

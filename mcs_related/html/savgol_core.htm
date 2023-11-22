@@ -1,0 +1,50 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>savgol_core.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> SAVGOL_CORE     - core routine for the calculation of Savitzky-Golay filters                                                                        </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% h=savgol_core(f,d_t,w,M,n), general Savitzky-Golay filtering 
+% *************************************************************** 
+% *                                                             * 
+% * Core computation of  Savitzky-Golay filtering.              * 
+% *                                                             * 
+% * Usage:                                                      * 
+% *       f,   signal to be smoothed or differentiated          * 
+% *            (row vector or matrix of rows of data)           * 
+% *       d_t, the delta_t of the equally spaced                * 
+% *            sampling points                                  * 
+% *	  w    (one sided) width of the filter. Currently only  * 
+% *            symmetrical filters are supported                * 
+% *       M,   order of the Savitzky-Golay polynomial           * 
+% *       n,   order of the derivative (0 for smoothing)        * 
+% *       h,   filtered signal                                  * 
+% *              	length(h) == cols(f)-2*w                * 
+% *                                                             * 
+% * Uses:                                                       * 
+% *      savgol(), wrs()                                        * 
+% *                                                             * 
+% * See Also:                                                   * 
+% *	     cnv()                                              * 
+% *************************************************************** 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by savgol_core.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="savgol.htm">savgol</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

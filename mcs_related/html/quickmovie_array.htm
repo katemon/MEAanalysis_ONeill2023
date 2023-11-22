@@ -1,0 +1,56 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>quickmovie_array.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> quickmovie_array - quick & dirty tool to generate a movie from a 64xN matrix                                                                        </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% data = quickmovie_array(varname, startend, varargin) 
+% &lt;DuV&gt;              a 64xN array, a sampling period of 0.04 ms (25kHz sampling rate) 
+%                    is assumed unless you state otherwise with a parameter/value 
+%                    pair. e.g. ..., 'samplingperiod', 0.1, ... for 10 kHz. 
+% &lt;startend&gt;         2-element vector giving start and end times for the movie in msec 
+% &lt;data&gt;             the data actually used for the movie 
+% 
+% &lt;varargin&gt;         several optional parameter/value pairs (with their defaults): 
+% skip = 5;          no. of samples skipped between frames 
+% ipfactor = 2;      interpolation depth 
+% ipMethod = 'cubic' interpolation method ('linear', 'cubic') 
+% preIp = 'off'      pre-interpolation, 'on' delays the start but speeds up the movie 
+% viewDim = '2D'     '2D' or '3D' display 
+% loop = 'on'        infinite looping through the movie 
+% zlim = []          z-axis and color limits in µV, def. are min and max in the dataset 
+% integrate = 'no'   'yes' to show the inverted, detrended integral of the data 
+% plot8x8 = 'yes',    'yes' to generate an 8x8 figure of the data (calls plot64.m) 
+% saveas = [];       path and group name for jpeg-files, e.g. 'saveAs', 'c:\temp\test'. 
+%                    If 'saveAs' is a number (any) a global matlab-movie variable named 'mframe' 
+%                    will be created from the movie. 
+% namesequence='sequential'; Indicates the numbering of the filenames given by 'saveAs'. 'sequential' 
+%                    will have ascending numbers appended to the filename. 'frameindex' will have 
+%                    the framenumber appended instead. 
+% 'position'         size and position of the movie figure relative to the screen (0 is left or bottom 
+%                    of the screen, 1 is top or right) 
+% 
+% (c) U. Egert 3/2000 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by quickmovie_array.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="meamovie.htm">meamovie</A></LI> 
+<LI><A HREF ="plot64.htm">plot64</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

@@ -1,0 +1,135 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>plot_mxn.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> PLOT_MxN - draw MxN subplots with one trace per plot, zoomable, MEATools component                                                                  </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% plot_MxN(x) accepts a datastream object or a matrix and draws subplots on 
+% an MxN matrix with one trace per subplot. Individual axis can be zoomed 
+% with a click of the left mousebutton. Popup figures do not inherit the mouse 
+% click functionality. Subplots will be deleted with a right button click. 
+% 
+% Menu options: 
+%     An options menu holds commands to modify the figure. See the 
+%     'help' function of the menu for details. 
+% 
+% Syntax 
+% [all_axh, all_lh, sbh] = plot_MxN(x,varargin) 
+% &lt;x&gt; can be 
+%    - (1) a datastrm object of an MCRacks file with triggerd or continuously recorded 
+%          data, generally assuming that its variable name is D, 
+%    - (2) the path and name such an MCRack data file 
+%    - (2) a matrix of MxN rows, plots will show one row per subplot. 
+% 
+% &lt;all_axh&gt; is a list of graphic handles to the data axes, 
+% &lt;all_lh&gt; is a list of graphic handles to the data lines. Both are matrices 
+% in the dimensions of the array, e.g. 8x8, with the positions of unused 
+% electrodes filled with NaN. 
+% 
+% &lt;sbh&gt; is the graphic handle of the scalebars. 
+% 
+% Default parameters are set in the file plot_MxN_default.m, which must be 
+% present in the path. Defaults can be modified by parameter/value pairs: 
+% 
+% 
+% Options that can be adjusted by parameter value pairs, defaults 
+% are given as 'value' examples. 
+% 
+% starttime    - in ms (X-Axis) 
+% endtime      - in ms (X-Axis), 'end' can be used to show the full trace and is default 
+% 
+% these act as follows: 
+%   for triggered raw data:   - time within sweep to be displayed 
+%   for spike data:           - time from file start to be displayed 
+%   for matrices:             - starttime/endtime will be interpreted as column indices into the 
+%                               matrix, unless a sampling period is given with the parameter 
+%                               'samplingperiod' 
+% 
+% ymin (-50)   - in µV (Y-Axis) 
+% ymax (50)    - in µV (Y-Axis) 
+% posType      - 'time' or 'sweep' or '', default: sweep 
+% posValue     - time in ms or sweep number or 0, default: 1 
+% 
+% For triggered raw data posType and posValue are used as follows 
+% posType = 'time' for spike data means 
+% posValue = x-Axis extent in ms 
+% 
+% Other parameter value pairs 
+% 'pads',1             - displays pad number on every trace 
+% 'zeroLine',1           - displays dotted line on time zero (only spike data) 
+% 'cutX',0               - cuts off data beyond x range (valuable for printing in file) 
+% 'cutY',0               - sets data beyond y range to ymax/ymin (valuable for printing in file) 
+% 'padsOn', 0            - print electrode labels with each subplot 
+% 'zeroLine',0           - to show a line at y = 0 
+% 'channelSel',[1:68]    - select specific channels for plotting 
+% 'overlayplot ',  0     - to add another 8x8 plot to exisiting axes 
+% 'magnifyOnClick',1     - to show a subplot in a separate figure 
+% 'tracecolor', 'b'      - color for data traces 
+% 'tracestyle', '-'      - line style for data traces 
+% 'tracemarker', 'none'  - marker for data traces 
+% 'dispTunits',1e-3      - time units to use as fractions of seconds if axes are shown 
+% 'samplingTunits', 1e-6 - time of sampling period in fractions of seconds 
+% 'samplingperiod', 40   - samplingTunits per sample 
+% 'xautoscale', 1		    - enables autoscaling of the x-axis of all subplots 
+% 'yautoscale', 1		    - enables autoscaling of the y-axis of all subplots 
+% 'svparams', 0          - 2dim-vector to create Savitzky-Golay Filter 
+% 'phaseshift', 0        - switch to shift filtered trace by svparams(1) 
+% 'figurename', 'MxN'    - name of the figure window 
+% more parameters are listed in plot_mxn_default.m 
+% 
+% 
+% history 
+% (2)     - modified for MxN MEA-types and 'nogrid', U. Egert 
+% (1.2)   - parameter/value pair handling changed, 
+%         - more adjustable parameters added, 
+%         - time range handling allows 'end' for 'endtime', U. Egert 
+% (1.1)   - some options added, A. Brandt 
+% (1)     - support for MxN matrices added, Th.Knott 
+% (0)     - basics by Th. Knott 
+% 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by plot_mxn.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="addplot64menu.htm">addplot64menu</A></LI> 
+<LI><A HREF ="cell2mat.htm">cell2mat</A></LI> 
+<LI><A HREF ="datastrm.htm">datastrm</A></LI> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+<LI><A HREF ="find_total_window_ticks.htm">find_total_window_ticks</A></LI> 
+<LI><A HREF ="findoptmenu.htm">findoptmenu</A></LI> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="getmeadim.htm">getmeadim</A></LI> 
+<LI><A HREF ="isfile.htm">isfile</A></LI> 
+<LI><A HREF ="isvar.htm">isvar</A></LI> 
+<LI><A HREF ="laplace.htm">laplace</A></LI> 
+<LI><A HREF ="nextraw.htm">nextraw</A></LI> 
+<LI><A HREF ="nextsweep.htm">nextsweep</A></LI> 
+<LI><A HREF ="plot64popup.htm">plot64popup</A></LI> 
+<LI><A HREF ="plot_mxn_default.htm">plot_mxn_default</A></LI> 
+<LI><A HREF ="setpos.htm">setpos</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call plot_mxn.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="lfp_extractguictrl.htm">lfp_extractguictrl</A></LI> 
+<LI><A HREF ="plot64.htm">plot64</A></LI> 
+<LI><A HREF ="plot64gui.htm">plot64gui</A></LI> 
+<LI><A HREF ="plot64guicontrol.htm">plot64guicontrol</A></LI> 
+<LI><A HREF ="ppf_analysisdlg1a.htm">ppf_analysisdlg1a</A></LI> 
+<LI><A HREF ="sweepevalplot.htm">sweepevalplot</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

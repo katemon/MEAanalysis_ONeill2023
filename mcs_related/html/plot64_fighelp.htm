@@ -1,0 +1,112 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>plot64_fighelp.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> plot64_fighelp        - help on options in figures drawn with plot64.m                                                                              </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% plot64 generates a subplot matrix on an 8x8 grid, with one subplot drawn for 
+% each line of the input matrix. Corresponding to the layout of the standard 
+% MEAs distributed by Multichannelsystems only 60 positions are used, the 
+% corner subplots are empty. The bottom left position (subplot(8,8,57) is 
+% used to draw scalebars. If a datastream object was used the bottom right 
+% subplot will hold information about the datafile, and, if applicable, the 
+% sweep ID. 
+% 
+% The userdata field of the figure holds the handles to subplots with data, 
+% in an 8x8 matrix with unused positions filled with NaN. 
+% 
+% General functions 
+% Zoom out an individual subplot:      click on the data line of the subplot 
+%                                      or the axis itself with the LEFT mouse button. 
+% 
+% Delete a subplot:                    right-click or hold the CTRL key and left-click 
+%                                      on the data line of the subplot. 
+% 
+%---------------- 
+% 
+% SCALING                              essentially self explanatory. 
+% autoscale X or Y axis                auto-scales the individual subplots separately. See 'helpwin axis' 
+%                                      for details. The common scalebar property 'visible' is set to 'off', 
+%                                      all axes become visible. 
+% 
+%---------------- 
+% SUBLOT ADJUSTMENTS 
+% axis on/off                          renders the axes and their labels visible 
+% 
+% show line markers                    - 
+% 
+% set axes font sizes to 6             sometimes useful when printing figures 
+% 
+% subtract one trace from all others   subtract the data on one electrode from 
+%                                      all other traces, e.g. to quickly remove 
+%                                      artifacts common to all electrodes by 
+%                                      subtracting a traces showing the artifact but 
+%                                      no biological responses. 
+% 
+% apply any function to all subplots   a tool that allows you to apply one or more 
+%                                      commands to all subplots except the corner 
+%                                      plots. Use just like the debugger/editor. 
+% 
+% popup subplot on mouseclick          enable/disable popup function 
+% 
+%---------------- 
+% FIGURE ADJUSTMENTS 
+% position text by mouse click         queries for a string an places its bottom 
+%                                      left corner at the position of the next 
+%                                      mouse click in the figure window. The handle 
+%                                      to this object is supplied in the workspace 
+%                                      variable &lt;gtext_h&gt;. 
+% 
+% superimpose subplots                 recolors and copies the traces from the 
+%                                      electrodes indicated into the same axis 
+%                                      within a new figure window. 
+% 
+% delete corner subplots               - 
+% 
+% delete all subplots without data     if a datastream object is found in the base 
+%                                      workspace the subplots for all electrodes 
+%                                      not included its 'ChannelNames' field are deleted. 
+% 
+% set figure color to white            sets the figure background to white, e.g. 
+%                                      for screenshots. 
+% 
+% add a figure title                   adds text to the top of the figure above all 
+%                                      subplots (a "super title"). Use this function 
+%                                      after all subplot commands. A handle to this 
+%                                      title is stored in the base workspace in 
+%                                      the variable &lt;title_h&gt;. 
+% 
+%---------------- 
+% PRINTING FUNCTIONS                   since printing complex figures is somewhat 
+%                                      ticklish in Matlab, I've added a couple 
+%                                      of menu items that may help. These include 
+%                                      printing via postscript files created 
+%                                      temporarily and the like. This selection was 
+%                                      compiled by trial and error while trying to 
+%                                      get a figure onto paper. No guaranties, just 
+%                                      give them a try when you encounter similar 
+%                                      problems. 
+% 
+% See also PLOT64POPUP PLOT64 PLOT64GUI PLOT64GUICONTROL 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call plot64_fighelp.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="addplot64menu.htm">addplot64menu</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

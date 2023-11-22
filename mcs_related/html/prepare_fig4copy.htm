@@ -1,0 +1,74 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>prepare_fig4copy.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> prepare_fig4copy - changes some properties to 'prettify' the figure                                                                                 </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% prepare_fig4copy(fh,action) changes some properties to 'prettify' the figure 
+% The default value of &lt;action&gt; is 'settings'. If no argument is given, 
+% a file open dialog box is given. If &lt;fh&gt; is missing, the action will be 
+% performed on the current figure. 
+% 
+% &lt;action&gt; can be one of the following strings: 
+% settings           -   parameters like font size, line width etc. will be 
+%                        adapted according to default values, preference 
+%                        structure 'prepare_fig4copy' or values in an 
+%                        optional structure or alternatively as parameter/value pairs 
+%                        The initial settings are stored in the 'userdata' 
+%                        field of the figure 
+% restore settings   -   restores the settings according to the stored 
+%                        values 
+% makeScalebar       -   turns the visibility of the axes off (except 
+%                        colorbar) and draws a scalebar in the lower left 
+%                        corner with appropriate labels. 
+% makeScalebarDlg    -   same as makeScalebar but with a dialogbox for the 
+%                        labels. 
+% removeScalebar     -   removes the scalebar and turns the visibility of 
+%                        the axes on again 
+% 
+% xlabel             -   [ms] % unit for x-axis of the scalebar 
+% ylabel             -   [\muV] % unit for y-axis of the scalebar 
+% PaperUnits         -   'centimeters'; 
+% PaperOrientation   -   'portrait'; 
+% PaperSize          -   [13.66 10.26]; %[width height] 
+% PaperColor         -    [1 1 1]; 
+% FontAngle          -    'normal'; 
+% FontName           -    'Arial'; 
+% FontSize           -    [16]; 
+% FontUnits          -    'points'; 
+% FontWeight         -    'normal'; 
+% LineWidth          -    [2]; 
+% TightBounding      -    1; 
+% 
+% See also PREPARE_SURF4COPY 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by prepare_fig4copy.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+<LI><A HREF ="display.htm">display</A></LI> 
+<LI><A HREF ="isfield.htm">isfield</A></LI> 
+<LI><A HREF ="query_figure.htm">query_figure</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call prepare_fig4copy.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="addexportmenu.htm">addexportmenu</A></LI> 
+<LI><A HREF ="prepare_surf4copy.htm">prepare_surf4copy</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

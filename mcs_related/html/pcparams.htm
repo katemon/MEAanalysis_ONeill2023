@@ -1,0 +1,58 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>pcparams.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> PCPARAMS        - principle component analysis of spike waveforms                                                                                   </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [PCPARMAT, PCVECTORS, usedidx] = pcparams(varargin) 
+% Uses information found in RACKSETUP and PARSESETUP in the workspace 
+% to retrieve spike waveforms from raw MCRack spike data files, calculate 
+% the principle components and generate a M x N matrix PCPARMAT for M spikes 
+% and PC coefficients for N components. 
+% 
+% IMPORTANT: PCPARMAT is always a matrix of size &lt;PARSESETUP.Nspx&gt; x &lt;no_of_pcs&gt;, even 
+%            if the PCs are calculated for a single electrode/subpopulation only. In this 
+%            case rows not corresponding to spikes of this population are zeros! 
+% 
+% A number of configuration parameters can be adjusted on the command line 
+% with parameter/value pairs. Possible parameters are: 
+% 
+% Parameter         legal values 
+% 'dataset'         ChannelIDs (cid) or electrode name strings. When cids are used 'datatype' must be adjusted as well 
+% 'datatype'        'electrodename' (default) or 'cid' 
+% 'tracetype'       'raw' (default) or 'filtered'    to use raw or filtered data for PC calculation 
+% 'no_of_pcs'        any integer, default is 8       no. of PC components to store in PARMAT and PCVECTORS 
+% 'tracelength'     ticks in the datatraces, default is RACKSETUP.total_cutout_ticks, other values were not tested yet 
+% 'datafile'        path\name of the MCS data file, default is RACKSETUP.sourcefile 
+% 'plotpcs'         'yes' or 'no' (default),         with 'yes' the &lt;no_of_pcs&gt; PCVECTORS are plotted 
+% 'subpopulation'   0 (default) or other integers present in CLUSTERNUMBER, PCs are calculated from these traces only 
+% 
+% S. Rotter/U. Egert 2/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by pcparams.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="assert.htm">assert</A></LI> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+<LI><A HREF ="getcid.htm">getcid</A></LI> 
+<LI><A HREF ="getidx.htm">getidx</A></LI> 
+<LI><A HREF ="gettrace.htm">gettrace</A></LI> 
+<LI><A HREF ="nspx.htm">nspx</A></LI> 
+<LI><A HREF ="pc.htm">pc</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

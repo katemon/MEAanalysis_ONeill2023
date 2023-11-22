@@ -1,0 +1,53 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>prepare_surf4copy.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> prepare_surf4copy - changes the visibility of vector and bitmap graphics in the figure                                                              </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% prepare_surf4copy(sfh,action) changes the visibility of different figure 
+% elements to enable to export the vector and bitmap graphics parts 
+% separately. 
+% The default value of &lt;action&gt; is 'export'. If no argument is given, 
+% a file open dialog box is given. If &lt;sfh&gt; is missing, the action will be 
+% performed on the current figure. 
+% 
+% &lt;action&gt; can be one of the following strings: 
+% axes      -   surface and image objects will be set to visibility off 
+% surface   -   axes, text and line objects will be set to visibility off 
+% both      -   everything will be visible again 
+% export    -   creates separate wmf-files for the axes lines and 
+%               text of a figure and tif-files for the surface/image 
+%               objects in these axes. Figures will be saved in default 
+%               quality (150 dpi) and in the size they are on the screen. 
+%               If the figure consists of several surface objects, each 
+%               will be saved separately after its color values where 
+%               adapted by BLANK_ZLIM_FOR_ZBUFFER 
+% 
+% Both files have the same name but different extensions. This utility optimizes 
+% the line quality for further image processing. Note that it does not check 
+% for duplicate filenames but overwrites duplicates without warning! 
+% 
+% See also MEASURFPLOT, BLANK_ZLIM_FOR_ZBUFFER, PREPARE_FIG4COPY 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by prepare_surf4copy.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="prepare_fig4copy.htm">prepare_fig4copy</A></LI> 
+<LI><A HREF ="query_figure.htm">query_figure</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

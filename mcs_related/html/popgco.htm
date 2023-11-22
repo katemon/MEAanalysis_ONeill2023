@@ -1,0 +1,62 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>popgco.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> POPGCO  - pops a graphics object into a separate figure                                                                                             </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% targeth = POPGCO(varargin) can be used as callback or buttondownfcn 
+% of line and axes objects. It copies the object full sized 
+% into a new figure window. By default successive calls from 
+% children of the same axis will copy these to the same 
+% target axis. Use the parameter/value pair &lt;'redrawstyle', 'new'&gt; 
+% to copy objects to individual figures. 
+% 
+% These default settings can be modified by parameter/value pairs: 
+% targettype = 'figure'          'figure' or 'axes' 
+% redrawstyle = 'new'            'new' for new figure, 'add' to add to a 
+%                                previous figure 
+% targeth = -1                   target figure handle for the object 
+% targetname = ''                figure name for the new figure 
+% clearbtnfcn = 1                1 to disable the popup function in the new 
+%                                figure 
+% acceptbttn = 'any'             'normal', 'extend', 'alternate', 'open', or 'any' 
+%                                type of click the should be responded to 
+%                                See 
+% postpopcmd = 'axis(''auto'')'  command to execute in the new figure 
+% sourceobj = gcbo               handle of the object to copy to the new figure 
+% 
+% U. Egert 6/98 
+% 
+% See also ADDPOPUCTRL 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by popgco.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call popgco.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="addplot64menu.htm">addplot64menu</A></LI> 
+<LI><A HREF ="addpopupctrl.htm">addpopupctrl</A></LI> 
+<LI><A HREF ="dotmovie.htm">dotmovie</A></LI> 
+<LI><A HREF ="dotrate.htm">dotrate</A></LI> 
+<LI><A HREF ="meamovie.htm">meamovie</A></LI> 
+<LI><A HREF ="ratecorrscript.htm">ratecorrscript</A></LI> 
+<LI><A HREF ="sweepevalplot.htm">sweepevalplot</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 
