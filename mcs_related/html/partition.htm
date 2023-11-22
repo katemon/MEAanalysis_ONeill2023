@@ -1,0 +1,72 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>partition.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> PARTITION          - Mathematica's Partition function                                                                                               </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% w=partition(v,n,d),  Mathematica's Partition function 
+% *************************************************************** 
+% *                                                             * 
+% * interprets v as a list and returns a list of sub-lists.     * 
+% *                                                             * 
+% * Usage:                                                      * 
+% *        v,  row vector (or matrix of rows) of source data    * 
+% *        n,  number of elements in one segment                * 
+% *        d,  offset d for successive segments (default d=n)   * 
+% *                                                             * 
+% *        w,  result matrix                                    * 
+% *            if v is a matrix, w is a 3d-matrix               * 
+% *                                                             * 
+% * Uses:                                                       * 
+% *      rows(), cols(), repetition(), part()           * 
+% *                                                             * 
+% * Future:                                                     * 
+% *        - local variables i,j, and p can be removed by       * 
+% *          rewriting code in a more compact form.             * 
+% *                                                             * 
+% * History:                                                    * 
+% *         (4) extraction of elements simplified using         * 
+% *             orientation safe indexing.                      * 
+% *            MD, 16.2.1997, Jerusalem                         * 
+% *         (3) support for simultaneous operation on matrix of * 
+% *             rows of data added.                             * 
+% *            MD, 16.2.1997, Jerusalem                         * 
+% *         (2) replaced outer product by copy                  * 
+% *            MD, SG 29.11.1996, Jerusalem                     * 
+% *         (1) commented                                       * 
+% *            MD, SG 19.11.1996, Jerusalem                     * 
+% *         (0) first Version,                                  * 
+% *            MD, 6.11.1996, Freiburg                          * 
+% *                                                             * 
+% *                                                             * 
+% *                          diesmann@biologie.uni-freiburg.de  * 
+% *                          gruen@hbf.huji.ac.il               * 
+% *                                                             * 
+% *************************************************************** 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by partition.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="cols.htm">cols</A></LI> 
+<LI><A HREF ="rows.htm">rows</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call partition.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="partition_sr.htm">partition_sr</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

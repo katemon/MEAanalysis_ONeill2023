@@ -1,0 +1,54 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>mcs2gdf.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> MCS2GDF            - convert SOURCECHANNELNUMBER/SPIKETIME to gdf                                                                                   </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% gdfmat = mcs2gdf(idx) converts column vectors giving the ChannelID 
+% and the spiketime to an N x 2 matrix giving ChannelID in the 1st and 
+% event times in the 2nd column. Times are maintained in full temporal 
+% resolution which differs from the original gdf format with .5 ms temporal 
+% resolution. 
+% 
+% &lt;idx&gt; points to rows in SOURCECHANNELNUMBER and SPIKETIME, 
+% i.e. to events. Both variables must to be global in the base 
+% workspace. If &lt;idx&gt; is set to 'all', all spikes are used. 
+% i.e. to spikes. 
+% 
+% If a variable CLUSTERNUMBER exists in the global workspace the gdf 
+% 'neuron id' is calculated as SOURCECHANNELNUMBER*100+CLUSTERNUMBER. 
+% otherwise 'neuron id' is SOURCECHANNELNUMBER. 
+% 
+% If the parameter/value pair 'fname', &lt;outfile&gt; is given the resulting 
+% matrix will be stored to that file in ASCII format, columns separted 
+% by tabs. 
+% 
+%  'fname'        target file name 
+%  'outtimeunits' time units used in the target file given in fractions of seconds 
+%                 e.g. 1e-6 for microseconds, 1e-3 for milliseconds (def. 1e-6) 
+%  'intimeunits'  time units used in the source variable, as above (def. 1) 
+% 
+% (c) U. Egert 5/98 
+% 
+% See also WRITE2GDF 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by mcs2gdf.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

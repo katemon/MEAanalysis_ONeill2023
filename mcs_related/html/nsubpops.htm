@@ -1,0 +1,61 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>nsubpops.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> NSUBPOPS        - shows the subpopulations sorted for one or all electrode (MEATools)                                                               </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [nsubpopmat, enamelist, subpoplist] = NSUBPOPS(ename) no. of spikes per subpopulation 
+%              of electrode &lt;ename&gt;. Creates a graphical display of the result. 
+% 
+% &lt;ename&gt;      can be a either a string giving the electrode name or a number 
+%              giving its ChannelID. If &lt;ename&gt; is omitted all subpopulations for 
+%              all electrodes are listed. 
+% &lt;nspspxV&gt;     is a 2 column vector giving the CLUSTERNUMBER assigned to a 
+%              subpopulation (1st column) and the no. of spikes for that 
+%              cluster (2nd column). Each row refers to a subpopulation. 
+% 
+% uses 
+%	getidx 
+% 
+% global variables used: 
+% 
+%	CLUSTERNUMBER 
+%    SOURCECHANNELNUMBER 
+%    RACKSETUP 
+% 
+% See also GETSUBPOPS NSPX 
+% 
+% U.Egert 12/97 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by nsubpops.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="getcid.htm">getcid</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+<LI><A HREF ="stdstatus.htm">stdstatus</A></LI> 
+<LI><A HREF ="subpoplist.htm">subpoplist</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call nsubpops.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="make_elist.htm">make_elist</A></LI> 
+<LI><A HREF ="mcssummaryctrl.htm">mcssummaryctrl</A></LI> 
+<LI><A HREF ="spxpchanplt.htm">spxpchanplt</A></LI> 
+<LI><A HREF ="startrate.htm">startrate</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

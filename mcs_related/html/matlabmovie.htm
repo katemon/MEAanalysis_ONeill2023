@@ -1,0 +1,58 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>matlabmovie.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> matlabmovie    - create a move using the matlab movie function                                                                                      </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% matmovie = matlabmovie(M) 
+% &lt;matmovie&gt; is a matrix of the type that can be played with movie.m. &lt;M&gt; 
+% must be a matrix of N(1)*N(2) rows and any number of columns. The default assumes 
+% 64 rows for an 8x8 matrix. The movie uses image.m to create pseudocolor 
+% images of the values in the matrix &lt;M&gt;. Each column in M will give one 
+% frame. Each frame will have the dimensions N(1)*N(2). The first and last columns 
+% can be indicated using parameter value pairs (see below). 
+% 
+% Note that 
+% (1) matlab movies require a large amount of memory. Make sure you use only 
+% the data needed and that your virtual memory is sufficient. Ensure that 
+% the image that should be part of the movie is not covered by another 
+% window at any time while the movie is being built. 
+% (2) parts of any window that overlap with the matlab figure you want 
+%     to appear in the movie will be incorporated in the movie! 
+% 
+% 
+% Parameter/value pairs used: 
+% Parameter       value 
+% 'start'         first column in M to show 
+% 'stop'          last one 
+% 'skip'          1 to show each column (def.), 2 for every second column, etc. 
+% 'interp_value'  degree of interpolation for the patches between the grid positions 
+%                 (def. 4) 
+% 'interp_method' interpolation method to use. See help for interp2 for further information. 
+%                 def is '*cubic'; 
+% 'zlim'          color and z-axis limits, per default the min and max values of M are used. 
+% 'ydir'         y-axis direction, def: 'reverse'. 
+% 
+% See also MOVIE IMAGE GETFRAME MOVIEBUILDER 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by matlabmovie.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

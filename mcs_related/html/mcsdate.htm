@@ -1,0 +1,43 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>mcsdate.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> MCSDATE - recovers the recording date of a MCRacks-file                                                                                             </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% realdate = mcsdate(mcsd) converts the file record date 
+% from the format used in MCRacks-files to date strings. 
+% If no input argument is given it uses RACKSETUP.yrecdate 
+% as constructed with the command &lt;RACKSETUP.yrecdate = 
+% 1970 + dword/3600/24/365&gt; in the file header parsing 
+% program pshdspx82.m to pshdspx85.m. 
+% If &lt;mcsd&gt; is a datastream object the recording start time will be 
+% determined from the field 'recording date' and converted into a date 
+% string. 
+% Alternatively the old date version (&lt; v. 1.44) can be given as input 
+% argument and will be converted. 
+% 
+% 
+% See also DATESTR DATASTRM 
+% U. Egert 2/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by mcsdate.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="datastrm.htm">datastrm</A></LI> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

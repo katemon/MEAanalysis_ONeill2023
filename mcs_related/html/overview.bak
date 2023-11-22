@@ -1,0 +1,1126 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+
+  <meta name="Author" content="U. Egert">
+
+  <meta name="GENERATOR"
+ content="Mozilla/4.79 [en] (Windows NT 5.0; U) [Netscape]">
+
+  <meta name="Classification"
+ content="data analysis toolbox, neurobiology">
+
+  <meta name="Description"
+ content="Description of a Matlab Toolbox for the analysis of electrophysiologicalrecordings with multielectrode arrays (microelectrode arrays, MEA)">
+
+  <meta name="KeyWords"
+ content="data analysis, electrophysiology, microelectrode arrays, MEA, MCRack, multielectrode, neurophysiology, matlab, meatools">
+  <title>MEATools - Introduction</title>
+</head>
+  <body background="iepback.gif">
+ &nbsp;
+<center>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+ <tbody>
+    <tr>
+ <td height="180"><img src="271p62_3_005swp39fr2200a.gif" height="206"
+ width="180" align="left">
+      </td>
+  <td>
+      <dl>
+        <center> <dt> <font size="+4">MEA-Tools</font></dt>
+        </center>
+      </dl>
+
+      <dl>
+        <center> <dd> <font size="+1">MATLAB tools for the analysis of multi-neuronal
+data recorded with multi-electrode arrays</font></dd>
+        </center>
+      </dl>
+
+      <center>Version 2.65 <br>
+      <img src="logo2.gif" border="0" height="81" width="600">
+ <br>
+Copyright U.Egert 1998-2003</center>
+ </td>
+  <td>
+      <div align="right"><a href="http://www.uni-freiburg.de"><img
+ src="ufrlogo_small.gif" border="0" height="169" width="170"
+ align="right">
+      </a></div>
+ </td>
+ </tr>
+
+  </tbody>
+</table>
+</center>
+  <br>
+&nbsp; <br>
+&nbsp; <br>
+&nbsp;
+<blockquote><b><font size="+1">MEA-Tools</font></b> is a collection of <a
+ href="http://www.mathworks.com">MATLAB</a>-based tools to analyze spike
+and field potential data from extracellular recordings with <a
+ href="http://www.nmi.de/images/gif/pojects/mea/Multi4c2.JPG"><b><font
+ color="#000099">M</font></b>ulti-<b><font color="#000099">E</font></b>lectrode-<b><font
+ color="#000099">A</font></b>rrays</a>, as produced by the <a
+ href="http://www.nmi.de">NMI Reutlingen</a>, and the MCRack (Vers. 1.0.0.71
+or higher) recording software. MCRack is part of the <a
+ href="http://www.multichannelsystems.com/mea60.htm">MEA-60 System </a><a
+ href="http://www.multichannelsystems.com/prod010.htm">and the ME16, ME32,
+ME64 and ME128 </a>recording setups distributed by <a
+ href="http://www.multichannelsystems.com/"><b>multi</b>channel<font
+ color="#000099">*</font><b>systems</b></a>. MEA-Tools is meant to be an
+easy-to-use toolbox with graphical user interfaces (GUIs) on one hand and
+a script-based guide through some useful procedures on the other. These scripts
+can be expanded as needed to incorporate new data analysis or display features
+as required - and obviously depending on your knowledge of MATLAB. We will
+incorporate some scripts into GUIs and add additional features ourselves
+as our own work progresses.
+  <p>The Toolbox is compatible with MCRack recording obtained with the ME-16
+to ME128 systems that do not use planar electrode arrays. Obviously, display
+functions that rely on a known geometric arrangement of the electrodes on
+a rectangular grid are not useful with generally loosely defined positions
+of wire electrode bundles. We currently do not catch all errors that may occur
+if you use these functions erroneously. Which may cause unpredictable reactions
+by matlab, including the notorious 'segmentation error'. So make sure you
+save your data before you experiment with new functions. </p>
+  <p>Generally, MEATools is arranged in 4 menus for <a
+ href="#spiketools">spike analysis</a>,<a href="#lfptools"> LFP analysis,</a><a
+ href="#continuous"> continuous data tools</a> and common <a
+ href="#displayfunctions">display functions</a> respectively. Descriptions
+and help for the individual m-files used in this suite are available through
+MATLAB help functions or <a href="index.htm" target="_top">HTML-documentation</a>,
+which will also show the cross-references between the files. </p>
+  <p>Several other functions and utilities are not used in the context of
+any GUI but are useful for command line work, e.g. quickmovie.m. Several commands
+will come up with a simple GUI when they are called without input arguments,
+e.g. getraw_uv.m, getsweep_uv, writemcs2neximp.m. </p>
+  <p><b>SOME REMARKS:</b> </p>
+  <ul>
+ <li> The MEA-Tools are the product of our own work with these recording
+systems and data types. Their functionality was defined by our particular
+research interests, as well as the interaction with our students. They are
+freeware, but Matlab(TM) is not! See the <a href="#LICENSE">licence information</a>
+below on that matter. Since neither of us is a professional programmer, you
+may find the code primitive or clumsy at times. You will also find sections
+that take care of older file formats not available to you anymore.</li>
+  <li> These tools were written under the assumption that you at least know
+the fundamental concepts and rules of MATLAB. You may savely assume that
+we have not found each and every bug in the MEA-Tools. We have likely not
+prevented all possibilities to use functions with an unsuitable set of data
+(e.g. spike sorting with LFP data), neither have we accounted for all possibilities
+of improper use of the MATLAB command language (neither does MATLAB itself).</li>
+  <li> The support we can give is very limited. For training courses or the
+development of specific tools please contact U. Egert<a href=mailto:&#101;&#103;&#101;&#114;&#116;&#64;&#98;&#105;&#111;&#108;&#111;&#103;&#105;&#101;&#46;&#117;&#110;&#105;&#45;&#102;&#114;&#101;&#105;&#98;&#117;&#114;&#103;&#46;&#100;&#101>&#101;&#103;&#101;&#114;&#116;&#64;&#98;&#105;&#111;&#108;&#111;&#103;&#105;&#101;&#46;&#117;&#110;&#105;&#45;&#102;&#114;&#101;&#105;&#98;&#117;&#114;&#103;&#46;&#100;&#101</a>.</li>
+  <li> Do not change variables, move, delete or close files and GUI figures
+while you are working with GUIs unless you are sure you know what you are
+doing.</li>
+  <li> Working with such large files and amounts of data is very memory intensive.
+Get as much RAM as you can (how about 512 MB) and arrange for ample swap space
+(like 512 MB). Especially when analyzing LFPs, I recommend that you copy
+the files you wish to process to a local harddisks since CD-ROM drives are
+still comparatively slow.</li>
+
+  </ul>
+
+  <ul>
+ <li> LIABILITY DISCLAIMER: We do not take any liability for damages that
+may directly or indirectly occurr through the use of these tools.</li>
+  <li> Remember: garbage in - garbage out.</li>
+
+  </ul>
+
+  <p><br>
+  <b>One last suggestion: do not hesitate to carefully read the help windows,
+tooltips, html-documentation, command line messages or prompt lines in dialog
+boxes.</b></p>
+</blockquote>
+
+<hr width="100%"> <br>
+<b><font color="#cc0000"><font size="+1">CONTENTS</font></font></b>
+<ul>
+ <li> <font color="#000000"><a href="#meatools">MEA-Tools startup screen</a></font></li>
+  <li> <a href="#spiketools">SPIKE TOOLS</a></li>
+  <li> <a href="#lfptools">LFP TOOLS</a></li>
+  <li> <a href="#continuous">CONTINUOUS DATA TOOLS</a></li>
+  <li> <a href="#suppldata">SUPPLEMENTARY DATA TOOLS</a></li>
+  <li> <a href="#displayfunctions">DISPLAY FUNCTIONS</a></li>
+  <li> <a href="#add%20ons">ADD ONS</a></li>
+  <li> <font size="+1"><a href="index.htm">Guide to non-Matlab m-files used
+by MEATools <i>(except for datastream-object functions)</i></a></font></li>
+  <br>
+and some additional ones <li> <a href="#ADRESSES">Adresses &amp; Links</a></li>
+  <li> <a href="#LICENSE">License Information</a></li>
+  <li> <a href="#Acknowledgements">Acknowledgements</a></li>
+
+</ul>
+
+<hr width="100%"> <br>
+&nbsp;
+<p><b><font color="#000000">IMPORTANT</font></b> <br>
+<b><font color="#000000">The central variable in the MEA-Tools context is
+a special data object named <font size="+1">D</font> of the class 'datastrm'.
+It holds the essential information about the recording conditions and the
+data file. It also links this file to your matlab workspace. If the corresponding
+MCRack file is not found at the previous location this connection is lost.
+The datastream object D is then converted to a structure, with its information
+still available. However, it will not be possible to retrieve waveform data
+from the file unless you recreate D as a datastream object with the command:&nbsp;
+<i>D = datastrm('filename')</i>.</font></b> <br>
+&nbsp; </p>
+<p><a name="meatools"></a><b><font color="#cc0000"><font size="+1">MEA-Tools
+startup screen</font></font></b> </p>
+<p><font color="#000000">The MEA-Tools menu consists of a number of submenus
+collecting functions useful for a particular data type. Display functions
+were collected in a separate menu since some are used for all data types.</font>
+</p>
+<p><font color="#000000">The documentation section points to either this page,
+a matrix showing the crosslinking of the m-files used and a list of graphics
+tools that are not part of the matlab suite. Details of the sections are
+describe below. Please refer to the individual help menus for more details.</font>
+</p>
+<center>
+<p><img src="meatoolsbox_allmenus.gif" height="376" width="835">
+</p>
+</center>
+
+<p> </p>
+<hr width="100%">
+<p><a name="spiketools"></a><b><font color="#cc0000"><font size="+1">SPIKE
+TOOLS</font></font></b> </p>
+<p>Spike Tools are designed to load, view, sort and analyze specific aspects
+of electrophysiological spike data recorded with the MCRacks multi-electrode
+array system for 8x8 MEAs. Many features rely on this file structure, or the
+arrays created thereof, some can be used with any matlab-array. We will expand
+the flexibility to use other formats as time allows. </p>
+<p>Spike Tools currently holds the following menu items:
+<table border="2" cellpadding="5" width="100%">
+ <tbody>
+    <tr>
+ <td>'Parse Spike Files'&nbsp;</td>
+  <td>- read the spikes from the original data files and calculate descriptive
+parameters (currently principle components), save the results as mat-files.
+This is the first thing you need to do when working with spike data.</td>
+ </tr>
+  <tr>
+ <td>'Load Mat-Files'&nbsp;</td>
+  <td>- load such files</td>
+ </tr>
+  <tr>
+ <td>'calculate principle components from a matrix'</td>
+  <td>- supplementary tool to work with simple matrices holding spike cut-outs</td>
+ </tr>
+  <tr>
+ <td>'define/edit RACKSETUP'</td>
+  <td>- assists in defining RACKSETUP (see below) when working with data sets
+other than MCRack files</td>
+ </tr>
+  <tr>
+ <td>'Spike Data Summary'</td>
+  <td>- review a summary of the current dataset</td>
+ </tr>
+  <tr>
+ <td>'Sort Spikes'</td>
+  <td>- sort the spikes according to these parameters,&nbsp; this includes
+tools to review spike shapes. The final parameters and cluster boundaries
+are stored to a log file to:</td>
+ </tr>
+  <tr>
+ <td>'Reuse Sorting Parameters'</td>
+  <td>&nbsp;- a script guiding you through applying the same spike sorting
+sequence to a new data set, thus creating comparable cluster assignments</td>
+ </tr>
+  <tr>
+ <td>'Merge spike data files'</td>
+  <td>- a script guiding you through the process of merging sorted data from
+successive recordings into a single dataset. The resulting dataset cannot
+access the original raw spike data files (i.e. shapes). Sorting should therefore
+be finished before merging.</td>
+ </tr>
+  <tr>
+ <td>'Spike Record Display'</td>
+  <td>- a display routine showing the spike cut-outs vs. time and color-coded
+for their cluster assignment during spike sorting. A useful tools to review
+the results of your spike sorting.</td>
+ </tr>
+  <tr>
+ <td>'Spike Rate Analysis'</td>
+  <td>- different tools to calculate and display spike rate based on moving
+window rate estimation.</td>
+ </tr>
+
+  </tbody>
+</table>
+  <br>
+&nbsp; <br>
+&nbsp; </p>
+<p>How to proceed: </p>
+<ol>
+ <li> First of all, the spike data, the waveforms need to be extracted from
+the datafiles to retrieve spike times, calculate parameters necessary for
+spike sorting and to review the data. The matlab data structures created
+during this process are currently used as global variables in many of the
+components and therefore can be used only if their names are not changed.</li>
+  <br>
+The essential variables in the workspace are
+</ol>
+
+<table border="2" cellpadding="5" width="100%">
+ <tbody>
+    <tr>
+ <td>&nbsp;D</td>
+  <td>the datastream object linking your workspace to the MCRack file</td>
+ </tr>
+  <tr>
+ <td>SPIKETIME</td>
+  <td>spike times given in microseconds</td>
+ </tr>
+  <tr>
+ <td>SOURCECHANNELNUMBER</td>
+  <td>&nbsp;a number giving the electrode in matlab <a
+ href="#linear%20indices%20into%20an%208x8">indices for 8x8 matrices</a>.</td>
+ </tr>
+  <tr>
+ <td>RACKSETUP</td>
+  <td>a structure holding information written to during the experiment. ChannelNames,
+MicrosecondsPerTick, and ChannelID lists are subfields</td>
+ </tr>
+  <tr>
+ <td>PARSESETUP</td>
+  <td>information collected during data processing.</td>
+ </tr>
+  <tr>
+ <td>PARMAT</td>
+  <td>a parameter matrix describing principle component contributions and
+other features of each spike</td>
+ </tr>
+  <tr>
+ <td>spkpointer</td>
+  <td>a pointers into the data file for each spike</td>
+ </tr>
+  <tr>
+ <td>CLUSTERNUMBER</td>
+  <td>during spikes sorting newly assigned electrode-subnames are collected
+in PARSESETUP and identifiers for spike cluster membership of each spike are
+listed in this variable. It does not exist prior to spike sorting.</td>
+ </tr>
+
+  </tbody>
+</table>
+
+<ol start="2">
+ <li> To use previously extracted datasets use 'Load Mat-Files'</li>
+  <li> To review the data set in a summary use 'Spike Data Summary'</li>
+  <li> sort raw data sets to isolate single neurons and remove artifacts
+with 'Sort Spikes'. This generates CLUSTERNUMBER and modifies PARSESETUP</li>
+  <li> to reuse the cluster boundaries you just established on a new data
+set, e.g. from the same preparation use 'Reuse Sorting Parameters'. See MATLAB
+help-file for details on the requirements for successfully reusing sorting
+parameters.</li>
+  <li> To join these disjunct sets into one use 'Merge Spike Data Files'</li>
+
+</ol>
+ Once you have established your dataset you may go to the actual analysis.
+:
+<ol start="7">
+ <li> Calculate and view spike rates for single or multiple electrode/subpopulation
+combinations as trace or pseudocolor displays</li>
+  <li> calculate PSTH displays and dot-plots for triggered sweeps</li>
+  <li> identify spike bursts and inter-spike-interval distributions</li>
+
+</ol>
+
+<hr width="100%"> <br>
+<a name="lfptools"></a><b><font color="#cc0000"><font size="+1">LFP TOOLS</font></font></b>
+<p>LFP Tools are designed to load, view and extract specific aspects of electrophysiological
+data recorded with the MCRacks multi-electrode array system for 8x8 MEAs.
+Most&nbsp; features rely on this file structure,&nbsp; some can be used with
+matlab-arrays if they are arranged in 64xN columns and rows with one row
+per electrode. Rows must be arranged according to the matlab adressing scheme
+for an 8x8 matrix. In other words the row index links a trace with the electrodes
+position in an 8x8 MEA. The row index corresponds to the linear index into
+a matlab 8x8 matrix pointing to this electrode. <br>
+&nbsp; <br>
+&nbsp;
+<table cols="3">
+ <tbody>
+    <tr>
+ <td>
+      <center>addressing an 8x8 MEA <br>
+by columns and rows as in MCRack</center>
+
+      <center>
+      <table border="1">
+ <tbody>
+          <tr>
+ <td>&nbsp;</td>
+  <td>
+            <center>21&nbsp;</center>
+ </td>
+  <td>
+            <center>31&nbsp;</center>
+ </td>
+  <td>
+            <center>41&nbsp;</center>
+ </td>
+  <td>
+            <center>51</center>
+ </td>
+  <td>
+            <center>61&nbsp;</center>
+ </td>
+  <td>
+            <center>71&nbsp;</center>
+ </td>
+  <td>&nbsp;</td>
+ </tr>
+  <tr>
+ <td>
+            <center>12&nbsp;</center>
+ </td>
+  <td>
+            <center>22&nbsp;</center>
+ </td>
+  <td>
+            <center>32&nbsp;</center>
+ </td>
+  <td>
+            <center>42</center>
+ </td>
+  <td>
+            <center>52</center>
+ </td>
+  <td>
+            <center>62&nbsp;</center>
+ </td>
+  <td>
+            <center>72&nbsp;</center>
+ </td>
+  <td>
+            <center>82</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>13&nbsp;</center>
+ </td>
+  <td>
+            <center>23&nbsp;</center>
+ </td>
+  <td>
+            <center>33&nbsp;</center>
+ </td>
+  <td>
+            <center>43</center>
+ </td>
+  <td>
+            <center>53</center>
+ </td>
+  <td>
+            <center>63&nbsp;</center>
+ </td>
+  <td>
+            <center>73&nbsp;</center>
+ </td>
+  <td>
+            <center>83</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>14&nbsp;</center>
+ </td>
+  <td>
+            <center>24&nbsp;</center>
+ </td>
+  <td>
+            <center>34&nbsp;</center>
+ </td>
+  <td>
+            <center>44</center>
+ </td>
+  <td>
+            <center>54</center>
+ </td>
+  <td>
+            <center>64&nbsp;</center>
+ </td>
+  <td>
+            <center>74&nbsp;</center>
+ </td>
+  <td>
+            <center>84</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>15&nbsp;</center>
+ </td>
+  <td>
+            <center>25&nbsp;</center>
+ </td>
+  <td>
+            <center>35&nbsp;</center>
+ </td>
+  <td>
+            <center>45&nbsp;</center>
+ </td>
+  <td>
+            <center>55</center>
+ </td>
+  <td>
+            <center>65&nbsp;</center>
+ </td>
+  <td>
+            <center>75&nbsp;</center>
+ </td>
+  <td>
+            <center>85</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>16&nbsp;</center>
+ </td>
+  <td>
+            <center>26&nbsp;</center>
+ </td>
+  <td>
+            <center>36&nbsp;</center>
+ </td>
+  <td>
+            <center>46</center>
+ </td>
+  <td>
+            <center>56&nbsp;</center>
+ </td>
+  <td>
+            <center>66&nbsp;</center>
+ </td>
+  <td>
+            <center>76&nbsp;</center>
+ </td>
+  <td>
+            <center>86</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>17&nbsp;</center>
+ </td>
+  <td>
+            <center>27&nbsp;</center>
+ </td>
+  <td>
+            <center>37&nbsp;</center>
+ </td>
+  <td>
+            <center>47&nbsp;</center>
+ </td>
+  <td>
+            <center>57</center>
+ </td>
+  <td>
+            <center>67&nbsp;</center>
+ </td>
+  <td>
+            <center>77&nbsp;</center>
+ </td>
+  <td>
+            <center>87</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>&nbsp;</center>
+ </td>
+  <td>
+            <center>28&nbsp;</center>
+ </td>
+  <td>
+            <center>38&nbsp;</center>
+ </td>
+  <td>
+            <center>48</center>
+ </td>
+  <td>
+            <center>58</center>
+ </td>
+  <td>
+            <center>68&nbsp;</center>
+ </td>
+  <td>
+            <center>78&nbsp;</center>
+ </td>
+  <td><br>
+            </td>
+ </tr>
+
+        </tbody>
+      </table>
+      </center>
+ </td>
+  <td>
+      <center><img src="meacenter.gif" border="0" height="220"
+ width="238">
+      </center>
+ </td>
+  <td>
+      <center><a name="linear indices into an 8x8"></a>linear indices into
+an 8x8 MEA, <br>
+i.e. row indices and SOURCECHANNELNUMBERS</center>
+
+      <center>
+      <table border="1">
+ <tbody>
+          <tr>
+ <td>
+            <center>1&nbsp;</center>
+ </td>
+  <td>
+            <center>9&nbsp;</center>
+ </td>
+  <td>
+            <center>17</center>
+ </td>
+  <td>
+            <center>25</center>
+ </td>
+  <td>
+            <center>33&nbsp;</center>
+ </td>
+  <td>
+            <center>41&nbsp;</center>
+ </td>
+  <td>
+            <center>49</center>
+ </td>
+  <td>
+            <center>57</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>&nbsp;2&nbsp;</center>
+ </td>
+  <td>
+            <center>10&nbsp;</center>
+ </td>
+  <td>
+            <center>18</center>
+ </td>
+  <td>
+            <center>26</center>
+ </td>
+  <td>
+            <center>34&nbsp;</center>
+ </td>
+  <td>
+            <center>42&nbsp;</center>
+ </td>
+  <td>
+            <center>50</center>
+ </td>
+  <td>
+            <center>58</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>&nbsp;3&nbsp;</center>
+ </td>
+  <td>
+            <center>11&nbsp;</center>
+ </td>
+  <td>
+            <center>19</center>
+ </td>
+  <td>
+            <center>27</center>
+ </td>
+  <td>
+            <center>35&nbsp;</center>
+ </td>
+  <td>
+            <center>43&nbsp;</center>
+ </td>
+  <td>
+            <center>51</center>
+ </td>
+  <td>
+            <center>59</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>&nbsp;4&nbsp;</center>
+ </td>
+  <td>
+            <center>12&nbsp;</center>
+ </td>
+  <td>
+            <center>20</center>
+ </td>
+  <td>
+            <center>28</center>
+ </td>
+  <td>
+            <center>36&nbsp;</center>
+ </td>
+  <td>
+            <center>44&nbsp;</center>
+ </td>
+  <td>
+            <center>52</center>
+ </td>
+  <td>
+            <center>60</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>&nbsp;5&nbsp;</center>
+ </td>
+  <td>
+            <center>13&nbsp;</center>
+ </td>
+  <td>
+            <center>21</center>
+ </td>
+  <td>
+            <center>29</center>
+ </td>
+  <td>
+            <center>37&nbsp;</center>
+ </td>
+  <td>
+            <center>45&nbsp;</center>
+ </td>
+  <td>
+            <center>53</center>
+ </td>
+  <td>
+            <center>61</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>&nbsp;6&nbsp;</center>
+ </td>
+  <td>
+            <center>14&nbsp;</center>
+ </td>
+  <td>
+            <center>22</center>
+ </td>
+  <td>
+            <center>30</center>
+ </td>
+  <td>
+            <center>38&nbsp;</center>
+ </td>
+  <td>
+            <center>46&nbsp;</center>
+ </td>
+  <td>
+            <center>54</center>
+ </td>
+  <td>
+            <center>62</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>&nbsp;7&nbsp;</center>
+ </td>
+  <td>
+            <center>15&nbsp;</center>
+ </td>
+  <td>
+            <center>23</center>
+ </td>
+  <td>
+            <center>31</center>
+ </td>
+  <td>
+            <center>39&nbsp;</center>
+ </td>
+  <td>
+            <center>47&nbsp;</center>
+ </td>
+  <td>
+            <center>55</center>
+ </td>
+  <td>
+            <center>63</center>
+ </td>
+ </tr>
+  <tr>
+ <td>
+            <center>&nbsp;8&nbsp;</center>
+ </td>
+  <td>
+            <center>16&nbsp;</center>
+ </td>
+  <td>
+            <center>24</center>
+ </td>
+  <td>
+            <center>32</center>
+ </td>
+  <td>
+            <center>40&nbsp;</center>
+ </td>
+  <td>
+            <center>48&nbsp;</center>
+ </td>
+  <td>
+            <center>56</center>
+ </td>
+  <td>
+            <center>64</center>
+ </td>
+ </tr>
+
+        </tbody>
+      </table>
+      </center>
+ </td>
+ </tr>
+
+  </tbody>
+</table>
+  </p>
+<p>Although the tools are stable within they need to use a 'datastream object'
+named D. To create this object in the base workspace use the 'load file'
+tool. When storing a workspace Matlab will lose the datastream object identity
+of D and instead store it as a structure. This does not link D to the original
+data file anymore (the file is not open), you need to recreate D. <br>
+&nbsp; </p>
+<p>LFP Tools currently holds the following tools:
+<table border="2" cellpadding="5" width="100%">
+ <tbody>
+    <tr>
+ <td colspan="2"> <br>
+      <b>File Handling Utilties</b></td>
+ </tr>
+  <tr>
+ <td>'load sweep data'</td>
+  <td>- create the datastream object D from an MCRack file</td>
+ </tr>
+  <tr>
+ <td>'load mat-files'&nbsp;</td>
+  <td>- load a Matlab workspace</td>
+ </tr>
+  <tr>
+ <td>'retrieve a triggered sweep'</td>
+  <td>- retrieve the data of an individual sweep from a file</td>
+ </tr>
+  <tr>
+ <td>'average triggered sweeps'</td>
+  <td>- calculate an average an the standard deviation across one or more
+sets of triggered sweeps of data</td>
+ </tr>
+  <tr>
+ <td>'manual sweep handling'</td>
+  <td>- a script utility useful if you need to retrieve and manipulate data
+manually.</td>
+ </tr>
+  <tr>
+ <td colspan="2"><br>
+      </td>
+ </tr>
+  <tr>
+ <td><a name="Extract LFP"></a><b>Extract LFP Features</b></td>
+  <td>- The feature extraction tool is used to extract some characteristic
+values from the sweeps. Currently 'min' and 'max' values and their times&nbsp;
+in an adjustable range of the data set&nbsp; are retrieved. The same can be
+done for differentials of the data, for multiple trigger events, after subtracting
+other waveforms (e.g. stimulus artifact templates). A number of preprocessing
+tools is available. The tool allows to review the peaks found and batch processing
+of sets of sweeps. For large amounts of data this may take some time. A typical
+LTP experiment will be processed in a few minutes, for a long experiment
+you might want to run it over night.</td>
+ </tr>
+  <tr>
+ <td><b>Display LFP Features</b></td>
+  <td>- A tool to view the data extracted in by the previous function with
+various displays, static and animated. This also summarizes the data display
+in simple matrices that can be used for further processing.</td>
+ </tr>
+  <tr>
+ <td colspan="2"><br>
+      </td>
+ </tr>
+  <tr>
+ <td><b>LFP Statistics</b></td>
+  <td>- a script guiding you through calculating averages and standard deviations
+across sweeps.</td>
+ </tr>
+
+  </tbody>
+</table>
+  </p>
+<p> </p>
+<hr size="4" width="100%"> <br>
+<a name="continuous"></a><b><font color="#cc0000"><font size="+1">CONTINUOUS
+DATA TOOLS</font></font></b>
+<p><font color="#000000">The tools to retrieve and work with continuous records
+of the electrode potentials a currently restricted to just retrieving a slice
+of data to a variable in the base workspace. The needs for further processing
+vary considerably so standard tools that would be useful for some number
+of people cannot be defined.easily. Any user contributions to this section
+are welcome. I can contribute some functions and scripts for specific tasks,
+such as picking spikes from a continuous record or processing data from cardiac
+myocyte cultures, if anybody is interested in them.</font> <br>
+&nbsp; </p>
+<p> </p>
+<hr width="100%"> <br>
+<a name="suppldata"></a><b><font color="#cc0000"><font size="+1">SUPPLEMENTARY
+DATA TOOLS</font></font></b>
+<p>This section supports the retrieval of Trigger, Parameter and Analog data
+streams. </p>
+<p>SUPPL.&nbsp; DATA TOOLS currently holds the following tools:
+<table border="2" cellpadding="5" width="100%">
+ <tbody>
+    <tr>
+ <td>'retrieve analog data from a continuous record'</td>
+  <td>- retrieve a time slice of gap-free data from an 'analog data' datastream.
+These are recorded through BNC connectors on the back of ADC board on the
+back of your computer.</td>
+ </tr>
+  <tr>
+ <td>'retrieve a sweep of analog data'</td>
+  <td>- similar, but for triggered sweeps.</td>
+ </tr>
+  <tr>
+ <td>'retrieve trigger data'</td>
+  <td>- retrieve a 'Trigger' data stream from a file</td>
+ </tr>
+  <tr>
+ <td>'retrieve parameter data'</td>
+  <td>- retrieve data generated by the 'Analyzer' tool of MCRack</td>
+ </tr>
+
+  </tbody>
+</table>
+  </p>
+<p> </p>
+<hr size="4" width="100%"> <br>
+<a name="displayfunctions"></a><b><font color="#cc0000"><font size="+1">DISPLAY
+FUNCTIONS</font></font></b>
+<p>The Display Functions menu currently holds the following menu items:
+<table border="1" cellpadding="5" width="100%">
+ <tbody>
+    <tr>
+ <td><b>Datastream Summary</b></td>
+  <td>A tools summarizing the properties of MCRack files and their datastreams</td>
+ </tr>
+  <tr>
+ <td><b>'8x8 Subplots'</b></td>
+  <td>Create an 8x8 subplot figure from datastream objects or 64xN matrices.</td>
+ </tr>
+  <tr>
+ <td><b>'Movie Tool'</b></td>
+  <td>The 'movie tool' shows a MEA-geometry oriented pseudocolor movie of
+either the data in D, or of an 64xN array. Values are coded in color and can
+be viewed in 2D or 3D display with different degrees of interpolation and
+from various perspectives. The tool can not only be used to view raw data&nbsp;
+is useful to visualize pre-processed data as well, e.g. response-amplitudes
+across trials or PSTH data from MEA records.Several preprocessing options
+are available. The movie uses matlab as its engine and currently cannot be
+saved as a standalone file. However, a series of numbered jpeg files can
+be saved. Corel PhotoPaint (TM) and several freeware tools will create MPEG
+movies from such series of files.&nbsp;</td>
+ </tr>
+  <tr>
+ <td><b>'write a matlab movie variable to jpeg files'</b></td>
+  <td>Create a series of numbered jpeg files from a Matlab movie variable.
+This is a special type of variable used by Matlab to generate movies (see
+'help movie' for more information). Corel PhotoPaint (TM) and several freeware
+tools will create MPEG movies from such series of files.&nbsp;</td>
+ </tr>
+  <tr>
+ <td><b>'Dose Response Curves - script'</b></td>
+  <td>A script support to generate Dose-Response curves (DRC) based on plots
+of extracted data. You need to first generate a plot of the dataset you want
+to sum up in a DRC. The script will then guide you through the steps necessary
+to compress the plotted data into a DRC. A similar function is available
+through the 'Average Analysis-Results ...' function in the LFP Tools menu.</td>
+ </tr>
+  <tr>
+ <td valign="CENTER"><b>Graphics Utilities</b></td>
+  <td>some tools that, in part, were replaced by the figure editing functions
+of the figure menues.</td>
+ </tr>
+  <tr>
+ <td>- 'Simple Plot Editor'</td>
+  <td>A Matlab function that is useful to edit/annotate figures, obsolete
+for Matlab version 5.3 and higher.</td>
+ </tr>
+  <tr>
+ <td>- 'Print Annotation - script'</td>
+  <td>A script to help you with some common tasks when creating figures.</td>
+ </tr>
+  <tr>
+ <td>- 'Subplot Mosaic - script'</td>
+  <td>A script to combine subplots from different figures into one figure,
+sometimes useful to create presentation figures.</td>
+ </tr>
+  <tr>
+ <td><b>Demos</b></td>
+  <td><br>
+      </td>
+ </tr>
+  <tr>
+ <td>- 'Cerebellum Movie Demo'</td>
+  <td>A demo movie showing signal spreading across a cerebellar slices. To
+run this demo you need the files '..\meatools\demodata\Cb090998_e35b.jpg'
+and '..\meatools\demodata\cb090998b4cont.001'.&nbsp;</td>
+ </tr>
+  <tr>
+ <td>- 'Hippocampus Movie Demo'</td>
+  <td>A demo movie showing signal spreading across a hippocampal organotypic
+culture. To run this demo you need the files '..\meatools\demodata\271p62_otc_with_sketch.jpg'
+and '..\meatools\demodata\271p62_3.005'. The dataset and figure were kindly
+provided by Th. Knott.</td>
+ </tr>
+
+  </tbody>
+</table>
+  <br>
+&nbsp; <br>
+&nbsp; </p>
+<p> </p>
+<hr width="100%"> <br>
+<a name="add ons"></a><b><font color="#cc0000"><font size="+1">ADD ONS</font></font></b>
+<p><a name="MatDraw"></a><b><font color="#3333ff"><a
+ href="readme_matdraw">MatDraw</a></font></b> <br>
+MatDraw is a quite useful shareware tool written by Keith Rogers. It is NOT
+free. MatDraw adds numerous figure editing functions. Matlab vers. 5.3 has
+incorporated its functionality. Please read the <a
+ href="license_matdraw">license conditions</a>. <br>
+&nbsp; </p>
+<p> </p>
+<hr width="100%">
+<p><a name="LICENSE"></a><font color="#cc0000"><font size="+1">LICENSE INFORMATION</font></font>
+</p>
+<p><font color="#000000"><font size="+1">Copyright</font></font> </p>
+<p>The copyright to all matlab components is with <a
+ href="http://www.mathworks.com">The Mathworks</a>. The MatDraw toolbox copyright
+is owned by Keith Rogers (see above). MCRack and MEA-60 System are trademarks
+of <a href="http://www.multichannelsystems.com">Multichannelsystems</a>. </p>
+<p>(c) Copyright 1997-2000 by Ulrich Egert, Armin Brandt, Markus Diesmann,
+Thomas Knott and Stefan Rotter </p>
+<p>&nbsp;&nbsp;&nbsp; This program is distributed in the hope that it will
+be useful, <br>
+&nbsp;&nbsp;&nbsp; but WITHOUT ANY WARRANTY; without even the implied warranty
+of <br>
+&nbsp;&nbsp;&nbsp; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.&nbsp;
+See the <br>
+&nbsp;&nbsp;&nbsp; GNU General Public License for more details. </p>
+<p>&nbsp;&nbsp;&nbsp; You should have received a copy of the GNU General Public
+License <br>
+&nbsp;&nbsp;&nbsp; along with this program; if not, write to the Free Software
+<br>
+&nbsp;&nbsp;&nbsp; Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+</p>
+<p>Permission ist granted to copy and distribute modified versions of this
+document under the terms of the <a href="gpl.html">GNU general public license</a>
+as published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version. </p>
+<p> </p>
+<hr width="100%">
+<p><a name="ADRESSES"></a><b><font color="#cc0000"><font size="+1">ADRESSES
+&amp; LINKS</font></font></b> </p>
+<p><b>Links to our collaborators</b>: <br>
+&nbsp;
+<table>
+ <tbody>
+    <tr>
+ <td>Recording System and data acquisition software, supplier for MEAs:&nbsp;</td>
+  <td>
+      <center><a href="http://www.multichannelsystems.com"><img
+ src="mcslogos.gif" border="0" height="53" width="156">
+      </a></center>
+ </td>
+ </tr>
+  <tr>
+ <td>Multi-Electrode-Array development &amp; production:</td>
+  <td>
+      <center><a href="http://www.nmi.de"><img
+ src="nmilogo_rot_blau.gif" border="0" height="53" width="94">
+      </a></center>
+ </td>
+ </tr>
+  <tr>
+ <td>Updates on MEATools will be available on our homepage:</td>
+  <td><a
+ href="http://www.brainworks.uni-freiburg.de/projects/mea/meatools/overview.htm"><img
+ src="logo2s.gif" border="0" height="54" width="212">
+      </a></td>
+ </tr>
+
+  </tbody>
+</table>
+  <br>
+&nbsp; </p>
+<p> </p>
+<hr width="100%"> <br>
+<a name="Acknowledgements"></a><font color="#cc0000">Acknowledgements</font>
+<p>U. Egert, M. Diesmann and Th. Knott were funded by a research grant of
+the German <a href="http://www.bmbf.de">Federal Ministry of Education and
+Research (BMBF)</a>. </p>
+<p><i>B.K. Alsberg wrote most of the m-files to generate the m-file HTML cross-reference
+documentation.</i> </p>
+<p> </p>
+<hr width="100%">
+<p><b>Spike-Tools </b>were created by Ulrich Egert with contributions from Markus Diesmann (<a href=mailto:&#100;&#105;&#101;&#115;&#109;&#97;&#110;&#110;&#64;&#106;&#117;&#112;&#105;&#116;&#101;&#114;&#46;&#99;&#104;&#97;&#111;&#115;&#46;&#103;&#119;&#100;&#103;&#46;&#100;&#101>&#100;&#105;&#101;&#115;&#109;&#97;&#110;&#110;&#64;&#106;&#117;&#112;&#105;&#116;&#101;&#114;&#46;&#99;&#104;&#97;&#111;&#115;&#46;&#103;&#119;&#100;&#103;&#46;&#100;&#101</a>), Stefan Rotter, (<a href=mailto:&#114;&#111;&#116;&#116;&#101;&#114;&#64;&#98;&#105;&#111;&#108;&#111;&#103;&#105;&#101;&#46;&#117;&#110;&#105;&#45;&#102;&#114;&#101;&#105;&#98;&#117;&#114;&#103;&#46;&#100;&#101>&#114;&#111;&#116;&#116;&#101;&#114;&#64;&#98;&#105;&#111;&#108;&#111;&#103;&#105;&#101;&#46;&#117;&#110;&#105;&#45;&#102;&#114;&#101;&#105;&#98;&#117;&#114;&#103;&#46;&#100;&#101</a>, Dept. of Neurobiology
+and Biophysics, Univ. Freiburg), and Thomas Knott (<a href=mailto:&#107;&#110;&#111;&#116;&#116;&#64;&#99;&#121;&#116;&#111;&#99;&#101;&#110;&#116;&#114;&#105;&#99;&#115;&#46;&#99;&#111;&#109>&#107;&#110;&#111;&#116;&#116;&#64;&#99;&#121;&#116;&#111;&#99;&#101;&#110;&#116;&#114;&#105;&#99;&#115;&#46;&#99;&#111;&#109</a>, Cytocentrics). <br>
+<b>LFP-Tools</b> were created by U. Egert with contributions from <a
+ href="mailto:brandt@biologie.uni-freiburg.de">A. Brandt</a>, (Dept. of Neurobiology
+and Biophysics, Univ. Freiburg), and Th. Knott (Cytocentrics). <br>
+<b>Display-Tools</b> were created by by U. Egert and A. Brandt, (Dept. of
+Neurobiology and Biophysics, Univ. Freiburg), and Th. Knott (Cytocentrics).
+<br>
+<a href="http://homepages.uni-tuebingen.de/schwarz/index.html">C. Schwarz</a>
+(Eberhard-Karls-Universitaet Tuebingen, Dept. Cognitive Neurology) contributed
+to the compatibility with non-gridded multielectrode arrays such as wire bundles
+and helped to improve some other functions as well. <br>
+&nbsp; <br>
+&nbsp; <br>
+&nbsp; </p>
+<p>Feedback: </p>
+<blockquote>
+  <address> <i><font size="+1">U. Egert (<a href=mailto:&#101;&#103;&#101;&#114;&#116;&#64;&#98;&#105;&#111;&#108;&#111;&#103;&#105;&#101;&#46;&#117;&#110;&#105;&#45;&#102;&#114;&#101;&#105;&#98;&#117;&#114;&#103;&#46;&#100;&#101>&#101;&#103;&#101;&#114;&#116;&#64;&#98;&#105;&#111;&#108;&#111;&#103;&#105;&#101;&#46;&#117;&#110;&#105;&#45;&#102;&#114;&#101;&#105;&#98;&#117;&#114;&#103;&#46;&#100;&#101</a>), A. Brandt, M.
+Diesmann, S. Rotter, A. Aertsen;</font></i></address>
+
+  <address> <i><font size="+1"><a
+ href="http://www.brainworks.uni-freiburg.de" target="_top">Dept. of Neurobiology
+&amp; Biophysics</a>,</font></i></address>
+
+  <address> <i><font size="+1"><a
+ href="http://www.biologie.uni-freiburg.de/data/bio3.html">Institute for
+Biology III,</a></font></i></address>
+
+  <address> <i><font size="+1">Univ. of Freiburg,</font></i></address>
+
+  <address> <i><font size="+1">Schaenzlestr. 1,</font></i></address>
+
+  <address> <i><font size="+1">79104 Freiburg i.Br. Germany;</font></i></address>
+
+  <address> <i><font size="+1">phone: +49 761-203-2862</font></i></address>
+
+  <address> <i><font size="+1">fax: +49 761-203-2860</font></i></address>
+
+  <address> <i><font size="+1"><a href=mailto:&#101;&#103;&#101;&#114;&#116;&#64;&#98;&#105;&#111;&#108;&#111;&#103;&#105;&#101;&#46;&#117;&#110;&#105;&#45;&#102;&#114;&#101;&#105;&#98;&#117;&#114;&#103;&#46;&#100;&#101>&#101;&#103;&#101;&#114;&#116;&#64;&#98;&#105;&#111;&#108;&#111;&#103;&#105;&#101;&#46;&#117;&#110;&#105;&#45;&#102;&#114;&#101;&#105;&#98;&#117;&#114;&#103;&#46;&#100;&#101</a></font></i></address>
+ </blockquote>
+
+<center>last update: May 25<sup>th</sup> 2003</center>
+  <br>
+</body>
+</html>

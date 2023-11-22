@@ -1,0 +1,88 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>namespac.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> namespac      - define members of struct name in caller's workspace                                                                                 </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% *************************************************************** 
+% *                                                             * 
+% * Usage:                                                      * 
+% *       namespace('name', 'fname') is typically called with 	 * 
+% *       a struct name 													 * 
+% *       declared global in the caller's workspace.            * 
+% *       namespace('name') defines all members of struct       * 
+% *       name in the caller's workspace.                       * 
+% *       namespace('name', 'fname') uses only the fields 'fname'* 
+% *       namespace() displays a warning if it is overriding    * 
+% *       an already defined variable.                          * 
+% *       namespace('name', 'fieldname') will extract only      * 
+% *		 the fieldname specified. fieldname must be a cell     * 
+% *       array of fieldnames.                                  * 
+% *                                                             * 
+% *                                                             * 
+% * Example:                                                    * 
+% *         Let x with x.y==5 be a global struct.               * 
+% *         function f                                          * 
+% *          global x; namespace(x);                            * 
+% *          disp(y);                                           * 
+% *         a matlab function.                                  * 
+% *         A call to f will print 5.                           * 
+% *                                                             * 
+% * Future:                                                     * 
+% *         write the reverse function endnamespace(name)       * 
+% *                                                             * 
+% * Uses:                                                       * 
+% *       - evalin   (matlab5)                                  * 
+% *       - assignin (matlab5)                                  * 
+% *       - warning (matlab5)                                   * 
+% *		                                                       * 
+% * History:					                                		* 
+% *         (1) second version                                  * 
+% *         	 option to extract a selected fields added       * 
+% *             UE, 26.10.97                                    * 
+% *         (0) first version                                   * 
+% *            MD, 3.8.1997                                     * 
+% *                                                             * 
+% *                                                             * 
+% *                          diesmann@biologie.uni-freiburg.de  * 
+% *                          gruen@hbf.huji.ac.il               * 
+% *                          egert@biologie.uni-freiburg.de     * 
+% *                                                             * 
+% *************************************************************** 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by namespac.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call namespac.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="guicfg2cell.htm">guicfg2cell</A></LI> 
+<LI><A HREF ="guicfg2struc.htm">guicfg2struc</A></LI> 
+<LI><A HREF ="mcsrate_summary.htm">mcsrate_summary</A></LI> 
+<LI><A HREF ="mcsspk_summary.htm">mcsspk_summary</A></LI> 
+<LI><A HREF ="sortctrl.htm">sortctrl</A></LI> 
+<LI><A HREF ="startlfp_extract.htm">startlfp_extract</A></LI> 
+<LI><A HREF ="startrate.htm">startrate</A></LI> 
+<LI><A HREF ="startsubpopplot.htm">startsubpopplot</A></LI> 
+<LI><A HREF ="startsweepeval.htm">startsweepeval</A></LI> 
+<LI><A HREF ="sweepevalctrl.htm">sweepevalctrl</A></LI> 
+<LI><A HREF ="unsort_gui.htm">unsort_gui</A></LI> 
+<LI><A HREF ="writesortlog.htm">writesortlog</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

@@ -1,0 +1,61 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>parameterpltmany.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> PARAMETERPLTMANY      - plots traces from the original MCS datafile                                                                                 </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% h = PARAMETERPLTMANY(dataset, datatype, varargin) 
+% with varargin giving parameter/value pairs 
+% 
+% &lt;dataset&gt; can be a string giving an electrode name, a list of pointers to the onset 
+% of the traces in the original data file,a ChannelID or indices into spkpointer. 
+% IMPORTANT: the &lt;datatype&gt; used must be given as 'pointer', 'electrodename', 'cid', or 
+% 'index'. 
+% 
+% Other options are 
+% 'subpopulation' - referring to a subpopulation value created during spike sorting (integer). 
+% 'tracetype' - can be 'raw' (default) or 'filtered', in which case Savitzky-Golay 
+%               filtered traces will be displayed. 
+% 'datafile' - path\filename to the raw MCS datafile 
+% 
+% &lt;h&gt; is a vector of handles to the traces. 
+% 
+% 
+% U. Egert 1/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by parameterpltmany.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="assert.htm">assert</A></LI> 
+<LI><A HREF ="getidx.htm">getidx</A></LI> 
+<LI><A HREF ="isfield.htm">isfield</A></LI> 
+<LI><A HREF ="nspx.htm">nspx</A></LI> 
+<LI><A HREF ="plotprmmanyctrl.htm">plotprmmanyctrl</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+<LI><A HREF ="spxbundle.htm">spxbundle</A></LI> 
+<LI><A HREF ="toggletracetype.htm">toggletracetype</A></LI> 
+<LI><A HREF ="trace2mat.htm">trace2mat</A></LI> 
+<LI><A HREF ="tracepullout.htm">tracepullout</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call parameterpltmany.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="plotprm8.htm">plotprm8</A></LI> 
+<LI><A HREF ="sortctrl.htm">sortctrl</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

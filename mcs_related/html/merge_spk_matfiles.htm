@@ -1,0 +1,53 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>merge_spk_matfiles.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> merge_spk_matfiles    - merges sorted spike datasets (MEATools component)                                                                           </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% merge_spk_matfiles(Mdatadir, outfilename, Tlag) merges the mat-files in &lt;Mdatadir&gt;, 
+% adjusts SPIKETIME based on &lt;Tlag&gt; and saves the results to &lt;outfilename&gt;. 
+% &lt;Tlag&gt; is a vector with one delay time value/file. If &lt;Tlag&gt; is omitted the 
+% program will ask you for delay values. The resulting global variables will 
+% be accessible to the base workspace. The others should be reloaded by 
+% loading &lt;outfile&gt;. Since the workspace will have to hold twice the volume of all 
+% major variables this job is quite memory intensive. If in doubt you should free 
+% as much memory as possible and/or increased the file cache size (e.g. pagefile.sys). 
+% 
+% Merging should be done after spike sorting. This should be based on sorting the first file 
+% in a sequence an reusing the sorting parameters for the others. This results in uniform 
+% assignment of CLUSTERNUMBERS and CLUSTERNAMES. The resulting dataset does not link the 
+% spike events to the original raw data records, i.e. the spike pointers do not point to 
+% the spike locations. For this reason the variables &lt;spkpointer&gt; are not merged, the field 
+% RACKSETUP.sourcefilename is removed and replace by the field RACKSETUP.mergedata, which 
+% holds the original RACKSETUP and PARSESETUP structures as subfields, the respective spike pointers, 
+% the time lags used for each of them for merging, and the index range limits for the merged 
+% spikes. 
+% 
+% (c) U. Egert 1998 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by merge_spk_matfiles.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="getfilenames.htm">getfilenames</A></LI> 
+<LI><A HREF ="nspx.htm">nspx</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call merge_spk_matfiles.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="merge_spk_matfiles_script.htm">merge_spk_matfiles_script</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

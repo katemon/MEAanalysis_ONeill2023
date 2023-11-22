@@ -1,0 +1,396 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./meatools_authorsguide_files/filelist.xml">
+<title>MEA-Tools Authorsguide II</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>U. Egert</o:Author>
+  <o:Keywords>authorsguide, MEA-Tools adaptation</o:Keywords>
+  <o:Description>How to adapt the MEA-Tools file access routines to different data acquisition systems and array layouts.</o:Description>
+  <o:LastAuthor>U. Egert</o:LastAuthor>
+  <o:Revision>11</o:Revision>
+  <o:TotalTime>63</o:TotalTime>
+  <o:Created>2001-08-29T14:52:00Z</o:Created>
+  <o:LastSaved>2002-01-07T16:21:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>521</o:Words>
+  <o:Characters>2975</o:Characters>
+  <o:Category>MEA-Tools</o:Category>
+  <o:Company>Univ. Freiburg</o:Company>
+  <o:Lines>24</o:Lines>
+  <o:Paragraphs>5</o:Paragraphs>
+  <o:CharactersWithSpaces>3653</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>80</w:Zoom>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536885895 0 0 0 511 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"\FF2D\FF33 \660E\671D";
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	color:blue;
+	mso-text-animation:none;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	mso-text-animation:none;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:72.0pt 57.7pt 72.0pt 57.65pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:663895724;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1450140864 1504725666 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-start-at:13;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";}
+@list l1
+	{mso-list-id:1127553333;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1401191210 -787340916 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";}
+@list l2
+	{mso-list-id:1631740014;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1464806062 1862417564 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l2:level1
+	{mso-level-start-at:14;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Helvetica;mso-fareast-font-family:"MS Mincho"'>GUIDE FOR AUTHORS<o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><b><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><b><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><b><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>Add new routines to the menues<o:p></o:p></span></b></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l1 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>write the routine as a script or GUI supported and copy all
+necessary files into the MEA-Tools folder<br>
+or anotherone within the MATLAB path,<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l1 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>open the file <i>AddPersonalMeaToolsMenu.m</i>,<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l1 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>follow the instructions there to select the main menu in which to
+include the new routine,<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l1 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>scripts can be opened for editing by typing 'edit <i>yourfilename</i>'
+as a callback<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l1 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>adjust the menu label and callback lines as required, it is often
+useful to include a tag as well,<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l1 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>uncomment the last line in the <i>meatoolsbox.m</i> file,<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l1 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>restart the MEA-Tools from the command line.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>A brief example:<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>Assume you wrote a GUI assisting in the analysis of paired pulse
+facilitation in brain slices. You would have to retrieve and analyze the
+individual triggered sweeps of the LFP response using the LFP-Tools/Extract LFP
+Features. After displaying, let's say the values of the response amplitude you
+would find those values in a matrix, named <i>outmat</i> per default. Paired
+pulse facilitation of course refers to two responses to two trigger events, so <i>outmat</i>
+would in our case be 64xNx2, where N is the number of trials (one per sweep).
+Let us further assume that you varied the stimulus strength to see how that
+affects PPF. For each setting 5 sweeps were recorded. You will probably want to
+average across those 5 sweeps, summarize the resulting values and calculate the
+ratio between the amplitudes of the response to the first and second stimulus. <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>In fact, such a GUI is already included in the MEA-Tools. You'll
+find it in the LFP section as the last menu item. Open <i>AddPersonalMeaToolsMenu.m</i>
+to see how it was included in the menu. <o:p></o:p></span></p>
+
+<p class=MsoPlainText><b><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><b><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><b><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>General jobs to do to adjust meatools routines for new MEA-Types
+or data acquisition systems.<o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><u><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>To access different file formats:<span style="mso-spacerun: yes"> 
+</span><o:p></o:p></span></u></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo4;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>write a new '<i>datastream.m</i>' function that creates the
+datastream object from your file format. Information about the properties, i.e.
+fields, to supply, can be found in dstreaminfo1.htm,<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo4;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>adjust the <i>nextsweep.m </i>and <i>nextdata.m </i>functions such
+that they retrieve the data from your binary files correctly. If the MEA has a
+fixed geometry, <i>nextdata.m </i>needs to place data from one electrode into
+one row in the sequence described below. <o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo4;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>It is not necessary that this uses mex-files or DLLs. Any version
+that retrieves your data and supplies the necessary information is fine.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><u><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>To use different MEA layouts: <o:p></o:p></span></u></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>Standard variables: MEAINFO <b><o:p></o:p></b></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l2 level1 lfo6;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>load meainfo.mat - add the fieldnames matching your MEA-type
+descriptor:<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>add the following fields:<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l2 level1 lfo6;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>MEAINFO.&lt;meatype&gt;cid : vector with integer identifiers for
+the electrodes of your MEA geometry. This needs to use the addressing scheme
+Matlab uses for linear indices into a matrix with the corresponding layout.
+These channelIDs point to rows in data matrices recorded by the electrode identified
+with the same channelID used as a linear index into the MEA matrix.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:35.45pt'><span style='font-family:
+Helvetica;mso-fareast-font-family:"MS Mincho"'>Example: <o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:35.45pt'><span style='font-family:
+Helvetica;mso-fareast-font-family:"MS Mincho"'>if the MEA has an 8x8 layout the
+top row ChannelIDs would be 1,9,17,25,33,41,49,57. A full dataset has 64 rows.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:35.45pt'><span style='font-family:
+Helvetica;mso-fareast-font-family:"MS Mincho"'>for an 10x6 layout these would
+be 1,11,21,31,41,51. A full dataset has 60 rows. Also see the LFP-Tools section
+in the <i>MEA-Tools/Documentation/Overview</i> file<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:18.0pt'><span style='font-family:Helvetica;
+mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l2 level1 lfo6;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>MEAINFO.&lt;meatype&gt;names : matrix with string identifiers of
+the MEA electrodes according in the same sequence as the channelIds above<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>other m-files to adjust:<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>in <i>plot_mxn.m</i>: subfunction 'findrowcol' <o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt'><span style='font-family:Helvetica;
+mso-fareast-font-family:"MS Mincho"'>- add new MEA-type descriptor defining the
+number of rows and columns according to the description given there<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>in <i>trace2mat.m</i>; subfunction 'getcutouts' <o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt'><span style='font-family:Helvetica;
+mso-fareast-font-family:"MS Mincho"'>- adjust for your file type<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><b><span style='font-family:Helvetica;mso-fareast-font-family:
+"MS Mincho"'>click <a href="dstreaminfo1.htm"><span style='mso-ascii-font-family:
+Helvetica;mso-hansi-font-family:Helvetica'>here</span></a> for definitions of
+the fields in the Datastream Object<o:p></o:p></span></b></p>
+
+</div>
+
+</body>
+
+</html>

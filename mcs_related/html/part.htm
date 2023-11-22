@@ -1,0 +1,81 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>part.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> part         - sort of Mathematica's part function                                                                                                  </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% *************************************************************** 
+% *                                                             * 
+% * Usage:                                                      * 
+% * -------                                                     * 
+% *  1d-matrices (vectors):                                     * 
+% *       part(v,i)  returns ith component of v                 * 
+% *                                                             * 
+% *  2d-matrices:                                               * 
+% *       part(v,i,j)  returns (i,j)th component of v           * 
+% *                                                             * 
+% *  3d-matrices:                                               * 
+% *       part(v,i,j,k,n) returns (i,j,k)th component of v,     * 
+% *                       only works correctly if n is the      * 
+% *                       number of elements in the first       * 
+% *                       dimension (range of i).               * 
+% *                                                             * 
+% *                                                             * 
+% * See Also:                                                   * 
+% *           partindex, replace, zeros3d                       * 
+% * Uses:                                                       * 
+% *           partcheck, parterror,                             * 
+% *           rows, cols                                        * 
+% *                                                             * 
+% * History:                                                    * 
+% *         (4) keys 'row' and 'col' added to force             * 
+% *             orientation of result independent of v,i.       * 
+% *            MD, 5.2.1997, Freiburg                           * 
+% *         (3) support for linear index added                  * 
+% *            MD, 11.12.1996, Freiburg                         * 
+% *         (2) now using parterror                             * 
+% *            MD, SG 26.11.1996, Jerusalem                     * 
+% *         (1) partcheck, comments extended                    * 
+% *            MD, SG 25.11.1996, Jerusalem                     * 
+% *         (0) first Version                                   * 
+% *            MD, SG 20.11.1996, Jerusalem                     * 
+% *                                                             * 
+% *                                                             * 
+% *                          diesmann@biologie.uni-freiburg.de  * 
+% *                          gruen@hbf.huji.ac.il               * 
+% *                                                             * 
+% *************************************************************** 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by part.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="col.htm">col</A></LI> 
+<LI><A HREF ="cols.htm">cols</A></LI> 
+<LI><A HREF ="elements.htm">elements</A></LI> 
+<LI><A HREF ="partcheck.htm">partcheck</A></LI> 
+<LI><A HREF ="range.htm">range</A></LI> 
+<LI><A HREF ="repetrow.htm">repetrow</A></LI> 
+<LI><A HREF ="row.htm">row</A></LI> 
+<LI><A HREF ="rows.htm">rows</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call part.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="repeat.htm">repeat</A></LI> 
+<LI><A HREF ="savgol.htm">savgol</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

@@ -1,0 +1,70 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>parsespikesgui.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> parsespikesgui - GUI to parse MCRacks spike data files                                                                                              </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% PARSESPIKESGUI will help you to select an MCRacks data file 
+% and a directory to use for parsing spike data and extracting 
+% the variables SPIKETIME SOURCECHANNELNUMBER PARMAT spkpointer 
+% PCVECTORS and some accessory ones. The data will be stored 
+% to a file in &lt;storage path&gt;. The filename will be generated 
+% from the data file name by dropping the '.' and appending 
+% '.mat' to the original name. The parsing process can be 
+% interrupted by activating the matlab command window and pressing 
+% Ctrl-C. Note that matlab cannot stop while in a mex-file, 
+% i.e. while fetching spike cutouts from the disk. Matlab will 
+% then stop only after returning to the workspace of the m-file 
+% that called the mex-routine. 
+% 
+% Fields: 
+% file name          name and path of the MCRack file 
+% storage path       path to use for the results file 
+% no. of components  number of principle components stored 
+% no. of spikes for PC-calculation: 
+%     With records in which a large number of spikes are 
+%     found on one electrode calculating the principle components 
+%     (PC) can be very memory and time consuming, even with large RAM. 
+%     You may reduce this by limiting the number of spikes used to 
+%     calculate the principle components, e.g. to 20,000. This will 
+%     result in only every n-th spike being included in the calculation. 
+%     For example, if you have 100,000 spikes on a channel using 20,000 
+%     spikes will result in every 5-th spike used. The PCs derived 
+%     are then applied to all spikes. 
+% 
+% To processing several files at once use the batch-function. 
+% 
+% U. Egert 6/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by parsespikesgui.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+<LI><A HREF ="getobjprop.htm">getobjprop</A></LI> 
+<LI><A HREF ="parsespikesbatch.htm">parsespikesbatch</A></LI> 
+<LI><A HREF ="parsespxguictrl.htm">parsespxguictrl</A></LI> 
+<LI><A HREF ="pc.htm">pc</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+<LI><A HREF ="setself.htm">setself</A></LI> 
+<LI><A HREF ="startspikereader.htm">startspikereader</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call parsespikesgui.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

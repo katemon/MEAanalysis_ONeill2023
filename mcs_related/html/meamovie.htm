@@ -1,0 +1,71 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>meamovie.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> MEAMOVIE  - displays a 64 x N-matrix as an animated pseudocolor plot  [MEA/ab]                                                                      </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+%   MEAMOVIE(MAT) where &lt;MAT&gt; is a 64 x N Matrix displays the values of &lt;MAT&gt; 
+%   columnwise as interpolated 8 x 8 pseudocolor frames. 
+% 
+%   The following parameter/value-pairs can be given, separated by commas: 
+%     frames:       range of frames (columns) out of data that are to be 
+%                   displayed 
+%     badPads:      indices of pads whose data are to be discarded 
+%     skip:         number of frames that are to be skipped between each 
+%                   two that are displayed 
+%     zlim:         minimum and maximum of the color- and z-axis in µV 
+%     ipFactor:     number of rounds of interpolation 
+%     ipMethod:     method of interpolation 
+%                   [ 'linear', 'nearest', {'cubic'}, 'spline' ] 
+%     viewDim:      start the movie as 2- or 3-dimensional surface plot 
+%                   [ {'2D'}, '3D'] 
+%     loop:         restart the movie automatically [ {'on'}, 'off' ] 
+%     preIp:        batch interpolation [ 'on', {'off'} ] 
+%     ctrl:         show run/stop/continue-button [ {'on'}, 'off' ] 
+%     shadingIp:    shading interpolated [ {'on'}, 'off' ] 
+%     markers:      markers to be plotted 
+%     markerStyle:  style of these markers (as matlab plotting style string) 
+%     saveas:       path and group name for jpeg-files, e.g. 'saveas', 'c:\temp\test' 
+% 
+%  See also: STARTMOVIE, STARTMOVIEGUI 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by meamovie.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="addframe2imgmenu.htm">addframe2imgmenu</A></LI> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+<LI><A HREF ="figsetup.htm">figsetup</A></LI> 
+<LI><A HREF ="im_pos.htm">im_pos</A></LI> 
+<LI><A HREF ="ip.htm">ip</A></LI> 
+<LI><A HREF ="moviecontrol.htm">moviecontrol</A></LI> 
+<LI><A HREF ="popgco.htm">popgco</A></LI> 
+<LI><A HREF ="range.htm">range</A></LI> 
+<LI><A HREF ="setfield.htm">setfield</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call meamovie.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="cbdemo1.htm">cbdemo1</A></LI> 
+<LI><A HREF ="moviestartcontrol.htm">moviestartcontrol</A></LI> 
+<LI><A HREF ="movietestscript.htm">movietestscript</A></LI> 
+<LI><A HREF ="quickmovie_array.htm">quickmovie_array</A></LI> 
+<LI><A HREF ="quickmovie_cont.htm">quickmovie_cont</A></LI> 
+<LI><A HREF ="quickmovie_dstream.htm">quickmovie_dstream</A></LI> 
+<LI><A HREF ="quickmovie_sweep.htm">quickmovie_sweep</A></LI> 
+<LI><A HREF ="startmovie.htm">startmovie</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

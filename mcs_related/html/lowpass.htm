@@ -1,0 +1,43 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>lowpass.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> LOWPASS - fast lowpass IIR filter                                                                                                                   </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% Version 1.0 - 17/09/04 - stefan.rotter@biologie.uni-freiburg.de 
+% 
+% y = lowpass(h,a,x) gives a filtered version of the time series x. If the 
+% signal processing toolbox is available, a second-order butterworth 
+% lowpass filter with cut-off frequency &lt;a&gt; in Hz is used. Othwerwise a 
+% first-order exponential lowpass filter with "time constant" &lt;a&gt;. The 
+% sampling PERIOD (!) is given by &lt;h&gt; in milliseconds, hence the sampling 
+% frequency is assumed as 1/&lt;h&gt;. 
+% 
+% (c) Stefan Rotter/Ulrich Egert 2004 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by lowpass.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="cut.htm">cut</A></LI> 
+<LI><A HREF ="isfile.htm">isfile</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call lowpass.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="removedrift_iir.htm">removedrift_iir</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

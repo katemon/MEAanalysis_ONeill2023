@@ -1,0 +1,87 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>lfptoolshelp.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> LFPTOOLSHELP - help for the LFP tools menu of MEA-Tools                                                                                             </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% LFP Tools are designed to load, view and extract specific aspects 
+% of electrophysiological data recorded with the MCRacks multi-electrode 
+% array system for 8x8 MEAs. Most features rely on this file structure, 
+% some can be used with matlab-arrays if they are arranged in 64xN 
+% columns and rows with one row per electrode. Rows must be arranged 
+% according to the matlab adressing scheme for an 8x8 matrix. In other 
+% words the row index links a trace with the electrodes position in an 
+% 8x8 MEA. The row index corresponds to the linear index into a matlab 
+% 8x8 matrix pointing to this electrode. 
+% 
+% !!!!!!!! IMPORTANT !!!!!!!! 
+% LFP Tools require datastreams that are created by recording triggered 
+% windows in MCRack. In Matlab, you can see whether this data stream exists 
+% when you create the datastream object. Suitable data have the streamname 
+% 'Electrode Raw Data'. 
+% 
+% LFP Tools will NOT work on streams named 'Spikes 1' or on streams created 
+% by an analyzer tool in MCRack! 
+% 
+% Although the tools are stable within themselves they require a 'datastream object' 
+% named D. To create this object in the base workspace use the 'load file' 
+% tool. When storing a workspace Matlab will lose the datastream object 
+% identity of D and instead store it as a structure. This does not link 
+% D to the original data file anymore (the file is not open), you need to 
+% recreate D. 
+% 
+% How to proceed: 
+% 'Load Sweep Data'     - create the datastream object D from an MCRack file 
+% 'Load Mat-Files'      - load a Matlab workspace 
+% 'Extract LFP Features'- The feature extraction tool is used to extract 
+%                         some characteristic values from the sweeps. 
+%                         Currently 'min' and 'max' values in an adjustable 
+%                         range of the data set and 'min'/'max' of a 
+%                         polynomial interpolation are retrieved. The 
+%                         tool allows batch processing of sets of sweeps. 
+%                         Due to the large amount of data this may a long 
+%                         time. So for a long experiment you might want to 
+%                         run it over night. 
+% 'retrieve a triggered sweep' 
+%                       - dialog box to retrieve one or several sweeps from 
+%                          an MCRack file, convert the AD values to microvolts 
+%                          and store them to a variable in the matlab workspace. 
+%                          If several sweeps are requested the resulting 
+%                          variable is 3D with different sweeps stored along 
+%                          the 3rd dimension. 
+% 'LFP Statistics'      - a script guiding you through calculating averages 
+%                         and standard deviations across sweeps. 
+% 'manual sweep handling'- a script utility useful if you need to retrieve 
+%                          and manipulate data manually. 
+% 
+% Display functions are found in a separate menu. 
+% 
+% See also SPIKETOOLSHELP DISPLAYFUNCTIONSHELP 
+% 
+% LFP-Tools were created by U. Egert with contributions from A. Brandt, 
+%                             (Dept. of Neurobiology and Biophysics, Univ. 
+%                             Freiburg), and Th. Knott (NMI Reutlingen) 
+% 
+% (c) U. Egert, Freiburg 6/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call lfptoolshelp.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

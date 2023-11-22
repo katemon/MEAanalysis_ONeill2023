@@ -1,0 +1,62 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>makesurf2contour.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> makesurf2contour - copy a surface to a contour in a new figure                                                                                      </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [lh, th,c, linevalues]=makesurf2contour(varargin) 
+% creates a contourplot from the color or height data of a 
+% surface plot. &lt;lh&gt; are handles to the contour lines (as returned 
+% by countour.m, &lt;c&gt; is the corresponding countour matrix. &lt;th&gt; 
+% are handles to the contour line labels or the list of contour 
+% levels. &lt;linevalues&gt; are the levels at which lines are drawn, only 
+% one value per level is returned, so this vector may be shorter 
+% than &lt;lh&gt; if no 'linevalues' are given. 
+% 
+% Various parameters can be adjusted by parameter/value pairs: 
+% 
+% parameter         def. value 
+% 'sourcefigh'      gcf     handle to the source data obj., can be 
+%                           a handle to either a figure, axis or surface obj. 
+% 'Nlines'          10      no. of lines in the contour plot 
+% 'linevalues'      0       set the lines to the values in this vector 
+% 'targetfigname'   'surf2contour' 
+% 'datasource'      'color' surface 'height' or 'color' as source values 
+% 'linecolor'       0       any color value or 0 for default 
+% 'skipNlines'      0       no. of lines to skip when labeling contours 
+% 'fontsize'        10      font size for text-labels 
+% 'fontname'        arial   font name for these 
+% 'labellines'      0       0 to print a list of levels, 1 to label contour lines. 
+% 'roundLineVals'   0       any integer to round the levels to the nearest 
+%                           decimal, e.g. 1 for nearest integer, 2 to 
+%                           nearest tenth, -2 to nearest decade 
+% 
+% U. Egert 10/01 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by makesurf2contour.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="col.htm">col</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call makesurf2contour.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 
