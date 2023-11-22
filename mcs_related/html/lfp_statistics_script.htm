@@ -1,0 +1,60 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>lfp_statistics_script.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> LFP_STATISTICS_SCRIPT - calculation of mean and average across sweeps in MCRack records                                                             </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+%################################################################################################## 
+% 
+%              SCRIPT TO CALCULATE SOME STATISTICAL MEASURES OF MEA SWEEP-DATA 
+% 
+% Contents 
+%              - DISPLAY FUNCTIONS 
+%              - CALCULATE MEAN AND STANDARD DEVIATION ACROSS SWEEPS 
+% 
+% 
+%################################################################################################## 
+% 
+% This script provides the commands necessary to calculate the mean across a set of sweeps 
+% recorded with MCRack from MEAs. The result will be a 3D array named &lt;meanSweeps&gt; with 
+% one row per electrode, one column per sampling point and one plane per set of averaged 
+% sweeps. Note that the &lt;sweepset&gt;s listing the indices of the sweeps you want to average 
+% across do not need to be continuous but can combine non-successive sweeps, e.g. 
+% [1 5 3 81 6:10], which must then be enclosed in brackets. The result will be saved in 
+% a variable named &lt;meanSweeps&gt;. A plot command at the bottom of this file helps 
+% to view the result. 
+% 
+% This matrix type can be accessed by the plot64, movie and other utilities. 
+% 
+% U. Egert 8/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by lfp_statistics_script.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="avgsweep.htm">avgsweep</A></LI> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+<LI><A HREF ="getsweep_uv.htm">getsweep_uv</A></LI> 
+<LI><A HREF ="plot64.htm">plot64</A></LI> 
+<LI><A HREF ="savgol.htm">savgol</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call lfp_statistics_script.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

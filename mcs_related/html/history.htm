@@ -1,0 +1,255 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>history.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> HISTORY - changes in the current version and release history                                                                                        </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% changes in the release of (ver. 2.81) 
+% - isglobal (obsolete in Matlab 7.0+) replace with an extra function 
+% - minimal code cleanup 
+% - a few fixes for compatibility to 7.0+ 
+% - bugfix in nspx 
+% 
+% Changes in the release of 09/22/04 (Ver. 2.8) 
+% - added a little tool to display parameter/value pair lists for debugging 
+%   (pvpdisp.m) 
+% - added a little utility to display jpg files (showjpg.m) 
+% - added removedrift_IIR, uses an 1st-order exponential or a butterworth filter 
+%   to quickly remove slow drifts in data by low-pass filtering. The time shift isn't 
+%   corrected perfectly, however. 
+% - overlay function of MxN plots extended. 'Shift-left click' on a subplot now copies the 
+%   trace to the most recently selected popup-figure and changes the line color. 
+% - fixed links in the documentation 
+% - getfilenames can now return a list of subdirectories 
+% 
+% Changes in the release of 08/26/03 (Ver. 2.652) 
+% - new version of the plot_mxn GUI, more userfriendly 
+% 
+% Changes in the release of 08/11/03 (Ver. 2.651) 
+% - fixed a bug in the display of the LFP-tool results 
+% - the corresponding GUI for the overall display of LFP results, 
+%   sweepevalgui.m was fixed. Sweep times on the x-axis are now correct and 
+%   the selected x-axis values are returned in a variable if they were 
+%   calculated from a list of sweep numbers. 
+% - the display of errorbars in the plot MxN GUI was fixed. 
+% - bugfix in parameter retrieval 
+% - added retrieval of Parameterstream derived from Spike data streams, e.g. rates 
+% 
+% Changes in the release of 08/11/03 (Ver. 2.65) 
+% - spike parsing accepts an existing datastream obj. D in the filename 
+%     field 
+% - bug fixes, e.g. for reading files from 'nogrid' setups 
+% 
+% Changes in the release of  Ver. 2.64) 
+% - changed the MxN-plot options menu layout 
+% - plotmeagrid_objects.m is improved as a utility for the selection of MEA electrodes 
+% - fig2sub now can handle colorbars correctly 
+% - getsweep_uv can now retrieve sections of sweeps 
+% - some more comments an help functions 
+% - fixed the bugs in deblanklr 
+% - fixed a bug in the artifact blanking by NaNs of the LFP extraction 
+% 
+% Changes in the release of 05/19/03 (Ver. 2.63) 
+% - Included capture for an 'inconsistency' in the retrieval of parameter data 
+%   streams in MCRack files. Parameter data can now be retrieved for short 
+%   time windows without crashing Matlab 
+% - Spike time window width units were changed from milliseconds to seconds 
+%   in MCRack V. 3. Racksetupdef.m and pcjkparams_d.m were adjusted 
+%   accordingly. 
+% - added a little utility to list the command options and read their help 
+%   sections in control files: ctrlhelp.m 
+% - various improvements of prepare_surf4copy 
+% - deblanklr.m can now not only be used to remove blanks, but also any 
+%   other leading and trailing string from another string 
+% - pvpmod.m (currently our version) now accepts structures, the version 
+%   coming with the mcintfac directory in the Matlab Support package from 
+%   MCRack will have this version with their next release 
+% - some error catches and help comments overhauled in various places 
+% 
+% Changes in the release of 10/30/02 (Ver. 2.62) 
+% - Changed loop counters i -&gt; ii and j -&gt; jj to speed up the loops 
+%   according to the optimization instruction in Matlab 6.1 
+% 
+% Changes in the release of 05/23/02 (Ver. 2.61) 
+% - excluded some large matfiles needed for demos only from meatools.zip to 
+%   reduce download time. The files are now included in the special file with 
+%   demo movies. A link was added in the corresponding menu. 
+% - In addition to the principle components the spike file parsing procedure 
+%   will now also return spike minima and maxima. These are stored as columns 
+%   1 and 2 of PARMAT. 
+% - plotprm8.m: moved the cross check between parameter request list and data set to 
+%   to chkdist2.m, adjusted sortspx4.m to keep changes if the check showed inconsistencies. 
+% - Added a routine to plot the spike size vs. time in the experiment to the Spike Tools 
+%   menu and the spike sorting GUI. 
+% - Added font adjustment features in the Spike sorting GUI, this became necessary for 
+%   LCD screens. For whatever reason most GUI default fonts were bigger on these. 
+% - The traces created by waterfallplot.m may now be colored and will pop up 
+%   in a new window when clicked on (unless 'zoom' is on). 
+% - Legend positions will be readjusted after using suptitle, supxlabel, or supylabel. 
+% - getsweep_uv.m: added 'start and stop on trigger' compatibility. 
+% - getsweep_uv.m: changed units of &lt;sweep_time&gt; from msec to sec. &lt;sweep_time&gt; now holds 
+%   one row per sweep requested. 
+% - The datastream method ad2muvolt.m will now accept cell arrays, too. 
+% - added a legend in popups of LFP result plots 
+% - bugs fixed: recognition of 'nogrid' electrode arrays improved; sweep start times in 
+%               series of automatically recorded files is now correct; some adjustments 
+%               for compatibility with future changes in Matlab; fixed an error catch in 
+%               chkdist2.m; fixed a range bug in lfp extraction; missing lfpextract_defaults.cfg 
+%               added to zip file; 
+% 
+% Changes in the release of 01/18/02 
+% This is mainly a bugfix. 
+% - There was a bug with the new template generation tool in the LFP-Tools, 
+%   this is now fixed. 
+% - The use of matrix style spike cutout data in the spike sorting tool has 
+%   been overhauled. 
+% - added font adjustment features in the LFP Tools GUI, this became necessary for 
+%   LCD screens. For whatever reason most GUI default fonts were bigger on these. 
+% 
+% Changes in the release of 12/20/01 
+% - I hope I've found all adjustments necessary to run with Matlab 6.0/6.1 
+% - waterfallplot.m, makepcolorplot.m, makesurf2contour.m, bar3sc.m added, test it. 
+% - started a 'how can I ...' instructions file for common tasks. 
+% 
+% Changes in the release of 10/15/01 
+% - fixed a bug in LFP extract 
+% - added a tool to create pseudocolor plot in a simple way (measurfplot.m, 
+%   it is also found in the Display menu. These plots have a couple of 
+%   options, e.g. to clip away sub- or suprathreshold sections. Thanks to 
+%   Carl-Ludwig von Schlabrendorff. 
+% - added a utility to create contour plots to resulting figures (makesurf2contour.m) 
+% 
+% Changes in the release of 9/4/01, Vers. 2.51: 
+% - more bug fixes (e.g. the routine to retrieve gap-free 
+%   data from MCRack files recorded with non-planar 
+%   electrode arrays.) 
+% - installation and update routine added (installmeatools.m) 
+% - MEA-Tools main window adjusted accordingly 
+% - option added to 8x8 figure menu: draw a horizontal line into all subplots 
+% 	(e.g. to mark the 0 level, or thresholds) 
+% - option added to 8x8 figure menu: draw vertical lines to each data point, e.g. to 
+%	indicate standard deviations. 
+% - new function added to Display Functions/graphics utilities to manage figure 
+%	windows, usefull if you named them and like to work with many windows at a time. 
+% 
+% - You can now enter sets of trigger times for each sweep (but you don't need to!). 
+%   To analyze several sweeps with different trigger times use one row per 
+%   sweep. Each row may have multiple trigger times. To indicate different numbers 
+%   of trigger events in different sweeps use cell arrays with one cell 
+%   per sweep. In case you recorded the trigger event with MCRack, the 
+%   trigger events found for the sweeps you indicate will be returned in 
+%   the variable &lt;TrigTimes&gt; in the base workspace. 
+% - definition of the 'evaluation range end' was changed. This field now 
+%   asks for the extent of the window that should be analyzed after each 
+%   trigger. startlfp_extract.m was changed accordingly. 
+% - lfpextract_defaults.cfg was changed to lfpextract_defaults.m; lfp_extractgui.m 
+%   was adjusted to run it as a script. 
+% 
+% - Documentation updated - ! not complete yet 
+% 
+% --------------------------------------------- 
+% Changes in the release of 8/15/01, Vers. 2.5: 
+% - several bug fixes 
+% 
+% IMPORTANT 
+% To facilitate the use of MEA-Tools with MEA geometries other than 8x8 electrodes 
+% IN THE FUTURE we've started some adjustments that, hopeful, will not be visible 
+% for those using the 8x8 type. The main change is that plot64.m is replaced by 
+% plot_mxn.m in calls from GUIs. For backward compatibility we change the file 
+% plot64.m so that it referes to plot_mxn.m. In case you adjusted plot64.m for 
+% your own use you may need to make adjustments for this. The transition to other 
+% MEA types may still take some time. 
+% 
+% After comments from users I've changed the structure of the MEA-Tools menu, 
+% mainly the LFP-Tools, to hopefully make it more intuitive. 
+% 
+% other changes 
+% - bar64 now uses the same functionality for mouseclicks as plot64/plot_mxn 
+% - quickmove_*, new option to create a matlab type movie to be played with movie.m. This 
+%     can also be used to create mpeg movies with the matlab routine 
+%     mpgwrite (MS Windows only). 
+% 
+% 
+% new functions: 
+% meatoolscontributors: see the list of people who contributed to the MEA-Tools thus far, 
+% also accessible through the button on the main MEA-Tools frame. 
+% 
+% mpgbuilder   - a GUI to support building mpeg movies from matlab movies with 
+%                 mpgwrite.m (supplied on the Mathworks site). The necessary files 
+%                 are included in this release. 
+% getTrigTime  - find trigger time in datastrm objects, various options for multiple 
+%                 trigger events within one sweep. 
+% bar64_paperlayout- useful to set the default page setup for bar64.m 
+% supxlabel    - creates a common x-axis label for a figure with several subplots 
+% supylabel    - same thing for y-axis 
+% contentclasses - a list of MEA-Tools m-file group according to their field of 
+%                  application (called from the Documentation menu). 
+% history       - this file, lists changes to this and previous versions (called from 
+%                  the Documentation menu) 
+% 
+% -------------------------------------------------------------------------------------- 
+% changes in the release of 1/12/01, Vers. 2.0: 
+% - several bug fixes 
+% 
+% - in spike sorting routine: plots of spike cutout bundles selected from a 
+%   multi-trace plot setting the CLUSTERNUMBER of the bundle to zero will 
+%   delete the traces from the original multi-trace plot. This will show more 
+%   clearly which traces are acutally left. 
+% 
+% - overhauled several lfp extraction components: 
+%       - the 'Evaluate LFP-features' menu was moved to the 'LFP-Tools' section 
+%       - added differentiation with Savitzky-Golay filter 
+%       - artifacts can be set to NaN before filtering 
+%       - configuration is now stored in the results variable 
+%       - min/max Value delays now give correct number of samples after the 
+%         preceding trigger 
+% 
+% - overhauled plot64.m 
+% - suptitle, supxlabel and supylabel now stay where they are when you change the axis limits 
+% - in 8x8 plots the userdata field now hold the axis handles in 8x8 arrangement 
+%   with missing subplot indicated by NaN entries in the matrix. 
+% - you can now create sequentially number files for each frame in with the movie tool from 
+%   the GUI. This is useful to create mpeg-movies with programs such as Corel PhotoPaint(TM). 
+%   The function is activated via the options menu. 
+% - you can now display the time corresponding to the frame number in the movie. 
+%   The function is activated via the options menu. 
+% 
+% 
+% new functions 
+% - measurfplot.m: generates a movie-frame-like single figure with interpolated electrode 
+%   values (instead of setting them to 0), alternatively electrode values can be set to NaN, 
+%   which results in 'gaps' at these positions 
+% - scrollxaxis.m     - nice tool, check it out 
+% - quickmovie_*      - commandline tools to call the meatools movie function with the 
+%                       most common settings used in the GUI 
+% 
+% A new menu item in MEA-Tools with the following functions: 
+% - gettrigger_uv.m   - retrieval of one or more datasets from trigger datastreams 
+% - getparam.m 	      - retrieve parameter data (GUI support via getparamgui.m) 
+% - getanalog_uv.m    - retrieve analog data 
+% 
+% 
+% 
+% Known bugs: 
+% 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call history.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

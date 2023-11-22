@@ -1,0 +1,76 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>getparamdata.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> getparamdata - retrieve parameter data from a datastream object                                                                                     </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [dout, times]= getparamdata(X, paramstreamname, param, startend) 
+% retrieves parameter data from an MCRack file. &lt;X&gt; indicates the path and 
+% name of an MCRack file (*.mcd) or a datastream object corresponding to 
+% such a file. &lt;paramstreamname&gt; must indicate a valid parameter stream 
+% name. &lt;param&gt; indicates the parameter type requested, e.g. 'max'. 
+% Multiple parameters can be queried by placing their strings in a cell 
+% array of strings, e.g. {'max', 'tmax'}. &lt;startend&gt; is a 2-element vector 
+% defining the requested time window in milliseconds. 
+% 
+% &lt;dout&gt; will be a structure with the following fields: 
+% &lt;dout&gt;.StreamName indicating the parameter data stream, e.g. 'Parameter 1', 
+% &lt;dout&gt;.Inputbuffer will indicate the source data stream, e.g. 'Spikes 1' 
+% &lt;dout&gt;.&lt;param&gt; will hold a matrix of parameter values, e.g. 'rate'. Its size depends on the 
+% number of samples (columns), the number of electrodes (rows) and the 
+% setting of the 'make64' switch (see below). 
+% 
+% &lt;times&gt; is a vector of time values in ms corresponding to the sampling 
+% times in &lt;dout&gt;.&lt;param&gt;. 
+% 
+% 
+% Note that you can only retrieve the values of one &lt;paramstreamname&gt; at a 
+% time. 
+% 
+% Parameter/value pairs: 
+% 'make64'  == 1 places the result in a 64xN matrix, independent of the number 
+%           of electrodes acutally holding data. Parameter data derived 
+%           from analog channels will always be returned in the sequence 
+%           and matrix size corresponding to the electrodes requested. 
+%           'make64' for is ignored in this case. 
+% 
+% Example: retrieving spike rates from the first 100 seconds of a recording 
+% [dout, times]= getparamdata('c:/myMCdata.mcd', 'Parameter 1', 'rate', [0 100e3, 'make64', 1); 
+% 
+% To plot such data use 
+% plot_MxN(dout.rate, 'samplingperiod', times) 
+% 
+% (c) U. Egert 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by getparamdata.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="datastrm.htm">datastrm</A></LI> 
+<LI><A HREF ="getcid.htm">getcid</A></LI> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="getstreamnumber.htm">getstreamnumber</A></LI> 
+<LI><A HREF ="isfile.htm">isfile</A></LI> 
+<LI><A HREF ="nextdata.htm">nextdata</A></LI> 
+<LI><A HREF ="setfield.htm">setfield</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call getparamdata.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="getparamgui.htm">getparamgui</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

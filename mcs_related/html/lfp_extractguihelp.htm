@@ -1,0 +1,217 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>lfp_extractguihelp.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> LFP_EXTRACTGUIHELP - help for the LFP_EXTRACT graphical user interface                                                                              </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% LFP_EXTRACTGUI - a graphical interface to analyze MEA sweep data 
+% 
+% This utility allows you to set or adjust the parameters necessary 
+% to extract some features of one or more sweeps recorded with MCRacks. 
+% It currently requires that a datastream object named 'D' has been 
+% created beforehand, e.g. with the 'load sweep data' tools of the MEA-Tools. 
+%    Some of the settings must be entered manually or by clicking at 
+% appropriate positions in trace displays, for others suggestions 
+% are shown as defaults. 
+% It is necessary that you fill all fields and activate the settings 
+% of the fields marked with an asterisk (*) at least once per session, 
+% e.g. by clicking on the popup-menus. 
+%    Settings can be saved/restored to files, to help you to 
+% protocol the settings used with a particular dataset. This is 
+% implemented by saving the GUI as an m-file/mat-file from the 'Options' 
+% menu.  The configuration can also be stored in a structure and may then 
+% be viewed by writing the same structure to the base workspace with 
+% the 'save to workspace' button. 
+% 
+% Most field have a tooltip associated that is displayed when you 
+% move the mouse over this field/button/window. 
+% 
+% This tool consists of the following major sections 
+% 
+% - Definition of the data set that should be analyzed 
+% - Definition of the trigger times 
+% - Definition of templates that should be subtracted 
+%   from the data before they are evaluated, e.g. to remove stimulus 
+%   artifacts 
+% - Definition of the output and configuration variables, and the plot 
+%   or autosave conditions. 
+% - an Options menu 
+% 
+% Details of the individual entry fields and functions in these 
+% sections are described below. 
+% 
+% Currently the procedure finds minimum and maximum in data within 
+% the time range set by 'fit range limits' and the minima/maxima of 
+% the polynomial fit on the data for each trigger and each sweep. The 
+% result is written to a rather complex variable as described the 
+% 'lfp_extract.m' help section. They can be viewed and separated for 
+% further processing with 'MEA-Tools/Display Functions/evaluate LFP 
+% features' menu. 
+% 
+% Clicking on the RUN button will start the retrieval and calculation. 
+% Since this can become a long procedure if many sweeps are evaluated 
+% at a time you might want to test your settings on a few sweep first. 
+% The results are written into a variable in the base workspace which 
+% will be stored at the end of the process if the 'autosave' option is 
+% active. 
+% 
+% U. Egert 6/98 
+% 
+% 
+%                      ----------------- 
+% DATA DEFINITION 
+% Entry fields      '&lt;text&gt;'  refers to fields or field entries. Default 
+%                   values are stored in lfpextract_defaults.cfg. 
+% 
+% sweep ID range  - indices to the sweeps in your files entered as list 
+%                   or range, e.g. &lt;1 5 7&gt; or &lt;1:3&gt;, or as a variable name 
+%                   holding these. The sweeps will be batch-processed 
+%                   when RUN is pressed. 
+% data range limits- the time range of a sweep to display hereafter. 
+% 
+% reference electrode 
+%                 - the electrode to show for range selection by mouse 
+%                   clicks, visible only when 'mouse select' is checked. 
+% plot button     - draws a trace from the first sweep given from the 
+%                   reference electrode and asks you to click on the start 
+%                   and end position of the range you want to use as 
+%                   &lt;data range&gt;. 
+% 
+% FILTER DEFINITION 
+% filter type     - a choice of filters you can apply to the data before 
+%                   further processing, the field below it changes 
+%                   depending on your choice and suggests defaults 
+%                   appropriate for the filter type. Enter as many 
+%                   numbers as the defaults show, e.g. 1 for the moving 
+%                   average, 2 for Savitzky-Golay filters. The defaults 
+%                   will provide considerable smoothing of the data. 
+%                   Larger numbers for the boxcar and for the first value 
+%                   of the Savitzky-Golay will enhance smoothing, both 
+%                   refer to the number of samples that go into the filter 
+%                   design. 
+%                   Increasing the second value for Savitzky-Golay will 
+%                   keep the resulting curve closer to the raw data. 
+% filter configuration 
+%                 - settings for the filtertype selected. For moving averages 
+%                   the no. samples across which the filter averages is 
+%                   given/entered. For Savitzky-Golay filters the coefficients 
+%                   with which the filter is generated are requiered. 
+% 
+% TRIGGER DEFINITION 
+% trigger electrode 
+%                 - the electrode to use for trigger-time selection by 
+%                   mouse click. 
+% pre-trigger limit 
+%                 - the pre-trigger range to use for baseline correction, 
+%                   in a future version. 
+% post-trigger-dead time 
+%                 - post trigger range before the actually evaluated range 
+%                   starts, prepared. 
+% trigger position 
+%                 - times of the trigger events relative to the beginning of 
+%                   the sweep, you can select it on a sample trace 
+%                   from the trigger electrode. 
+% max no. of triggers 
+%                 - limits the number of trigger events used. This will be 
+%                   necessary for automated trigger detection in a 
+%                   later version. 
+% 
+% EVALUATION WINDOW 
+% evaluation window extent 
+%                 - data range used for feature extraction and polynomial fit 
+%                   on the data. Together with the trigger times and the post- 
+%                   trigger-dead time this defines the data windows to be 
+%                   evaluated. After each trigger, the data during the dead time 
+%                   is ignored, then the stretch up to the end of the evaluation 
+%                   range is evaluated. 
+%                   (The polynomial fit is currently not available. It will 
+%                   be used to calculate the slope and extrema of a dataset 
+%                   with less interference by noise and sampling accuracy. 
+%                   The fitted line will be shown in the results plot if the 
+%                   'polynomial fit' checkbox is on. Note that polynomial fitting 
+%                   is currently disabled.) 
+% display time units 
+%                 - time units used for trace displays, usually &lt;ms&gt;, may be 
+%                   changed to &lt;s&gt; or &lt;us&gt;. 
+% results variable 
+%                 - the name of the variable in which the results should be 
+%                   stored. Exisiting variables of that name are overwritten! 
+% config. structure 
+%                 - the name of the structure with the configuration settings 
+%                   when they are saved to the workspace. 
+% 
+% TEMPLATE SUBTRACTION 
+% subtract template 
+%                 - allows subtraction of a template from the data before 
+%                   processing when checked. Useful e.g. to subtract a response 
+%                   recorded in Ca2+ free buffer, i.e. without synaptic 
+%                   transmission, from the full response and then analyze 
+%                   the remaining postsynaptic components only. 
+% template variable 
+%                 - the name of the variable holding the templates. It size 
+%                   needs to be 64xMxN or 68xMxN where M is the length of the 
+%                   sweeps and N can be any number of templates 
+% index variable  - list or variable name with integers pointing to the 3rd dimension 
+%                   of the template variable for each sweep to be evaluated. 
+%                   The format can be any string that could be used as a matlab 
+%                   command. If only one integer is given, this index will be 
+%                   used for all sweep. 
+% 
+%                   Examples (omit the outer quotes): 
+%                   To subtract the same template from every sweep in 
+%                       the "sweep ID range" 1:3 you would enter '1' in the 
+%                       index variable field. 
+%                   To use a different template for each of these 3 sweeps 
+%                       enter '1 2 3' if these templates are stored in the 1st, 
+%                       2nd and 3rd plane of the template variable ('1:3' 
+%                       is equivalent). 
+%                   If you have 3 templates, each of which should be used for 
+%                       5 consecutive sweeps you could use either: 
+%                       '1 1 1 1 1 2 2 2 2 2 3 3 3 3 3', 
+%                       'repmat([1:3]',1,5)', or a workspace variable holding 
+%                       these sequences. 
+% new template    - this button will open a script that helps you to generate 
+%                   templates from sweeps. 
+% 
+% CHECKBOXES 
+% use differential 
+%                 - use the differentiating version of the Savitzky-Golay filter 
+%                   (only effective with this filter). See 'help savgol' for 
+%                   additional information. 
+% detrend trace   - detrend the trace in the evaluation window by subtracting a 
+%                   line drawn betw. the first and last value before the analysis. 
+% plot results    - shows the values projected onto the traces in 8x8 subplots. 
+%                   deactivate this option during batch processing unless 
+%                   you want to inspect each sweep processed individually. 
+% set artifact to NaN 
+%                 - set all values in a time window around the trigger times 
+%                   to NaN before filtering the data. This will result in 
+%                   gap at all traces positions influenced by these data in 
+%                   this window after filtering. Useful to omit data points 
+%                   from high frequency stimulus artifacts and the like. 
+% autosave        - saves the result at the end of the calculation to a 
+%                   mat-file. When you check the box you are asked for a 
+%                   filename. 
+% 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call lfp_extractguihelp.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="lfp_extractgui.htm">lfp_extractgui</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

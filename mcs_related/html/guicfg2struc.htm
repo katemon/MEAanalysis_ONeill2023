@@ -1,0 +1,52 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>guicfg2struc.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> GUIcfg2struc - converts GUI-configuration structure to a parameter/value structure                                                                  </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% pvp = GUIcfg2struc(cfg, switchvals, varargin) uses the fieldnames of &lt;cfg&gt; 
+% as parameters and takes the 'string' and 'value' fields of these subfields to build 
+% a structure holding parameters as fieldnames with the appropriate values. 
+% 
+% If a parameter/value pair 'usefields', &lt;fieldnamelist&gt; is given, only these 
+% fields are used. 
+% 
+% &lt;cfg&gt; must comply to the structure style described in setguiud.m. 
+% The optional cell argument &lt;switchvals&gt; determines how the checkbox/radiobutton 
+% values 0 and 1 should be translated. &lt;switchvals{1}&gt; will be returned for 0, 
+% &lt;switchvals{2}&gt; will be returned for 1. 
+% Default setting is {'no', 'yes'}. 
+% 
+% U. Egert 6/98 
+% 
+% See also GETGUIUD SETGUIUD CFG2BASE CFG2FIGUD SETSELF CELLFUNC_CALL 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by guicfg2struc.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="isfield.htm">isfield</A></LI> 
+<LI><A HREF ="namespac.htm">namespac</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call guicfg2struc.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="startlfp_extract.htm">startlfp_extract</A></LI> 
+<LI><A HREF ="startrate.htm">startrate</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

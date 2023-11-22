@@ -1,0 +1,74 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>getsweep_uv.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> getsweep_uV - retrieves an MC-Rack sweep as a matrix of uV values                                                                                   </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [sweep_uV, sweep_time] = getsweep_uV(sourceobj, targetsweep); 
+%    &lt;sourceobj&gt; must be the name of a datastream object or of a 
+%    file of triggered sweeps recorded with MCRacks. &lt;targetsweep&gt; 
+%    is the index number of the sweeps to be retrieved, it can be 
+%    range (e.g. 1:3), or a comma separated list of indices (e.g. 1,3,5). 
+%    &lt;sweep_uV&gt; is a 64xNxP matrix of sampling values given in microvolts, 
+%    where P is the length of &lt;targetsweep&gt; and N is the number of 
+%    samples in a sweep. &lt;sweep_time&gt; is a matrix giving the experimental 
+%    time in seconds with one row per sweep, e.g. for plotting. 
+% 
+%    If the data were recorded as 'Start And Stop On Trigger' windows the 
+%    no. of samples per sweep will likely vary. &lt;sweep_uV&gt; and &lt;sweep_time&gt; 
+%    in this case will be cell arrays with one cell per sweep giving uV values 
+%    and a time vector (experimental time) per sweep. 
+% 
+% Parameter/Value pairs: 
+% 'withinSweepWindow'   2-element vector defining the retrieval window WITHIN each sweep in ms (optional) 
+% 
+% If called without arguments an input dialog opens to request the necessary 
+% information. 
+% 
+% See also GETANALOG_UV GETTRIGGER_UV GETRAW_UV 
+% 
+% (c) U. Egert 9/98 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by getsweep_uv.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="ad2muvolt.htm">ad2muvolt</A></LI> 
+<LI><A HREF ="datastrm.htm">datastrm</A></LI> 
+<LI><A HREF ="getcid.htm">getcid</A></LI> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="getpos.htm">getpos</A></LI> 
+<LI><A HREF ="isfield.htm">isfield</A></LI> 
+<LI><A HREF ="isfile.htm">isfile</A></LI> 
+<LI><A HREF ="range.htm">range</A></LI> 
+<LI><A HREF ="scalar.htm">scalar</A></LI> 
+<LI><A HREF ="setpos.htm">setpos</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call getsweep_uv.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="frequencygain.htm">frequencygain</A></LI> 
+<LI><A HREF ="frequencygain_step.htm">frequencygain_step</A></LI> 
+<LI><A HREF ="getanalog.htm">getanalog</A></LI> 
+<LI><A HREF ="lfp_statistics_script.htm">lfp_statistics_script</A></LI> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+<LI><A HREF ="quickmovie_sweep.htm">quickmovie_sweep</A></LI> 
+<LI><A HREF ="remove_artifact_script.htm">remove_artifact_script</A></LI> 
+<LI><A HREF ="startmovie.htm">startmovie</A></LI> 
+<LI><A HREF ="template_script.htm">template_script</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

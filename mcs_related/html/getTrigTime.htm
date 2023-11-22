@@ -1,0 +1,60 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>getTrigTime.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> getTrigTime - retrieve the trigger position within a triggered sweep from a datastream object                                                       </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% TT = getTrigTime(varargin) tests wether the TimeWindow type of the 
+% global datastream object D is 'Start on Trigger'. If so, the value 
+% -1 * TimeWindow.Time1 is returned in &lt;TT&gt;. &lt;TT&gt; is empty otherwise. 
+% 
+% Optional arguments can be given through parameter value pairs: 
+% parameter 
+% 'filename'   instead of the global variable D the MCRack file entered as 
+%              value is read. Note that this recreates D. 
+% 'timetype'   'absolute' returns the absolute time of the trigger event 
+%              within a particular sweep. The index of this sweep must 
+%              be given in the 'sweepID' parameter/value pair. 
+%              'relative' gives the trigger events times with respect to 
+%              the start time of the sweeps indicated. 
+%              'start_only' (default) returns the value of the 'TimeWindow.time1' 
+%              property of the datastream object. 
+% 'sweepID'    indicate the sweep number in queries for absolute trigger 
+%              times. 'sweepID' can be a scalar or vector, default: [1]. 
+% 
+% The default settings (calls without input arguments) will return the time 
+% of all trigger events within a  sweep relative to the start time of the sweep 
+% (in ms). In case the trigger data stream was not recorded in the file the 
+% value of the 'TimeWindow.time1' property of the datastream object is returned. 
+% 
+% (c) U. Egert 2001 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by getTrigTime.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="datastrm.htm">datastrm</A></LI> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="getstreamnumber.htm">getstreamnumber</A></LI> 
+<LI><A HREF ="gettrigger_uv.htm">gettrigger_uv</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call getTrigTime.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="lfp_extractguictrl.htm">lfp_extractguictrl</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

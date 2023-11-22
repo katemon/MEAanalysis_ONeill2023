@@ -1,0 +1,64 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>getname.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> GETNAME - finds the MEA-electrode name for a channel ID                                                                                             </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [namestr, padnummatrix] = getname(cid) retrieves the name &lt;namestr&gt;of a MEA electrode 
+% defined by its channelid &lt;cid&gt;. The class of &lt;namestr&gt; can be 
+% defined by a parameter/value pair: 
+% 'returnclass'     'mat' will return a string matrix (default) 
+% 'returnclass'     'cell' will return a cell array of strings 
+% 
+% &lt;padnummatrix&gt; is a matrix giving the column/row electrode identifiers (names) 
+% 
+% globals MEAINFO RACKSETUP 
+% 
+% (c) U. Egert 1998 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by getname.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="isfield.htm">isfield</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call getname.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="rdspx9.htm">rdspx9</A></LI> 
+<LI><A HREF ="bar64.htm">bar64</A></LI> 
+<LI><A HREF ="close_es_selection.htm">close_es_selection</A></LI> 
+<LI><A HREF ="contdotplot.htm">contdotplot</A></LI> 
+<LI><A HREF ="es_selectionbox.htm">es_selectionbox</A></LI> 
+<LI><A HREF ="es_selectionbox2.htm">es_selectionbox2</A></LI> 
+<LI><A HREF ="make_elist.htm">make_elist</A></LI> 
+<LI><A HREF ="meatoolsboxctrl.htm">meatoolsboxctrl</A></LI> 
+<LI><A HREF ="racksetupdef.htm">racksetupdef</A></LI> 
+<LI><A HREF ="readspike2data.htm">readspike2data</A></LI> 
+<LI><A HREF ="select1subpop.htm">select1subpop</A></LI> 
+<LI><A HREF ="setespair2ud.htm">setespair2ud</A></LI> 
+<LI><A HREF ="showespair.htm">showespair</A></LI> 
+<LI><A HREF ="sortctrl.htm">sortctrl</A></LI> 
+<LI><A HREF ="sortspx4.htm">sortspx4</A></LI> 
+<LI><A HREF ="spikeratebox.htm">spikeratebox</A></LI> 
+<LI><A HREF ="startesselection.htm">startesselection</A></LI> 
+<LI><A HREF ="startrate.htm">startrate</A></LI> 
+<LI><A HREF ="sweepevalplot.htm">sweepevalplot</A></LI> 
+<LI><A HREF ="writemcs2neximp.htm">writemcs2neximp</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

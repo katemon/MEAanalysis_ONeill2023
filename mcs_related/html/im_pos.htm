@@ -1,0 +1,55 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>im_pos.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> IM_POS  - Write image position and pixel value                                                                                                      </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+%        IM_POS() writes the value of the image corresponding to the 
+%        current pointer position. The value is written in the window. 
+% 
+%        To use it, set the 'ButtonDownFcn' property of the image 
+%        to 'im_pos', e.g., 
+%            set(findobj(gcf,'type','image'),'ButtonDownFcn','im_pos'); 
+% 
+%        You can get the value of the array rather than the colormap 
+%        index by setting the 'UserData' property of the image to 
+%        the matrix and setting the 'UserData' property of the figure 
+%        to the magic number 1.17100, e.g., if the image displays 
+%        matrix X 
+%            set(findobj(gcf,'type','image'),'UserData',X); 
+%            set(gcf,'UserData',1.17100); 
+%        This isn't necessary for Matlab Version 5. 
+% 
+%        You can get the colormap index value zero relative (rather than 
+%        Matlab's 1 relative, useful for 8 bit images) by setting the 
+%        'UserData' property of the figure to the magic number 1.19108, 
+%        e.g., 
+%            set(gcf,'UserData',1.19108); 
+%        This will also use the 'UserData' of the image if it is 
+%        not empty. This isn't necessary for Matlab Version 5. 
+% 
+%        [No Guarantees. M. Lubinski] 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call im_pos.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="meamovie.htm">meamovie</A></LI> 
+<LI><A HREF ="rateplots.htm">rateplots</A></LI> 
+<LI><A HREF ="remove_artifact_script.htm">remove_artifact_script</A></LI> 
+<LI><A HREF ="sweepevalplot.htm">sweepevalplot</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

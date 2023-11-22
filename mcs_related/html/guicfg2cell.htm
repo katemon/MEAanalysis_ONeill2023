@@ -1,0 +1,49 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>guicfg2cell.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> GUIcfg2cell - converts GUI-configuration structure to a cell array suitable for evaluation                                                          </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% outcell = GUIcfg2cell(cfg, varargin) uses the fieldnames of &lt;cfg&gt; as parameters and 
+% takes the 'string' and 'value' fields of these subfields to build 
+% a cell array holding fieldnames as parameters and the appropriate values. 
+% This cell array is suitable as parameter/value-pair argument. 
+% 
+% &lt;cfg&gt; must comply to the structure style described in setguiud.m. 
+% The optional cell argument &lt;switchvals&gt; determines how the checkbox/radiobutton 
+% values 0 and 1 should be translated. &lt;switchvals{1}&gt; will be returned for 0. 
+% Default setting is {'no', 'yes'}. 
+% 
+% GUIcfg2cell is a MEA-Tools component 
+% U. Egert 6/98 
+% 
+% See also GETGUIUD SETGUIUD CFG2BASE CFG2FIGUD SETSELF CELLFUNC_CALL  GUICFG2STRUC 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by guicfg2cell.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="isfield.htm">isfield</A></LI> 
+<LI><A HREF ="namespac.htm">namespac</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call guicfg2cell.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="startsweepeval.htm">startsweepeval</A></LI> 
+<LI><A HREF ="sweepevalctrl.htm">sweepevalctrl</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

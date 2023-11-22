@@ -1,0 +1,71 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>gettrigger_uv.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> gettrigger_uV - retrieves MC-Rack continuous data as a matrix of uV values                                                                          </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% currOutVar=gettrigger_uV(D, newseTime) 
+%     &lt;D&gt; must be the name of a datastream object or a 
+%     file of continuous raw data recorded with MCRacks. 
+%     &lt;newseTime&gt; is a 2-element vector giving the start and end 
+%     time in milliseconds. 
+%     &lt;currOutVar&gt; is a variable of voltage data in uV. 
+% 
+% If called without arguments an input dialog opens, requesting the 
+% necessary information, suggesting defaults based on the previous 
+% call. 
+% 
+% Parameter value pairs may be used to select specific trigger StreamNames. 
+% 
+% If trigger events are queried from more than one trigger stream, the 
+% return variables will be cell arrays. With one trigger stream only the 
+% return variables will be doubles/strings! In other words, the class of 
+% the return variables matches that of the variable used to list the 
+% trigger datastreams. 
+% 
+% example 
+% ..., 'StreamName', {'Trigger 1', 'Trigger 2'}); 
+% 
+% This will return a 2xN cell array matrix with the data from Trigger 1 and Trigger 2 
+% in row 1 and 2 respectively. 
+% 
+% Note: 
+% The most recent settings will be stored with set(0, 'userdata') and reused 
+% as defaults in the next call to getraw_uv via the dialog box, i.e. without input 
+% arguments. 
+% 
+% U. Egert 3/99 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by gettrigger_uv.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="datastrm.htm">datastrm</A></LI> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="getstreamnumber.htm">getstreamnumber</A></LI> 
+<LI><A HREF ="isfile.htm">isfile</A></LI> 
+<LI><A HREF ="nextdata.htm">nextdata</A></LI> 
+<LI><A HREF ="strtok2cell.htm">strtok2cell</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call gettrigger_uv.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="gettrigtime.htm">gettrigtime</A></LI> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+<LI><A HREF ="meatoolsboxctrl.htm">meatoolsboxctrl</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

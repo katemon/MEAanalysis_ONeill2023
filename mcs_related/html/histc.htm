@@ -1,0 +1,59 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>histc.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> HISTC - Histogram count.                                                                                                                            </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+%   N = HISTC(X,EDGES), for vector X, counts the number of values in X 
+%   that fall between the elements in the EDGES vector (which must contain 
+%   monotonically non-decreasing values).  N is a LENGTH(EDGES) vector 
+%   containing these counts. 
+% 
+%   N(k) will count the value X(i) if EDGES(k) &gt;= X(i) &gt; EDGES(k+1).  The 
+%   last bin will count any values of X that match EDGES(end).  Values 
+%   outside the values in EDGES are not counted.  Use -inf and inf in 
+%   EDGES to include all non-NaN values. 
+% 
+%   For matrices, HISTC(X,EDGES) is a matrix of column histogram counts. 
+%   For N-D arrays, HISTC(X,EDGES) operates along the first non-singleton 
+%   dimension. 
+% 
+%   HISTC(X,EDGES,DIM) operates along the dimension DIM. 
+% 
+%   [N,BIN] = HISTC(X,...) also returns an index matrix BIN.  If X is a 
+%   vector, N(K) = SUM(BIN==K). BIN is zero for out of range values. If X 
+%   is an m-by-n matrix, then, 
+%     for j=1:n, N(K,j) = SUM(BIN(:,j)==K); end 
+% 
+%   Use BAR(X,N,'histc') to plot the histogram. 
+% 
+%   Example: 
+%      histc(pascal(3),1:6) produces the array [3 1 1; 
+%                                               0 1 0; 
+%                                               0 1 1; 
+%                                               0 0 0; 
+%                                               0 0 0; 
+%                                               0 0 1] 
+% 
+%   See also HIST. 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call histc.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="dotdensity.htm">dotdensity</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 
