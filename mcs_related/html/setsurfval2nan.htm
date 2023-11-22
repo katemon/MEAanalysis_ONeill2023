@@ -1,0 +1,76 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>setsurfval2nan.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> setsurfval2nan - set sub/supra threshold values in a surface to NaN                                                                                 </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% nanidx=setsurfval2nan(surfobjh, varargin) 
+% sets all z-values of the surface object &lt;surfobjh&gt; to NaN depending 
+% on their position above or below a threshold. If only &lt;surfobjh&gt; 
+% is given a threshold will be queried via mouse click based on a 
+% histogram of the value distribution. By default, neg. thresholds 
+% will result in all suprathreshold values being set to NaN. Pos. 
+% thresholds likewise for all subthreshold values. Threshold 
+% and direction can be modified manually with parameter/value pairs. 
+% 
+% &lt;nanidx&gt; indicates the zdata entries that were set to NaN. 
+% 
+% 'theta'           value for the threshold, if theta=NaN a histogram of 
+%                        the values will be shown for graphical selection of theta. Setting theta 
+%                        to Inf and thetasign to -1 will show all data. 
+% 'thetasign'       0    for automatic direction as described above, 
+%                   1    all values smaller than 'theta' will be NaN, 
+%                  -1    all above will be NaN 
+%                  -2    the threshold matrix will be retrieved from the 
+%                        userdata field of the surface plot created by 
+%                        measurfplot 
+% 'refdata'         []   alternative dataset to evaluate for sub/supra-threshold entries 
+%                        NOTE: this dataset needs to be exactly the size of the 
+%                        zdata set of the target surface object. You may want to use 
+%                        the interpolation function to create this set. 
+% 'nanidx           []   this parameter may be used to directly indicate which values 
+%`                       should be set to NaN. 
+% 'autozlim'        0    determines the z-level and color limits depending on the threshold 
+%                        and sign settings. Set to 1 to adjust these limits with 'cfg_zlim' 
+% 'cfg_zlim'             limits for z-level and colorscale, inherited from the surface object 
+%                        unless modified based on 'autozlim', and a parameter value pair with 
+%                        a two element vector as value indicating upper an lower limits. 
+% 
+% To enter these parameters via a GUI call setsurfval2nan('gui') or 
+% setsurfval2nan(&lt;h&gt;, 'gui') where &lt;h&gt; is a figure handle. 
+% 
+% See also MEASURFPLOT 
+% 
+% (c) U. Egert 11/2000 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by setsurfval2nan.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+<LI><A HREF ="display.htm">display</A></LI> 
+<LI><A HREF ="isvar.htm">isvar</A></LI> 
+<LI><A HREF ="scalar.htm">scalar</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call setsurfval2nan.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="addframe2imgmenu.htm">addframe2imgmenu</A></LI> 
+<LI><A HREF ="measurfplot.htm">measurfplot</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

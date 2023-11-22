@@ -1,0 +1,102 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>sorthelp.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> SORTHELP - help for the sorting tool GUI started with 'spikesortbox'                                                                                </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% General information 
+%--------------------- 
+% This GUI is used to sort spike data based on spike waveforms cut 
+% beforehand from MCRacks spike data records. It relies on a number of 
+% prerequisites that are given only if the data were recorded with this 
+% software and parsed offline with rdspx86.m. Sorting is based on the 
+% contributions of principle component vectors calculated in this function. 
+% 
+% The following global variables are used in the base workspace and must 
+% present when the GUI is started, i.e. before you can call this help.: 
+% 
+% SPIKETIME                a col. vector of spiketimes (microsec. if 
+%                             MCRacks was used) 
+% SOURCECHANNELNUMBER      a col. vector of channel numbers (ChannelIDs 
+%                             listed in RACKSETUP) 
+% PARMAT                   a 2D-matrix with one row of PCA weights per spike 
+% RACKSETUP                a structure describing the recording setup 
+%                             and the original data 
+% PARSESETUP               a structure listing data established during 
+%                             analysis of the raw data 
+% spkpointer               a col. vector pointing to the beginning of the 
+%                             spk-waveform data in the raw data file (older 
+%                             versions of MCRack only). 
+% 
+% Spike sorting will assign a CLUSTERNUMBER to each spike, resulting in a 
+% a col. vector of length(SPIKETIME). Additional information on the 
+% resulting cluster assignments is stored in PARSESETUP.Clusternames and 
+% PARSESETUP.Clusternames_def. 
+% 
+% 
+% Checklist to optimize data validity and integrity in MEA recordings from slices 
+%--------------------- 
+% - Reduce EMF interference as much as possible 
+% - minimal length of  the spike cutouts should be 2+3 ms 
+% - filter data w/ savgol 
+% - verify the homogeneity of the spikes in a cluster 
+% - set CLUSTERNUMBERS of any dubious spikes to 0 
+% 
+% 
+% 
+% Information on usage 
+%--------------------- 
+% 
+% 'location of the source data file': path and filename of the original 
+% MCRack file. During sorting spike waveforms will be retrieved from 
+% this file. They are not stored in the matlab workspace permanently. 
+% 
+% &lt;electrode name&gt; and &lt;subpopulation&gt; are selected from drop-down lists. 
+% The &lt;subpopulation&gt; list is updated only after selecting an electrode. 
+% Default is clusternumber 0. 
+% 
+% 'sort parameters' can be selected from a list. 
+% 
+% 'target file': the mat-file stored with the 'save workspace button'. 
+% 
+% &lt;save workspace&gt; will save ALL variables in the base workspace to the 
+% current target file. The 
+% &lt;close all&gt; button will however delete temporary variables not needed 
+% after sorting (e.g. some figure handles). To reduce the files size you 
+% may want to close the figures first and then save your data manually on 
+% the command line with 'save'. The &lt;save workspace&gt; button is convenient 
+% to store your data once in a while during sorting. 
+% 
+% &lt;show clusters&gt; will plot all cluster assignments of the selected 
+% electrode with spikes as dots colored according to their clusternumber. 
+% Use the 'spike record display' menu to review the spike cutouts in their 
+% temporal order with clusters color coded. 
+% 
+% The interface guides you through the sorting processes with a button 
+% list in a figure named 'sortgui'. Additional functions are available 
+% via figure menus and context menus activated with the right mouse button. 
+% 
+% U. Egert 6/98 
+% 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call sorthelp.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="spikesortbox.htm">spikesortbox</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

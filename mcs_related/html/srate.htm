@@ -1,0 +1,52 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>srate.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> SRATE        - calculates local event rates with a moving window                                                                                    </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% [n, ravg, rstd, rmed, rN] = srate(events, twindow, shiftval, doplot) 
+% 
+% Input arguments: 
+% events    usually event times 
+% twindow   the time window across which the rate is calculated 
+% shiftval  increments for moving the window 
+% dotplot    creates a rate plot if set to 'yes' 
+% scale     'frequency' or 'counts' (default) 
+% 
+% output arguments 
+% n			a vector giving the counts per time unit (counts/twindow) 
+% ravg		mean rate across the input vector 
+% rstd		standard  across the input vector 
+% rmed		median  across the input vector 
+% rN			number of windows used 
+% 
+% U. Egert 12/97 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by srate.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+<LI><A HREF ="stdstatus.htm">stdstatus</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call srate.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="startrate.htm">startrate</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

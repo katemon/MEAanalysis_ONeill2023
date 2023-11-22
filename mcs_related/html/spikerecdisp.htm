@@ -1,0 +1,95 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>spikerecdisp.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> spikerecdisp          - displays MCRack spike cutous                                                                                                </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% spikerecdisp retrieves and displays spike cutouts recorded with MCRack. 
+% Currently only one electrode at a time can be displayed. For each 
+% electrode up to 7 subpopulations can be selected. Their respective spikes 
+% will be shown in  different colors (assignment shown in the GUI window). 
+% If available, subpopulations will show up if you click on an electrode. 
+% Select multiple subpopulations with ctrl-click or shift-click. 
+% 
+% Upon starting the function a window opens asking you to confirm/adjust 
+% some settings. These are: 
+%     source file: The name and location of the raw data file (usually 
+%        *.mcd) corresponding to the current data set. 
+%     start time [s]:   recording time at which to start the display given 
+%        in seconds (def. 0) 
+%     frame width [s]: width of the window to show 
+%     y-Min:   lower limit of the voltage scale  (in microV) 
+%     y-separation: currently not used 
+% 
+% Options Menu: 
+% define source file         define the cutout data source 
+% set parameters             open an input window to adjust display 
+%                            parameters as described above 
+% data info                  update status field 
+% allow zoom                 toggle zoom function on and off 
+% toggle Y-grid              toggles the Y-grid lines on and off 
+% print functions            see helpwin addpscprintmenu 
+% help                       calls this text 
+% 
+% Button Functions: 
+% 'nextframe'                retrieve & display the next set of cutouts, 
+%                                   (retains the current magnification!) 
+% 'previousframe'            same for previous set of cutouts 
+% 'reset zoom'               resets the axis limits as defined with 
+%                                   'set parameters' or during startup 
+% 'overlay in 1'             plot all cutouts from the current window on to 
+%                                   of each other in a new figure 
+% 'overlay indiv.'           plot all cutouts of a color in one window (new figure), 
+%                                   separate windows for each color 
+% 
+% Note that changes to most settings become active after pressing the next or previous 
+% frame only. 
+% 
+% While zoomed in you may use the keyboard buttons to move within 
+% a frame: 
+% 
+% 'l'             to move to the next time slice to the left 
+% 'r'             to move to the next time slice to the right 
+% 'u'             to move to the voltage section above the current window 
+% 'd'             to move to the voltage section below 
+% 
+% 
+% (C) U. Egert 
+% 
+% See also ADDPSCPRINTMENU ZOOM SPIKERECDISPCTRL 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by spikerecdisp.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="addpscprintmenu.htm">addpscprintmenu</A></LI> 
+<LI><A HREF ="display.htm">display</A></LI> 
+<LI><A HREF ="isfield.htm">isfield</A></LI> 
+<LI><A HREF ="meatools.htm">meatools</A></LI> 
+<LI><A HREF ="setgcf.htm">setgcf</A></LI> 
+<LI><A HREF ="setobjprop.htm">setobjprop</A></LI> 
+<LI><A HREF ="spikerecdispctrl.htm">spikerecdispctrl</A></LI> 
+<LI><A HREF ="subpoplist.htm">subpoplist</A></LI> 
+<LI><A HREF ="switchoff.htm">switchoff</A></LI> 
+<LI><A HREF ="switchon.htm">switchon</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call spikerecdisp.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

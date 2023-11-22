@@ -1,0 +1,118 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>spiketoolshelp.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> SPIKETOOLSHELP - help text for the Spike Tools Menu of MEA Tools                                                                                    </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% 
+% Spike Tools are designed to load, view, sort and analyze specific aspects 
+% of electrophysiological spike data recorded with the MCRacks multi-electrode 
+% array system for 8x8 MEAs. Many features rely on this file structure, 
+% or the arrays created thereof, some can be used with any matlab-array. 
+% We will expand the flexibility to use other formats as time allows. 
+% 
+% !!!!!!!! IMPORTANT !!!!!!!! 
+% Spike Tools require spike cutouts that are created by the spike detector 
+% tool in MCRack. In Matlab, you can see whether this data stream exists 
+% when you create the datastream object. Spike cutouts have the streamname 
+% 'Spikes 1' (the number may change). 
+% 
+% Spike Tools will NOT work on streams named 'Electrode Raw Data'! 
+% 
+% How to proceed: 
+% First of all, the spike data, the waveforms need to be extracted from the 
+% datafiles to retrieve spike times, allow calculations necessary for spike 
+% sorting and to review the data. The matlab data structures created during 
+% this process are currently used as global variables in many of the components 
+% and therefore can be used only if their names are not changed. 
+% 
+% The essential variables in the workspace are 
+% SPIKETIME              spike times given in microseconds 
+% SOURCECHANNELNUMBER    a number giving the electrode in matlab indices for 
+%                        8x8 matrices. 
+% RACKSETUP              a structure holding information written to during 
+%                        the experiment. ChannelNames, MicrosecondsPerTick 
+%                        and ChannelID lists are subfields of RACKSETUP. 
+% PARSESETUP             information collected during data processing. 
+% PARMAT                 a parameter matrix describing principle component 
+%                        contributions and other features of each spike 
+% spkpointer             a pointers into the data file for each spike 
+% 
+% During spikes sorting newly assigned electrode-subnames are collected 
+% in PARSESETUP and identifiers for spike cluster membership of each spike 
+% are listed in CLUSTERNUMBER. 
+% 
+% ---------------------------------------------------------------------------------- 
+% 
+% Spike Tools currently holds the following tools: 
+% 'Parse Spike Files'         - read the spikes from the original data files 
+%                               and calculate descriptive parameters (currently 
+%                               principle components), save the results as mat-files 
+% 'Load Mat-Files'            - load such files 
+% 'calculate principle components from a matrix' 
+%                             - calculate principle components from matrices 
+%                               with one spike waveform per column, one channel only. 
+%                               Parameters are requested by a dialog box. 
+% 'define/edit RACKSETUP'     - collect the entry fields used in RACKSETUP from 
+%                               a datastream object or enter them manually when 
+%                               working with matrices. See 'help racksetupdef' for 
+%                               more information 
+% 'import/export spike data'  - 'import SPIKE 2 cutouts': import spike waveform from 
+%                               Spike2 files. See 'help readspike2data' for more details. 
+%                             - 'export cluster IDs to Spike2': export cluster IDs 
+%                               generated during spike sorting for importing with 
+%                               Spike2. See 'help writecn2spike2' for more details. 
+%                             - 'export spikes to Nex/GDF ASCII files': write spiketimes 
+%                               to ascii files in electrode/cluster and timestamp 
+%                               format. The resulting file has 2 columns suitable 
+%                               for import into NeuroExplorer (TM). See 'help 
+%                               writemcs2neximp' for more details. 
+% 
+% 'Spike Data Summary'        - review the current dataset 
+% 'Sort Spikes'               - sort the spikes according to these parameters, 
+%                               this includes tools to review spike shapes. The final 
+%                               parameters and cluster boundaries are stored to a 
+%                               files whose names are generated from the source 
+%                               files name. Spike data are stored as a mat-file, 
+%                               cluster vertices in a text-file with the extension 'sortlog'. 
+%                               See 'help sorthelp' for details. 
+% 'Reuse Sorting Parameters'  - a script guiding you through applying the same 
+%                               spike sorting sequence to a new data set, thus 
+%                               creating comparable cluster assignments 
+% 'Merge spike data files'    - a script guiding you through the process of merging 
+%                               sorted data from successive recordings into a single 
+%                               dataset. The resulting dataset cannot access the 
+%                               original raw spike data files (i.e. shapes). Sorting 
+%                               should therefore be finished before merging. 
+% 'Spike Rate Analysis'       - different tools to calculate and display spike rate 
+%                               based on moving window rate estimation. 
+% 
+% Spike-Tools were created by U. Egert with contributions from M. Diesmann, 
+%                             S. Rotter, (Dept. of Neurobiology and Biophysics), Univ. 
+%                             Freiburg, and Th. Knott (NMI Reutlingen) 
+% 
+% 
+% (c) U. Egert, Freiburg 6/98 
+% 
+% See also RACKSETUPDEF READSPIKE2DATA SORTHELP 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call spiketoolshelp.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

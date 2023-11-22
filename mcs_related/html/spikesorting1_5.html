@@ -1,0 +1,38 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Ulrich Egert">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (WinNT; I) [Netscape]">
+   <title>spikesorting1_4</title>
+</head>
+<body background="iepback.gif">
+&nbsp;
+<table COLS=2 WIDTH="100%" >
+<tr>
+<td><b>Spike sorting 1/5 - Initial Steps</b></td>
+
+<td>
+<div align=right><a href="overview.htm#spiketools">Back to overview</a></div>
+</td>
+</tr>
+</table>
+
+<p>MEA-Tools provides some utilities that are intended to review the spikes
+shapes, define subpopulations of spikes based on principle component analysis
+and review the sorted time series.
+<br>Principle components are calculated during the 'Parse Spikes' procedure
+in the Spike Tools menu. The results of that step are stored in a mat-file
+which should be reloaded before sorting.
+<p>The first steps after file parsing are illustrated in this graph. The
+'spike sorting' window allows you to define the electrode, subpopulation
+and parameters to use in the subsequent sorting step. The location of the
+source file must be given to allow retrieval of the spike waveforms. Per
+default the most recent entry for that mat-file is reused, so you should
+check and adjust if necessary. Likewise for the target file.
+<p><img SRC="sortguis800.gif" height=514 width=800>
+<p>Next:
+<br><b><a href="spikesorting2_5.html">Spike sorting 2/5 - reviewing spike
+waveforms</a></b>
+</body>
+</html>

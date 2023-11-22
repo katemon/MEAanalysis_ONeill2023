@@ -1,0 +1,131 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>setgcf.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> SETGCF - find/create a named figure                                                                                                                 </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% figh = setgcf(figname, action); 
+% Looks for/generates a named figure performes the requested action 
+% and returns the figure handle. If a figure of this name is not 
+% found a new one is created and its handle returned. 
+% 
+% If several figures with the same name are found the 
+% functions is cancelled. 
+% 
+% legal values for &lt;action&gt; 
+% 'create'      creates a new figure with &lt;figname&gt;, keeping others of the same name 
+% 'clear'       clears the figure 
+% 'delete'      deletes a figure with &lt;figname&gt; 
+% 'reset'       see helpwin reset 
+% 'replace'     re-creates a figure of that name 
+% 
+% U. Egert 7/97 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by setgcf.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="delete.htm">delete</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call setgcf.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="addlomenu.htm">addlomenu</A></LI> 
+<LI><A HREF ="addplot64menu.htm">addplot64menu</A></LI> 
+<LI><A HREF ="bar64.htm">bar64</A></LI> 
+<LI><A HREF ="bar_avg_std.htm">bar_avg_std</A></LI> 
+<LI><A HREF ="burstanalysis_script.htm">burstanalysis_script</A></LI> 
+<LI><A HREF ="cbsag_demo_info.htm">cbsag_demo_info</A></LI> 
+<LI><A HREF ="cbsag_smallmoviefig.htm">cbsag_smallmoviefig</A></LI> 
+<LI><A HREF ="cbsurf.htm">cbsurf</A></LI> 
+<LI><A HREF ="chan_map.htm">chan_map</A></LI> 
+<LI><A HREF ="chanmap_on_img.htm">chanmap_on_img</A></LI> 
+<LI><A HREF ="checkhelp.htm">checkhelp</A></LI> 
+<LI><A HREF ="create_datastatewindow.htm">create_datastatewindow</A></LI> 
+<LI><A HREF ="doserespplot.htm">doserespplot</A></LI> 
+<LI><A HREF ="dotdensity.htm">dotdensity</A></LI> 
+<LI><A HREF ="dotmovie.htm">dotmovie</A></LI> 
+<LI><A HREF ="dotrate.htm">dotrate</A></LI> 
+<LI><A HREF ="es_selectionbox2.htm">es_selectionbox2</A></LI> 
+<LI><A HREF ="frequencygain.htm">frequencygain</A></LI> 
+<LI><A HREF ="getdir.htm">getdir</A></LI> 
+<LI><A HREF ="getdstrmrange.htm">getdstrmrange</A></LI> 
+<LI><A HREF ="getepoch.htm">getepoch</A></LI> 
+<LI><A HREF ="gettrace.htm">gettrace</A></LI> 
+<LI><A HREF ="guisubpop_dlg.htm">guisubpop_dlg</A></LI> 
+<LI><A HREF ="hcotcmovie_fig.htm">hcotcmovie_fig</A></LI> 
+<LI><A HREF ="imgsurf.htm">imgsurf</A></LI> 
+<LI><A HREF ="isianalysis.htm">isianalysis</A></LI> 
+<LI><A HREF ="lfp_extract_plot.htm">lfp_extract_plot</A></LI> 
+<LI><A HREF ="lfp_extractscript.htm">lfp_extractscript</A></LI> 
+<LI><A HREF ="lfp_statistics_script.htm">lfp_statistics_script</A></LI> 
+<LI><A HREF ="lo4dotdensity.htm">lo4dotdensity</A></LI> 
+<LI><A HREF ="makesurf2contour.htm">makesurf2contour</A></LI> 
+<LI><A HREF ="map2trialgui.htm">map2trialgui</A></LI> 
+<LI><A HREF ="matlabmovie.htm">matlabmovie</A></LI> 
+<LI><A HREF ="mcssummarybox.htm">mcssummarybox</A></LI> 
+<LI><A HREF ="mcssummaryctrl.htm">mcssummaryctrl</A></LI> 
+<LI><A HREF ="measurfplot.htm">measurfplot</A></LI> 
+<LI><A HREF ="meatoolsbox.htm">meatoolsbox</A></LI> 
+<LI><A HREF ="moviedemoctrl.htm">moviedemoctrl</A></LI> 
+<LI><A HREF ="nsubpops.htm">nsubpops</A></LI> 
+<LI><A HREF ="otc.htm">otc</A></LI> 
+<LI><A HREF ="parameterpltmany.htm">parameterpltmany</A></LI> 
+<LI><A HREF ="parsespikesgui.htm">parsespikesgui</A></LI> 
+<LI><A HREF ="pc_vs_time.htm">pc_vs_time</A></LI> 
+<LI><A HREF ="pcparams.htm">pcparams</A></LI> 
+<LI><A HREF ="plot8x8img.htm">plot8x8img</A></LI> 
+<LI><A HREF ="plotmeagrid_objects.htm">plotmeagrid_objects</A></LI> 
+<LI><A HREF ="plotpcvec.htm">plotpcvec</A></LI> 
+<LI><A HREF ="plotprm8.htm">plotprm8</A></LI> 
+<LI><A HREF ="popsubplot.htm">popsubplot</A></LI> 
+<LI><A HREF ="ppf_analysis.htm">ppf_analysis</A></LI> 
+<LI><A HREF ="prepare_surf4copy.htm">prepare_surf4copy</A></LI> 
+<LI><A HREF ="printwinc.htm">printwinc</A></LI> 
+<LI><A HREF ="prm1plot.htm">prm1plot</A></LI> 
+<LI><A HREF ="query_figure.htm">query_figure</A></LI> 
+<LI><A HREF ="ratecorr.htm">ratecorr</A></LI> 
+<LI><A HREF ="ratecorrscript.htm">ratecorrscript</A></LI> 
+<LI><A HREF ="rateplots.htm">rateplots</A></LI> 
+<LI><A HREF ="remove_artifact_script.htm">remove_artifact_script</A></LI> 
+<LI><A HREF ="removedrift.htm">removedrift</A></LI> 
+<LI><A HREF ="removedrift_iir.htm">removedrift_iir</A></LI> 
+<LI><A HREF ="save8x8edge.htm">save8x8edge</A></LI> 
+<LI><A HREF ="setsurfval2nan.htm">setsurfval2nan</A></LI> 
+<LI><A HREF ="showdottrace.htm">showdottrace</A></LI> 
+<LI><A HREF ="showespair.htm">showespair</A></LI> 
+<LI><A HREF ="showlop.htm">showlop</A></LI> 
+<LI><A HREF ="sortctrl.htm">sortctrl</A></LI> 
+<LI><A HREF ="sortgui1.htm">sortgui1</A></LI> 
+<LI><A HREF ="sortspx4.htm">sortspx4</A></LI> 
+<LI><A HREF ="spikerecdisp.htm">spikerecdisp</A></LI> 
+<LI><A HREF ="spikerecdispctrl.htm">spikerecdispctrl</A></LI> 
+<LI><A HREF ="spkquality.htm">spkquality</A></LI> 
+<LI><A HREF ="spxbundle.htm">spxbundle</A></LI> 
+<LI><A HREF ="spxpchanplt.htm">spxpchanplt</A></LI> 
+<LI><A HREF ="srate.htm">srate</A></LI> 
+<LI><A HREF ="startburstanalysis.htm">startburstanalysis</A></LI> 
+<LI><A HREF ="startburstanalysis_batch.htm">startburstanalysis_batch</A></LI> 
+<LI><A HREF ="startrate.htm">startrate</A></LI> 
+<LI><A HREF ="subplotmosaic_script.htm">subplotmosaic_script</A></LI> 
+<LI><A HREF ="sweep2movie.htm">sweep2movie</A></LI> 
+<LI><A HREF ="sweepevalplot.htm">sweepevalplot</A></LI> 
+<LI><A HREF ="sweepscript.htm">sweepscript</A></LI> 
+<LI><A HREF ="template_script.htm">template_script</A></LI> 
+<LI><A HREF ="tracepullout.htm">tracepullout</A></LI> 
+<LI><A HREF ="usefulpr.htm">usefulpr</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

@@ -1,0 +1,56 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>sublabl.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> SUBLABL               - adds a text label to a subplot                                                                                              </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% comlabels = sublabl(handlemat, textmat, positionmat) labels the subplot 
+% in the targetfigure with the text in &lt;textmat&gt;. Positions are defined 
+% as described below and entered via &lt;positionmat&gt;. Target subplot 
+% are defined by the handles in &lt;handlemat&gt;. A vector of handles 
+% to the labels is returned in &lt;comlabels&gt;. 
+% 
+% Fontsize and fontname can be changed with the usual parameter/ 
+% value pairs. 
+% 
+% Note that the default settings work with linear axes only 
+% format für positionmat: 
+% 
+%		Pos.	correction factors 
+%	  x	y 
+% top left     11	1	1	% factor = 1 if default 
+% top rigth    12	1	1	% should be used 
+% bottom left  21	1	1 
+% bottom right 22	1	1 
+% center left  31	1	1 
+% center right 32	1	1 
+% 
+% Example: 
+% For an entry at the top left of a subplot &lt;positionmat&gt; would be 
+% [11 1 1] or [11]. 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by sublabl.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call sublabl.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="rateplots.htm">rateplots</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

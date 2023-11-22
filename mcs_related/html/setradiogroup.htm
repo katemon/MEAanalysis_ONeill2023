@@ -1,0 +1,58 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>setradiogroup.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> SETRADIOGROUP - sets exactly one of a group of radiobuttons                                                                                         </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+% Syntax 
+% activestr = setradiogroup(tagstr, activestr, fh), all input 
+%    arguments are optional. 
+%    If none are given the values of all radio buttons with the 
+%    same tag as the GCBO except GCBO are set to 0. All user 
+%    data will have the fields &lt;tag&gt; = &lt;tagstring&gt; and &lt;active&gt; 
+%    giving the string of the active button in the group. 
+% 
+%    If &lt;tagstr&gt; and &lt;activestr&gt; are given the 'Value' property 
+%    of radiobuttons of the current figure with the tag &lt;tagstr&gt; 
+%    will be set to 0 except the one with its 'string' property 
+%    set to &lt;activestr&gt;. 'userdata' will be set as above. Giving 
+%    figure handle &lt;fh&gt; will use that figure. 
+% 
+% Example 
+% A set of radiobuttons with the strings 'bttn1', 'bttn2', 'bttn3' 
+% each have the tag 'radiogroup1'. Clicking on 'bttn2' will set 
+% its 'Value' property to 1 and that of the others to 0. 
+% The 'userdata' of all three will have the 2 fields: 
+% 'tag' = 'radiogroup1' 
+% 'active' = 'bttn2' 
+% 
+%    The 'active' field can be retrieved with GETRADIOGROUP 
+% 
+% U. Egert 6/98 
+% 
+% an improvement would be to list handles to the members of the 
+% group in the userdata of each member. This would speed up the 
+% switching and allow individual 'tag' strings. 
+% 
+% See also GETRADIOGROUP 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call setradiogroup.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="emptygui.htm">emptygui</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 

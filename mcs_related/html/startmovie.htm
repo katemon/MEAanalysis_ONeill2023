@@ -1,0 +1,72 @@
+<HTML>                                              
+<HEAD>                                              
+  <TITLE>/</TITLE>                                  
+  <META NAME="GENERATOR" CONTENT="HTML-TOOLBOX ">   
+</HEAD>                                             
+<BODY BACKGROUND="iepback.gif"> 
+<HR WIDTH="100%"></P> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Cross-linked m-file</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=--1></FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+2>startmovie.m</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>Located in:</FONT></FONT></P></CENTER> 
+<CENTER><P><FONT COLOR="#000000"><FONT SIZE=+1>MEATools</FONT></FONT></P></CENTER> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function synopsis</FONT></FONT></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1> STARTMOVIE         - is a wrapper function for meamovie          [MEA/ab]                                                                           </FONT></FONT></P> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Function comments</FONT></FONT></P> 
+<pre> 
+%   STARTMOVIE without input parameters opens a file dialog and lets 
+%   the user select a file from which a datastrm object is to be 
+%   constructed whose first sweep is  subsequently read in and displayed 
+%   with meamovie in its default configuration 
+% 
+%   STARTMOVIE(NAME) where &lt;NAME&gt; is a string does nearly the same but 
+%   instead of opening the file dialog a datastrm object is constructed 
+%   from the file with the name &lt;NAME&gt; 
+% 
+%   STARTMOVIE(D) where &lt;D&gt; is a a datastrm object reads the first sweep 
+%   of &lt;D&gt; and hands it to meamovie 
+% 
+%   STARTMOVIE(MAT) where &lt;MAT&gt; is a matrix hands this matrix over to 
+%   meamovie without the dependence on any datastrm object. The preferred 
+%   format for &lt;MAT&gt; presently is 64 x N. Some other formats (68 x N, 
+%   N x 64, N x 68, 8 x 8 x N, N x 8 x 8) may be recognized, but in some 
+%   cases (e.g. 8 x 8 x 8) there is no way to guess the correct order. 
+% 
+%   Further arguments are interpreted as parameter/value-pairs. Presently 
+%   there are only two (mutually exclusive) parameters that are handled 
+%   by STARTMOVIE itself: 'sweep' and 'time'. They are used to set the 
+%   position of the datastrm object to a particular sweep. If 'sweep' is 
+%   used, the paramter has to be a sweep number while 'time' requires a 
+%   time in milliseconds. If both 'sweep' and 'time' are given, the value 
+%   of 'sweep' will be ignored. 
+%   Information regarding all other possible parameters can be found in 
+%   the help for meamovie. 
+% 
+%   See also MEAMOVIE, STARTMOVIEGUI, DATASTRM, SETPOS 
+</pre> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files called by startmovie.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="pvpmod.htm">pvpmod</A></LI> 
+<LI><A HREF ="datastrm.htm">datastrm</A></LI> 
+<LI><A HREF ="getfield.htm">getfield</A></LI> 
+<LI><A HREF ="getraw_uv.htm">getraw_uv</A></LI> 
+<LI><A HREF ="getstreamnumber.htm">getstreamnumber</A></LI> 
+<LI><A HREF ="getsweep_uv.htm">getsweep_uv</A></LI> 
+<LI><A HREF ="isfield.htm">isfield</A></LI> 
+<LI><A HREF ="laplace.htm">laplace</A></LI> 
+<LI><A HREF ="meamovie.htm">meamovie</A></LI> 
+<LI><A HREF ="nextsweep.htm">nextsweep</A></LI> 
+<LI><A HREF ="savgol.htm">savgol</A></LI> 
+<LI><A HREF ="setpos.htm">setpos</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#000000"><FONT SIZE=+1>m-files that call startmovie.m</FONT></FONT></P> 
+<UL> 
+<LI><A HREF ="moviestartcontrol.htm">moviestartcontrol</A></LI> 
+</UL> 
+<P><HR WIDTH="100%"></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>Written by  Ulrich Egert  11/11 2004 <IMG SRC = "copyright.gif" ></FONT></FONT></P> 
+<P><FONT COLOR="#0000FF"><FONT SIZE=-0>E-mail:</B><A HREF = "mailto:egert@biologie.uni-freiburg.de">egert@biologie.uni-freiburg.de</A></H4></FONT></FONT></P> 
